@@ -12,6 +12,27 @@ vim.cmd [[
     autocmd BufWritePost init.lua source <afile> | so ~/.config/nvim/init.lua
   augroup end
 ]]
+
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  context_commentstring = {
+    enable = true
+  },
+  highlight = {
+    enable = true,
+    disable = { "lua" }
+  },
+  indent = {
+    enable = true
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  }
+}
+
 -- telescope
 require('telescope').setup({
   pickers = {
