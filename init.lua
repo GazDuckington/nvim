@@ -15,7 +15,7 @@ vim.cmd [[
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   context_commentstring = {
     enable = true
   },
