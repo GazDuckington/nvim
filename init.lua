@@ -115,7 +115,6 @@ require('lualine').setup{
 -- general settings
 vim.o.termguicolors = true
 vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
-
 -- colorscheme
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 1
@@ -131,3 +130,4 @@ vim.bo.expandtab = true
 vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 vim.opt.smartindent = true
+vim.opt.number = true
