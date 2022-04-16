@@ -10,6 +10,7 @@ vim.g.maplocalleader = " "
 -- basic keybind
 -- save & quit
 map('n', '<c-s>', ':w<CR>', {})
+map('n', '<c-w>', ':bd!<CR>', {})
 map('n', '<c-q>', ':q<CR>', {})
 -- replace selected text
 map("n", "<c-f>", ":%s/", {})
