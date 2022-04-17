@@ -1,6 +1,6 @@
 ![Screenshot](./Screenshots.png)
 
-<p style="text-align: center;">My (Neo)Vim Configuration</p>
+<h3 align="center">My (Neo)Vim Configuration</h3>
 
 # Plugins
 - tree-sitter
