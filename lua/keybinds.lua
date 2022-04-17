@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-local telescope = require("telescope")
+-- local telescope = require("telescope")
 
 -- set leader key
 map("", "<Space>", "<Nop>", opts)
@@ -8,6 +8,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- basic keybind
+-- file explorer
+map('n', '<leader>e', ':Vexplore<CR>', opts)
 -- save & quit
 map('n', '<c-s>', ':w<CR>', {})
 map('n', '<c-w>', ':bd!<CR>', {})
@@ -15,7 +17,8 @@ map('n', '<c-q>', ':q<CR>', {})
 -- replace selected text
 map("n", "<c-f>", ":%s/", {})
 -- comment line
-map("n", "<leader>/", ":CommentToggle<CR>", {})
+map("n", "gc", ":CommentToggle<CR>", {})
+map("v", "gc", ":'<,'>CommentToggle<CR>", {})
 -- move line up & down
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==", opts)
 map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==", opts)
