@@ -2,6 +2,7 @@
 - tree-sitter
 - ts-rainbow
 - ts-autotag
+- nvim-comment
 - autopairs
 - lualine
 - bufferline
