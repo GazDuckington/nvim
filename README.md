@@ -1,12 +1,11 @@
-<p style="text-align: center;">
 ![Screenshot](./Screenshots.png)
-</p>
+
+<p style="text-align: center;">My (Neo)Vim Configuration</p>
 
 # Plugins
 - tree-sitter
 - ts-rainbow
 - ts-autotag
-- nvim-comment
 - autopairs
 - lualine
 - bufferline
