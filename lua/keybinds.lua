@@ -10,9 +10,10 @@ vim.g.maplocalleader = " "
 -- basic keybind
 -- file explorer
 map('n', '<leader>e', ':Vexplore<CR>', opts)
+map('n', '<leader>z', '<c-w>z<CR>', opts)
 -- save & quit
 map('n', '<c-s>', ':w<CR>', {})
-map('n', '<c-w>', ':bd!<CR>', {})
+map('n', '<c-d>', ':bd!<CR>', {})
 map('n', '<c-q>', ':q<CR>', {})
 -- replace selected text
 map("n", "<c-f>", ":%s/", {})
