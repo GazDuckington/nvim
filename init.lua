@@ -57,7 +57,7 @@ require("bufferline").setup({
         show_close_icon = false,
         show_tab_indicators = true,
     },
-    highlights = {
+    highlight = {
         fill = {
             guifg = { attribute = "fg", highlight = "Normal" },
             guibg = { attribute = "bg", highlight = "StatusLineNC" },
@@ -116,13 +116,14 @@ require('lualine').setup{
 -- general settings
 vim.o.termguicolors = true
 vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
+vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
 vim.g.netrw_winsize = 20
 -- colorscheme
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 vim.g.vscode_disable_nvimtree_bg = true
-vim.cmd([[colorscheme vscode]])
+vim.cmd[[colorscheme vscode]]
 -- mouse
 vim.cmd [[set mouse=a]]
 vim.opt.hidden = true

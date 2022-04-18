@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 
 -- basic keybind
 -- file explorer
-map('n', '<leader>e', ':Vexplore<CR>', opts)
+map('n', '<leader>e', ':Texplore %d<CR>', opts)
 map('n', '<leader>z', '<c-w>z<CR>', opts)
 map('n', '<leader>1', ':BufferLineCyclePrev<CR>', opts)
 map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
@@ -33,9 +33,9 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 -- telescope
-map('n', '<C-P>', "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
+map('n', '<C-P>', "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>", opts)
 map('n', '<C-F>', "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
 map('n', '<C-B>', "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
 -- toggle terminal
-map('n', '<c-t>', "<cmd>ToggleTerm dir='%:p:h'<CR>", opts)
+map('n', '<leader>t', "<cmd>ToggleTerm dir='%:p:h'<CR>", opts)
 map('n', '<leader>g', "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
