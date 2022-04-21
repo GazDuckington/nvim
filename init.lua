@@ -3,6 +3,7 @@ require('keybinds')
 require('coc-config')
 require('autotag')
 require('term')
+require('vscode')
 require('nvim-autopairs').setup{}
 require('nvim_comment').setup()
 
@@ -110,6 +111,9 @@ require('lualine').setup{
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     globalstatus = true
+  },
+  sections = {
+    lualine_x = {'filetype'}
   }
 }
 
