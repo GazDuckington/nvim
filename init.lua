@@ -13,6 +13,7 @@ vim.cmd [[
     autocmd BufWritePost init.lua source <afile> | so ~/.config/nvim/init.lua
   augroup end
 ]]
+vim.cmd [[set shell=/usr/bin/fish]]
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {
