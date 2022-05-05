@@ -2,10 +2,10 @@ local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return
 end
-
+vim.opt.shell = "/usr/bin/fish"
 require("toggleterm").setup{
   size = 20,
-  -- open_mapping = [[<c-t>]],
+  open_mapping = [[<c-t>]],
   shade_filetypes = {},
   shade_terminals = true,
   shading_factor = '1',
@@ -30,8 +30,8 @@ vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 
 -- tool
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-local floatterm = Terminal:new({ cmd = "fish", hidden = true })
+local lazygit = Terminal:new({ cmd = "lazygit",  dir='%:p:h',hidden = true })
+local floatterm = Terminal:new({ cmd = "fish", dir='%:p:h', hidden = true })
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()

@@ -37,7 +37,9 @@ map('n', '<C-P>', "<cmd>lua require('telescope.builtin').find_files({hidden=true
 map('n', '<C-F>', "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
 map('n', '<C-B>', "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
 -- toggle terminal
-map('n', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
-map('t', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
+-- map('n', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
+-- map('t', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
 map('n', '<leader>g', "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 map('t', '<leader>g', "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- rest.nvim
+map('n', '<leader>t', "<Plug>RestNvim<CR>", opts)
