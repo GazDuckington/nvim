@@ -126,6 +126,7 @@ else
   -- general settings
   vim.o.termguicolors = true
   vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
+  vim.cmd[[set autochdir]]
   vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
   vim.g.netrw_winsize = 20
 
