@@ -1,10 +1,5 @@
 -- init.lua
-if (vim.g.vscode) then
-  -- VSCode extension
-  -- vim.cmd([[source XXXXX.vim]])
-else
-  -- ordinary neovim
-  require('plugins')
+ require('plugins')
   require('keybinds')
   require('coc-config')
   require('autotag')
@@ -146,4 +141,4 @@ else
   vim.bo.softtabstop = 2
   vim.opt.smartindent = true
   vim.opt.number = true
-end
+
