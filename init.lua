@@ -117,17 +117,19 @@
       lualine_x = { 'filetype' }
     }
   }
-
+ 
   -- general settings
   vim.o.termguicolors = true
   vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
   vim.cmd[[set autochdir]]
+  
   if vim.g.goneovim == 1 then
     vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1e1e2e]])
   else
     vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
   end
-  vim.g.netrw_winsize = 20
+
+vim.g.netrw_winsize = 20
 
   -- colorscheme
   vim.g.vscode_style = "dark"
@@ -141,7 +143,7 @@
 
   -- indentation
   vim.bo.expandtab = true
-  vim.bo.shiftwidth = 2
+  vim.bo.shiftwidth = 4
   vim.bo.softtabstop = 2
   vim.opt.smartindent = true
   vim.opt.number = true
