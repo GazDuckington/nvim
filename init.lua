@@ -1,5 +1,5 @@
 -- init.lua
- require('plugins')
+  require('plugins')
   require('keybinds')
   require('coc-config')
   require('autotag')
@@ -122,7 +122,11 @@
   vim.o.termguicolors = true
   vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
   vim.cmd[[set autochdir]]
-  vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+  if vim.g.goneovim == 1 then
+    vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1e1e2e]])
+  else
+    vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+  end
   vim.g.netrw_winsize = 20
 
   -- colorscheme
