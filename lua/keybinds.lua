@@ -9,15 +9,8 @@ vim.g.maplocalleader = " "
 -- basic keybind
 map('n', '<c-h>', ':noh<CR>', opts)
 -- file explorer
-if vim.g.goneovim == 1 then
-   map('n', '<leader>e', ':GonvimFilerOpen<CR>', opts)
-   map('n', 'p', 'a<C-r>+<Esc>', opts)
-   --map('n', '<leader>v', '<C-r>+', opts)
-   --map('n', '<leader>v', '<C-r>+', opts)
-else
-   map('n', '<leader>e', ':Texplore %d<CR>', opts)
-   map('n', '<leader>z', '<c-w>z<CR>', opts)
-end
+map('n', '<leader>e', ':Texplore %d<CR>', opts)
+map('n', '<leader>z', '<c-w>z<CR>', opts)
 map('n', '<leader>1', ':BufferLineCyclePrev<CR>', opts)
 map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
 map('n', '<c-Tab>', ':BufferLineCycleNext<CR>', opts)
