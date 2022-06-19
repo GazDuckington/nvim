@@ -16,7 +16,7 @@ map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
 map('n', '<c-Tab>', ':BufferLineCycleNext<CR>', opts)
 -- save & quit
 map('n', '<c-s>', ':w<CR>', {})
-map('i', '<c-s>', ':w<CR>', {})
+map('i', '<c-s>', '<ESC>:w<CR>', {})
 map('n', '<c-d>', ':bd!<CR>', {})
 map('n', '<c-q>', ':q<CR>', {})
 -- replace selected text

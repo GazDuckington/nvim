@@ -4,6 +4,7 @@ require('keybinds')
 require('coc-config')
 require('autotag')
 require('term')
+require('lualine-conf')
 require('vscode')
 require('nvim-autopairs').setup {}
 require('nvim_comment').setup()
@@ -104,19 +105,6 @@ require("bufferline").setup({
     },
   },
 })
-
--- status line
-require('lualine').setup {
-  options = {
-    theme = 'vscode',
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    globalstatus = true
-  },
-  sections = {
-    lualine_x = { 'filetype' }
-  }
-}
 
 -- general settings
 vim.o.termguicolors = true
