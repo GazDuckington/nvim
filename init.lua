@@ -16,6 +16,7 @@ vim.cmd [[
   augroup end
 ]]
 
+vim.cmd([[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')]])
 -- treesitter
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
@@ -109,7 +110,7 @@ require("bufferline").setup({
 -- general settings
 vim.o.termguicolors = true
 vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
-vim.cmd [[set autochdir]]
+-- vim.cmd [[set autochdir]]
 vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
 vim.g.netrw_winsize = 20
 
