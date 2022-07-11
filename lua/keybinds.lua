@@ -37,9 +37,9 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-w>", ":bdelete<CR>", opts)
 -- telescope
-map('n', '<C-P>', "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>", opts)
-map('n', '<C-F>', "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
-map('n', '<C-B>', "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
+map('n', '<C-P>', "<cmd>Telescope fd<CR>", opts)
+map('n', '<C-F>', "<cmd>Telescope live_grep<CR>", opts)
+map('n', '<C-B>', "<cmd>Telescope buffers<CR>", opts)
 -- toggle terminal
 -- map('n', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
 -- map('t', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
