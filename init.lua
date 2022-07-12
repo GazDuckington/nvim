@@ -4,10 +4,14 @@ require('keybinds')
 require('coc-config')
 require('autotag')
 require('term')
-require('lualine-conf')
 require('vscode')
 require('nvim-autopairs').setup {}
 require('nvim_comment').setup()
+if vim.g.goneovim == 1 then
+    vim.cmd([[set laststatus=0]])
+else
+require('lualine-conf')
+end
 
 vim.cmd [[
   augroup init_user_config
@@ -111,7 +115,8 @@ require("bufferline").setup({
 vim.o.termguicolors = true
 vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
 -- vim.cmd [[set autochdir]]
-vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+vim.cmd([[cd %:p:h]])
+vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1d1c1a]])
 vim.g.netrw_winsize = 20
 
 -- colorscheme
@@ -130,3 +135,6 @@ vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 2
 vim.opt.smartindent = true
 vim.opt.number = true
+
+-- vim.opt.guifont = { "FiraCode Nerd Font", ":h8"}
+

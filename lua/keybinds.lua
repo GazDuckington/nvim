@@ -41,8 +41,8 @@ map('n', '<C-P>', "<cmd>Telescope fd<CR>", opts)
 map('n', '<C-F>', "<cmd>Telescope live_grep<CR>", opts)
 map('n', '<C-B>', "<cmd>Telescope buffers<CR>", opts)
 -- toggle terminal
--- map('n', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
--- map('t', '<c-t>', "<cmd>lua _FLOAT_TOGGLE()<CR>", opts)
 map('n', '<leader>g', "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- rest.nvim
 map('n', '<leader>t', "<Plug>RestNvim<CR>", opts)
+-- paste from clipboard
+map('n', "p", "a<C-r>+<Esc>", opts)
