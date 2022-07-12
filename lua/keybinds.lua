@@ -45,4 +45,6 @@ map('n', '<leader>g', "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- rest.nvim
 map('n', '<leader>t', "<Plug>RestNvim<CR>", opts)
 -- paste from clipboard
+if vim.g.goneovim == 1 then
 map('n', "p", "a<C-r>+<Esc>", opts)
+end
