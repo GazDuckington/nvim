@@ -8,11 +8,14 @@ require("toggleterm").setup{
   open_mapping = [[<c-t>]],
   shade_filetypes = {},
   shade_terminals = true,
-  shading_factor = '1',
+  shading_factor = '2',
   start_in_insert = true,
   persist_size = true,
   direction = 'float',
-  shell = vim.o.shell
+  shell = vim.o.shell,
+  float_ops = {
+    border = "curved"
+  }
 }
 
 function _G.set_terminal_keymaps()
