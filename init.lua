@@ -59,7 +59,7 @@ vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]])
 -- vim.cmd [[set autochdir]]
 vim.cmd([[autocmd VimEnter * cd %:p:h]])
 vim.cmd([[autocmd BufEnter * cd %:p:h]])
-vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1d1c1a]])
+-- vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1d1c1a]])
 vim.g.netrw_winsize = 20
 
 -- colorscheme
