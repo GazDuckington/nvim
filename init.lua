@@ -4,23 +4,24 @@ require('keybinds')
 require('coc-config')
 require('autotag')
 require('term')
-require('vscode')
 require('nvim-autopairs').setup {}
 require('nvim_comment').setup()
-if vim.g.goneovim == 1 then
-    vim.cmd([[set laststatus=0]])
-else
 require('lualine-conf')
-end
+require('bufferline-conf')
 
-vim.cmd [[
-  augroup init_user_config
-    autocmd!
-    autocmd BufWritePost init.lua source <afile> | so ~/.config/nvim/init.lua
-  augroup end
-]]
-
+--
 vim.cmd([[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')]])
+--
+vim.cmd([[autocmd BufWritePre *.py :silent call CocAction('runCommand', 'pyright.organizeimports')]])
+
+-- vscode
+require('vscode').setup({
+  transparent = true,
+  color_overrides = {
+    Cursor = { bg='#EC2864' }
+  }
+})
+
 -- treesitter
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
@@ -50,72 +51,14 @@ require('telescope').setup({
   }
 })
 
--- bufferline
-require("bufferline").setup({
-  options = {
-    buffer_close_icon = "",
-    close_command = "bdelete! %d",
-    close_icon = "",
-    indicator_icon = " ",
-    left_trunc_marker = "",
-    modified_icon = "●",
-    offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
-    right_mouse_command = "bdelete! %d",
-    right_trunc_marker = "",
-    show_close_icon = false,
-    show_tab_indicators = true,
-  },
-  highlight = {
-    fill = {
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "StatusLineNC" },
-    },
-    background = {
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "StatusLine" },
-    },
-    buffer_visible = {
-      gui = "",
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    buffer_selected = {
-      gui = "",
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    separator = {
-      guifg = { attribute = "bg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "StatusLine" },
-    },
-    separator_selected = {
-      guifg = { attribute = "fg", highlight = "Special" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    separator_visible = {
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "StatusLineNC" },
-    },
-    close_button = {
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "StatusLine" },
-    },
-    close_button_selected = {
-      guifg = { attribute = "fg", highlight = "normal" },
-      guibg = { attribute = "bg", highlight = "normal" },
-    },
-    close_button_visible = {
-      guifg = { attribute = "fg", highlight = "normal" },
-      guibg = { attribute = "bg", highlight = "normal" },
-    },
-  },
-})
-
 -- general settings
 vim.o.termguicolors = true
-vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]]) -- Thin separator
+
+-- thin separator
+vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]])
 -- vim.cmd [[set autochdir]]
-vim.cmd([[cd %:p:h]])
+vim.cmd([[autocmd VimEnter * cd %:p:h]])
+vim.cmd([[autocmd BufEnter * cd %:p:h]])
 vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1d1c1a]])
 vim.g.netrw_winsize = 20
 
@@ -125,16 +68,23 @@ vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd [[colorscheme vscode]]
+
 -- mouse
 vim.cmd [[set mouse=a]]
 vim.opt.hidden = true
 
 -- indentation
 vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
+vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 vim.opt.smartindent = true
 vim.opt.number = true
 
--- vim.opt.guifont = { "FiraCode Nerd Font", ":h8"}
+if vim.fn.exists("g:neovide") then
+  vim.g.neovide_floating_opacity = 0.9
+  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+  vim.g.neovide_cursor_vfx_particle_lifetime = 3
+  vim.opt.guifont = {"FiraCode Nerd Font", ":h8"}
+end
 

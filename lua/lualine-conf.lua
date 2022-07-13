@@ -1,6 +1,7 @@
 require('lualine').setup {
     options = {
         theme = 'vscode',
+	global_status = true,
         component_separators = '|',
         section_separators = { left = '', right = '' },
     },

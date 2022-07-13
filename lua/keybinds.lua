@@ -15,8 +15,8 @@ map('n', '<leader>1', ':BufferLineCyclePrev<CR>', opts)
 map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
 map('n', '<c-Tab>', ':BufferLineCycleNext<CR>', opts)
 -- save & quit
-map('n', '<c-s>', ':w<CR>', {})
 map('i', '<c-s>', '<ESC>:w<CR>', {})
+map('n', '<c-s>', '<ESC>:w<CR>', {})
 map('n', '<c-d>', ':bd!<CR>', {})
 map('n', '<c-q>', ':q<CR>', {})
 -- replace selected text
@@ -47,6 +47,13 @@ map('n', '<leader>t', "<Plug>RestNvim<CR>", opts)
 -- paste from clipboard
 map('v', 'y', '"+y', opts)
 map('n', 'y', '"+y', opts)
-if vim.g.goneovim == 1 then
-map('n', "p", "a<C-r>+<Esc>", opts)
+map('n', 'd', '"+d', opts)
+map('n', 'd', '"+d', opts)
+if vim.fn.exists("g:neovide") then
+  map('n', "p", "a<C-r>+<Esc>", opts)
+  map('n', '<C-k>', ':m .-2<CR>==', {})
+  map('n', '<C-j>', ':m .+1<CR>==', {})
+  map("v", "<C-k>", ":m '<-2<CR>gv=gv", opts)
+  map("v", "<C-j>", ":m '>+1<CR>gv=gv", opts)
 end
+
