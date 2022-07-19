@@ -13,6 +13,8 @@ require('bufferline-conf')
 vim.cmd([[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')]])
 --
 vim.cmd([[autocmd BufWritePre *.py :silent call CocAction('runCommand', 'pyright.organizeimports')]])
+--
+vim.cmd([[autocmd BufWritePost *.md :silent !pandoc % -o %:r.pdf]])
 
 -- vscode
 require('vscode').setup({
@@ -57,8 +59,8 @@ vim.o.termguicolors = true
 -- thin separator
 vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]])
 -- vim.cmd [[set autochdir]]
-vim.cmd([[autocmd VimEnter * cd %:p:h]])
-vim.cmd([[autocmd BufEnter * cd %:p:h]])
+-- vim.cmd([[autocmd VimEnter * cd %:p:h]])
+-- vim.cmd([[autocmd BufEnter * cd %:p:h]])
 -- vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=#1d1c1a]])
 vim.g.netrw_winsize = 20
 
@@ -79,12 +81,4 @@ vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 vim.opt.smartindent = true
 vim.opt.number = true
-
-if vim.fn.exists("g:neovide") then
-  vim.g.neovide_floating_opacity = 0.9
-  vim.g.neovide_transparency = 0.9
-  vim.g.neovide_cursor_vfx_mode = "railgun"
-  vim.g.neovide_cursor_vfx_particle_lifetime = 3
-  vim.opt.guifont = {"FiraCode Nerd Font", ":h8"}
-end
 
