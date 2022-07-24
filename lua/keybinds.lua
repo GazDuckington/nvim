@@ -62,3 +62,4 @@ map('n', '<C-S-x>', '"+d', opts)
 
 -- preview pdf
 map('n', '<leader>o', ':!zathura --synctex-forward :: %:r.pdf<CR>:redraw!<CR>', opts)
+map('n', '<leader>e', ':!pandoc % -o %:r.pdf<CR>', opts)
