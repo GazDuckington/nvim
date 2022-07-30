@@ -17,10 +17,10 @@ map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
 map('n', '<c-Tab>', ':BufferLineCycleNext<CR>', opts)
 
 -- save & quit
-map('i', '<c-s>', '<ESC>:w<CR>', {})
-map('n', '<c-s>', '<ESC>:w<CR>', {})
+map('i', '<c-s>', '<ESC>:w!<CR>', {})
+map('n', '<c-s>', '<ESC>:w!<CR>', {})
 map('n', '<c-d>', ':bd!<CR>', {})
-map('n', '<c-q>', ':q<CR>', {})
+map('n', '<c-q>', ':q!<CR>', {})
 
 -- replace selected text
 map("n", "<c-f>", ":%s/", {})
@@ -61,5 +61,5 @@ map('v', '<C-S-x>', '"+d', opts)
 map('n', '<C-S-x>', '"+d', opts)
 
 -- preview pdf
-map('n', '<leader>o', ':!zathura --synctex-forward :: %:r.pdf<CR>:redraw!<CR>', opts)
-map('n', '<leader>e', ':!pandoc % -o %:r.pdf<CR>', opts)
+map('n', '<A-S-o>', ':!zathura --synctex-forward :: %:r.pdf &<CR>:redraw!<CR>', opts)
+map('n', '<A-S-e>', ':!pandoc % -o %:r.pdf<CR>:redraw!<CR>', opts)

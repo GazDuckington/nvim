@@ -14,7 +14,6 @@ vim.cmd([[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.
 --
 vim.cmd([[autocmd BufWritePre *.py :silent call CocAction('runCommand', 'pyright.organizeimports')]])
 --
--- vim.cmd([[autocmd BufWritePost *.md :silent !pandoc % -o %:r.pdf]])
 
 -- vscode
 require('vscode').setup({

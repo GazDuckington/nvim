@@ -48,10 +48,10 @@ packer.startup(function(use)
     -- auto tag for html
     'windwp/nvim-ts-autotag',
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
+    -- event = "InsertEnter",
+    -- config = function()
+    --   require("nvim-ts-autotag").setup()
+    -- end,
   }
 use {
   "norcalli/nvim-colorizer.lua",
