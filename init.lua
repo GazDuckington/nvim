@@ -2,12 +2,13 @@
 require('plugins')
 require('keybinds')
 require('coc-config')
-require('autotag')
+-- require('autotag')
 require('term')
-require('nvim-autopairs').setup {}
-require('nvim_comment').setup()
 require('lualine-conf')
 require('bufferline-conf')
+require('nvim-ts-autotag').setup()
+require('nvim-autopairs').setup()
+require('nvim_comment').setup()
 
 --
 vim.cmd([[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')]])
