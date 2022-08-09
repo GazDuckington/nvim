@@ -12,9 +12,9 @@ map('n', '<c-h>', ':noh<CR>', opts)
 -- file explorer
 map('n', '<leader>e', ':Texplore %d<CR>', opts)
 map('n', '<leader>z', '<c-w>z<CR>', opts)
-map('n', '<leader>1', ':BufferLineCyclePrev<CR>', opts)
-map('n', '<leader>2', ':BufferLineCycleNext<CR>', opts)
-map('n', '<c-Tab>', ':BufferLineCycleNext<CR>', opts)
+map('n', '<c-1>', ':BufferLineCyclePrev<CR>', opts)
+map('n', '<c-2>', ':BufferLineCycleNext<CR>', opts)
+map('n', '<c-`>', ':BufferLineCycleNext<CR>', opts)
 
 -- save & quit
 map('i', '<c-s>', '<ESC>:w!<CR>', {})

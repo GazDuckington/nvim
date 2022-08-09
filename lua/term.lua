@@ -11,7 +11,7 @@ require("toggleterm").setup{
   shading_factor = '2',
   start_in_insert = true,
   persist_size = true,
-  direction = 'float',
+  direction = 'tab',
   shell = vim.o.shell,
   float_ops = {
     border = "curved"
