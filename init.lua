@@ -31,8 +31,7 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   },
   highlight = {
-    enable = true,
-    disable = { "lua" }
+    enable = true
   },
   indent = {
     enable = true
