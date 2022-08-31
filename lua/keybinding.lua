@@ -11,10 +11,6 @@ map('i', '<c-s>', '<ESC>:w!<CR>', opts)
 map('n', '<c-s>', '<ESC>:w!<CR>', opts)
 map('n', '<c-q>', ':q!<CR>', opts)
 
--- comment line
-map("n", "gc", ":CommentToggle<CR>", opts)
-map("v", "gc", ":'<,'>CommentToggle<CR>", opts)
-
 -- move line up & down
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==", opts)
 map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==", opts)
@@ -31,6 +27,13 @@ map("n", "<C-l>", "<C-w>l", opts)
 -- close buffer
 map("n", "<C-w>", ":bdelete<CR>", opts)
 
--- cycle buffer
-map("n", "<C-1>", ":bprevious<CR>", opts)
-map("n", "<C-2>", ":bnext<CR>", opts)
+-- Move to previous/next
+map('n', '<C-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<C-.>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<C-1>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<C-2>', '<Cmd>BufferMoveNext<CR>', opts)
+
+-- comment line
+map("n", "<C-/>", ":CommentToggle<CR>", opts)
+map("v", "<C-/>", ":'<,'>CommentToggle<CR>", opts)
