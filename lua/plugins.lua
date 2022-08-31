@@ -40,7 +40,7 @@ packer.init {
 
 -- install plugins here
 packer.startup(function(use)
-  
+
   -- LSP
   use {
     "williamboman/mason.nvim",
@@ -75,6 +75,9 @@ packer.startup(function(use)
         end,
   }
 
+  -- indentation lines
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- comment
   use "terrortylor/nvim-comment"
 
@@ -83,7 +86,7 @@ packer.startup(function(use)
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  
+
   -- lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -92,7 +95,7 @@ packer.startup(function(use)
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
-  
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
