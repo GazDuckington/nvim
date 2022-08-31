@@ -33,13 +33,29 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float {}
+      return require("packer.util").float({ border = 'single' })
     end,
   },
 }
 
 -- install plugins here
 packer.startup(function(use)
+  
+  -- LSP
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
+  -- autocompletion
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- Treesitter
   use {
