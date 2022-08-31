@@ -1,12 +1,16 @@
 -- GazDuckington
 
--- imports
+-- import inits
 require('keybinding')
 require('autos')
 
--- colors
-vim.cmd([[au ColorScheme * hi WinSeparator guibg=none]])
+-- global settings
+vim.opt_global.shell='fish'
+
+-- appearance
+vim.cmd([[highlight WinSeparator guibg=none]])
 vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+vim.o.laststatus=3
 vim.o.termguicolors = false
 
 -- mouse
