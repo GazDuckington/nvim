@@ -43,13 +43,15 @@ packer.startup(function(use)
   use "lukas-reineke/lsp-format.nvim"
 
   -- autocompletion
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+  }
 
   -- Treesitter
   use {
@@ -59,6 +61,22 @@ packer.startup(function(use)
     -- auto tag for html
     'windwp/nvim-ts-autotag',
     'windwp/nvim-autopairs',
+  }
+
+  -- terminal
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = 'v2.*',
+    config = function()
+      require("toggleterm").setup()
+    end
+  }
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+-- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- which key
@@ -80,6 +98,9 @@ packer.startup(function(use)
       })
     end
   }
+
+  -- impatient
+  use 'lewis6991/impatient.nvim'
 
   -- colorizer
   use {

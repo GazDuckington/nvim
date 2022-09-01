@@ -1,6 +1,6 @@
 -- global settings
-vim.g.shell = 'fish'
-vim.g.must_lsp = {'sumneko_lua', 'pyright', 'gopls', 'svelte'}
+vim.opt_global.shell = 'fish'
+vim.g.must_lsp = { 'sumneko_lua', 'pyright', 'gopls', 'svelte', 'tsserver' }
 
 -- appearance
 vim.cmd([[highlight WinSeparator guibg=none]])
