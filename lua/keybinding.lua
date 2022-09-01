@@ -1,10 +1,40 @@
+-- set leader key
+vim.g.mapleader = " "
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- set leader key
-map("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local ops = {
+  mode = "n", -- NORMAL mode
+  prefix = "<leader>",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = false, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local mappings = {
+  q = { ":q!<cr>", "Quit" },
+  w = { ":w!<cr>", "Save" },
+  c = { "<cmd>CommentToggle<cr>", "Comment Line" },
+  i = { ":cd %:p:h<cr>", "CD to Buffer" },
+  e = { ":e ", "Open/Create File" },
+  v = {
+    name = "Split View",
+    s = {":new<cr>", "Horizontal Split"},
+    v = {":vnew<cr>", "Vertical Split"}
+  },
+  b = {
+    name = "Buffer Control",
+    b = {":BufferPrevious<cr>", "Previous Buffer"},
+    n = {":BufferNext<cr>", "Next Buffer"},
+    q = {":bdelete<cr>", "Close Buffer"}
+  },
+}
+
+local wk = require("which-key")
+wk.register(mappings, ops)
+
 
 -- save & quit
 map('i', '<c-s>', '<ESC>:w!<CR>', opts)

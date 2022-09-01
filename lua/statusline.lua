@@ -41,15 +41,13 @@ require('lualine').setup({
     lualine_a = {function ()
         return mode_map[vim.api.nvim_get_mode().mode] or "__"
     end},
-    lualine_b = { 'branch','filename' },
-    lualine_c = { 'fileformat' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress'},
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
-    },
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = {'diagnostics', 'diff'},
+    lualine_y = { 'filetype'},
+    lualine_z = { 'progress', 'location' },
   },
-  options = {   
+  options = {
     theme = "catppuccin",
     global_status = true,
     component_separators = '|',

@@ -15,14 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -48,6 +40,8 @@ packer.startup(function(use)
     "neovim/nvim-lspconfig",
   }
 
+  use "lukas-reineke/lsp-format.nvim"
+
   -- autocompletion
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -65,6 +59,23 @@ packer.startup(function(use)
     -- auto tag for html
     'windwp/nvim-ts-autotag',
     'windwp/nvim-autopairs',
+  }
+
+  -- which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup({
+        window = {
+	  border = "single"
+	},
+	layout = {
+	  height = { min = 5 },
+	  width = { min = 10 },
+	  spacing = 5,
+	}
+      })
+    end
   }
 
   -- colorizer

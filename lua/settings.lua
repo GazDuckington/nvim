@@ -1,5 +1,6 @@
 -- global settings
-vim.opt_global.shell='fish'
+vim.g.shell = 'fish'
+vim.g.must_lsp = {'sumneko_lua', 'pyright', 'gopls', 'svelte'}
 
 -- appearance
 vim.cmd([[highlight WinSeparator guibg=none]])
@@ -8,7 +9,7 @@ vim.o.laststatus = 3
 vim.o.termguicolors = true
 
 -- mouse
-vim.cmd [[set mouse=a]]
+vim.cmd [[set mouse+=a]]
 vim.opt.hidden = true
 
 -- indentation
