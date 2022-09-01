@@ -10,31 +10,41 @@ local ops = {
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = false, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
+  nowait = false, -- use `nowait` when creating keymaps
 }
 
 local mappings = {
+  ["."] = {":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config"},
   q = { ":q!<cr>", "Quit" },
-  w = { ":w!<cr>", "Save" },
-  c = { "<cmd>CommentToggle<cr>", "Comment Line" },
+  s = { ":w!<cr>", "Save" },
+  ["/"] = { "<cmd>CommentToggle<cr>", "Comment Line" },
   i = { ":cd %:p:h<cr>", "CD to Buffer" },
   e = { ":e ", "Open/Create File" },
   v = {
     name = "Split View",
-    s = {":new<cr>", "Horizontal Split"},
-    v = {":vnew<cr>", "Vertical Split"}
+    s = {":new<cr>", "Split New Horizontal"},
+    v = {":vnew<cr>", "Split New Vertical"},
+    S = {":split<cr>", "Split Editor Horizontal"},
+    V = {":vsplit<cr>", "Split Editor Vertical"},
   },
   b = {
     name = "Buffer Control",
-    b = {":BufferPrevious<cr>", "Previous Buffer"},
-    n = {":BufferNext<cr>", "Next Buffer"},
+    j = {":BufferPrevious<cr>", "Previous Buffer"},
+    k = {":BufferNext<cr>", "Next Buffer"},
+    J = {":BufferMovePrevious<cr>", "Move Buffer to Previous"},
+    K = {":BufferMoveNext<cr>", "Move Buffer to Next"},
     q = {":bdelete<cr>", "Close Buffer"}
   },
+  p = {
+    name = "Writer Stuff",
+    m = { ":!pandoc % -o %:r.pdf<cr>:redraw!<cr>", "Markdown to PDF"},
+    t = { ":!pdflatex % -o %:r.pdf<cr>:redraw!<cr>", "LaTeX to PDF"},
+    r = { ":zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" }
+  }
 }
 
 local wk = require("which-key")
 wk.register(mappings, ops)
-
 
 -- save & quit
 map('i', '<c-s>', '<ESC>:w!<CR>', opts)

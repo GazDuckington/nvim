@@ -5,8 +5,8 @@ require("catppuccin").setup({
   ts_rainbow = true,
   barbar = true,
   highlight_overrides = {
-    all = { 
-	Comment = { fg = '#6c7086' }
+    all = {
+      Comment = { fg = '#6c7086' },
     }
   },
 })

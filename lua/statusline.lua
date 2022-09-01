@@ -45,12 +45,12 @@ require('lualine').setup({
     lualine_c = {'filename'},
     lualine_x = {'diagnostics', 'diff'},
     lualine_y = { 'filetype'},
-    lualine_z = { 'progress', 'location' },
+    lualine_z = { 'location', 'progress' },
   },
   options = {
     theme = "catppuccin",
     global_status = true,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
+    component_separators = '',
+    section_separators = { left = '', right = '' },
   },
 })
