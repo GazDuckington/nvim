@@ -12,7 +12,7 @@ require("toggleterm").setup{
   persist_size = true,
   direction = 'float',
   float_ops = {
-    border = "curved"
+    border = "single"
   }
 }
 

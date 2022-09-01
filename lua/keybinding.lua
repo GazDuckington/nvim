@@ -93,6 +93,9 @@ map("n", "<C-2>", "<Cmd>BufferMoveNext<cr>", opts)
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
 
+-- FZF
+map("n", "<C-p>", "<cmd>FZF<cr>", opts)
+
 -- telescope
 map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
