@@ -18,3 +18,12 @@ api.nvim_create_autocmd("BufWritePost", {
   end,
   group=gpinit
 })
+
+-- autoformat on save
+api.nvim_create_autocmd("BufWritePre", {
+	pattern={"*"},
+	callback=function ()
+		vim.cmd [[lua vim.lsp.buf.formatting_sync()]]
+	end,
+	group=gpinit
+})

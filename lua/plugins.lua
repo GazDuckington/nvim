@@ -40,8 +40,6 @@ packer.startup(function(use)
     "neovim/nvim-lspconfig",
   }
 
-  use "lukas-reineke/lsp-format.nvim"
-
   -- autocompletion
   use {
     'hrsh7th/cmp-nvim-lsp',
