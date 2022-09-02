@@ -42,7 +42,14 @@ require('lualine').setup({
         return mode_map[vim.api.nvim_get_mode().mode] or "__"
     end},
     lualine_b = {'branch'},
-    lualine_c = {'filename'},
+    lualine_c = {
+		  {
+		  'filename',
+		  file_status = true,
+		  newfile_status = true,
+		  path = 3,
+		  }
+		},
     lualine_x = {'diagnostics', 'diff'},
     lualine_y = { 'filetype'},
     lualine_z = { 'location', 'progress' },

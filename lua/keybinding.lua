@@ -39,8 +39,8 @@ local mappings = {
   p = {
     name = "Writer Stuff",
     m = { ":!pandoc % -o %:r.pdf<cr>:redraw!<cr>", "Markdown to PDF"},
-    t = { ":!pdflatex % -o %:r.pdf<cr>:redraw!<cr>", "LaTeX to PDF"},
-    r = { ":zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" }
+    t = { ":!pdflatex % -output-directory=%:p:h >/dev/null 2>&1<cr>:redraw!<cr>", "LaTeX to PDF"},
+    r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" }
   },
   r = {
     name = "Code Runner",
@@ -94,11 +94,11 @@ map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
 
 -- FZF
-map("n", "<C-p>", "<cmd>FZF<cr>", opts)
+-- map("n", "<C-p>", "<cmd>FZF<cr>", opts)
 
 -- telescope
-map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<C-h>", "<cmd>Telescope help_tags<cr>", opts)
+map("n", "<C-f>", "<cmd>Telescope find_files theme=dropdown<cr>", opts)
+map("n", "<C-g>", "<cmd>Telescope live_grep theme=dropdown<cr>", opts)
+map("n", "<C-b>", "<cmd>Telescope buffers theme=dropdown<cr>", opts)
+map("n", "<C-h>", "<cmd>Telescope help_tags theme=dropdown<cr>", opts)
 
