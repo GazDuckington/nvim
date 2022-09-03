@@ -107,9 +107,6 @@ packer.startup(function(use)
 	-- impatient
 	use 'lewis6991/impatient.nvim'
 
-	-- markdown preview
-	use { "ellisonleao/glow.nvim" }
-
 	-- colorizer
 	use {
 		"norcalli/nvim-colorizer.lua",

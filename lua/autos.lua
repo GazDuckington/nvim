@@ -44,7 +44,7 @@ function _READ_PDF()
 		vim.cmd('!zathura --synctex-forward :: %:r.pdf &')
 		vim.cmd('redraw!')
 	elseif ft == 'markdown' then
-		vim.cmd('Glow')
+		vim.cmd [[TermExec cmd='glow %:p:r.md' dir='%:p:h']]
 	else
 		vim.cmd [[echo 'Filetype not supported!']]
 	end
