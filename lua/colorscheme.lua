@@ -7,6 +7,7 @@ require("catppuccin").setup({
 	barbar = true,
 	custom_highlights = {
 		Comment = { fg = '#7e8991' },
+		LineNr = { fg = '#7e8991' },
 		CursorLine = { bg = '#181825' },
 		CursorLineNr = {
 			fg = '#04b956',

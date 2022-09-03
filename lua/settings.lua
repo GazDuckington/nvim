@@ -17,6 +17,7 @@ vim.cmd([[highlight WinSeparator guibg=none]])
 vim.o.cursorline = true
 vim.o.laststatus = 3
 vim.opt.relativenumber = true
+vim.opt.number = true
 
 -- mouse
 vim.cmd [[set mouse+=a]]
