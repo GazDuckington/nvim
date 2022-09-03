@@ -15,14 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -33,13 +25,39 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float {}
+      return require("packer.util").float({ border = 'single' })
     end,
   },
 }
 
 -- install plugins here
 packer.startup(function(use)
+
+  -- LSP
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
+  -- autocompletion
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+  }
+
+  -- tabnine
+  use {
+    'tzachar/cmp-tabnine',
+    run='./install.sh',
+    requires = 'hrsh7th/nvim-cmp'
+  }
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -48,79 +66,75 @@ packer.startup(function(use)
     -- auto tag for html
     'windwp/nvim-ts-autotag',
     'windwp/nvim-autopairs',
-    -- event = "InsertEnter",
-    -- config = function()
-    --   require("nvim-ts-autotag").setup()
-    -- end,
   }
-use {
-  "norcalli/nvim-colorizer.lua",
+
+  -- terminal
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = 'v2.*',
     config = function()
-      require("colorizer").setup({ "*" }, {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          RRGGBBAA = true, -- #RRGGBBAA hex codes
-          rgb_fn = true, -- CSS rgb() and rgba() functions
-          hsl_fn = true, -- CSS hsl() and hsla() functions
-          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-          })
-  end,
-}
-  -- rest.nvim
-use {
-  "NTBBloodbath/rest.nvim",
-  requires = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("rest-nvim").setup({
-      -- Open request results in a horizontal split
-      result_split_horizontal = false,
-      -- Keep the http file buffer above|left when split horizontal|vertical
-      result_split_in_place = false,
-      -- Skip SSL verification, useful for unknown certificates
-      skip_ssl_verification = false,
-      -- Highlight request on run
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
-      result = {
-        -- toggle showing URL, HTTP info, headers at top the of result window
-        show_url = true,
-        show_http_info = true,
-        show_headers = true,
-      },
-      -- Jump to request line on run
-      jump_to_request = false,
-      -- env_file = '.env',
-      custom_dynamic_variables = {},
-      yank_dry_run = true,
-    })
-  end
-}
+      require("toggleterm").setup()
+    end
+  }
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		-- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup({
+	plugins = {
+	  spelling = { enabled = true }
+	},
+        window = {
+	  border = "single"
+	},
+	layout = {
+	  height = { min = 5 },
+	  width = { min = 10 },
+	  spacing = 5,
+	}
+      })
+    end
+  }
+
+  -- impatient
+  use 'lewis6991/impatient.nvim'
+
+  -- colorizer
+  use {
+    "norcalli/nvim-colorizer.lua",
+      config = function()
+        require("colorizer").setup()
+        end,
+  }
+
+  -- indentation lines
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- comment
   use "terrortylor/nvim-comment"
 
-  -- CoC
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- tabline
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 
-  -- status bar
+  -- lualine
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  -- theme
-  use 'Mofiqul/vscode.nvim'
 
-  -- bufferline
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
- -- telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  -- toggle terminal
-  use 'akinsho/toggleterm.nvim'
+  -- colorscheme
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
