@@ -21,6 +21,12 @@ require('bufferline').setup({
 	clickable = true
 })
 
+require('glow').setup({
+	style = "dark",
+	border = "single",
+	pager = true
+})
+
 require('telescope').setup({
 	defaults = {
 		prompt_prefix = "  ",

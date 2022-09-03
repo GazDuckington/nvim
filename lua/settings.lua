@@ -1,6 +1,16 @@
 -- global settings
 vim.opt_global.shell = 'fish'
-vim.g.must_lsp = { 'sumneko_lua', 'pyright', 'gopls', 'svelte', 'tsserver', 'tailwindcss', 'emmet_ls' }
+vim.g.must_lsp = {
+	'sumneko_lua',
+	'pyright',
+	'gopls',
+	'svelte',
+	'tsserver',
+	'tailwindcss',
+	'emmet_ls',
+	'marksman',
+	'texlab',
+}
 vim.g.termguicolors = true
 
 -- appearance

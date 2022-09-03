@@ -39,13 +39,15 @@ local mappings = {
 	p = {
 		name = "Writer Stuff",
 		e = { ":lua _EXPORT_PDF()<cr>", "Export to PDF" },
-		r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" },
+		r = { ":lua _READ_PDF()<cr>", "Read File" },
+		-- r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" },
 	},
 	r = {
 		name = "Code Runner",
-		g = { ":TermExec cmd='go run %:p:r.go' dir='%:p:h'<cr>", "Golang" },
-		p = { ":TermExec cmd='python %:p:r.py' dir='%:p:h'<cr>", "Python" },
-		n = { ":TermExec cmd='pnpm run dev -- --open' dir='%:p:h'<cr>", "Node Server" },
+		-- g = { ":TermExec cmd='go run %:p:r.go' dir='%:p:h'<cr>", "Golang" },
+		-- p = { ":TermExec cmd='python %:p:r.py' dir='%:p:h'<cr>", "Python" },
+		r = { ":lua _RUNNER()<cr>", "Run File" },
+		n = { ":TermExec cmd='pnpm run dev -- --open' dir='%:p:h'<cr>", "Node Dev Server" },
 	},
 	t = {
 		name = "Telescope",

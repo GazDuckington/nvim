@@ -31,11 +31,33 @@ api.nvim_create_autocmd("BufWritePre", {
 -- export file to pdf
 function _EXPORT_PDF()
 	local ft = vim.bo.filetype
-	if ft == 'markdown' then
-		vim.cmd('!pandoc % -o %:r.pdf')
-	elseif ft == 'plaintex' then
+	if ft == 'plaintex' then
 		vim.cmd('!pdflatex % -output-directory=%:p:h >/dev/null 2>&1')
 	else
-		vim.cmd [[echo 'not available']]
+		vim.cmd [[echo 'Filetype not supported']]
+	end
+end
+
+function _READ_PDF()
+	local ft = vim.bo.filetype
+	if ft == 'pdf' or ft == 'plaintex' then
+		vim.cmd('!zathura --synctex-forward :: %:r.pdf &')
+		vim.cmd('redraw!')
+	elseif ft == 'markdown' then
+		vim.cmd('Glow')
+	else
+		vim.cmd [[echo 'Filetype not supported!']]
+	end
+end
+
+-- runner
+function _RUNNER()
+	local ft = vim.bo.filetype
+	if ft == 'python' then
+		vim.cmd [[TermExec cmd='python %:p:r.py' dir='%:p:h']]
+	elseif ft == 'go' then
+		vim.cmd [[TermExec cmd='go run %:p:r.go' dir='%:p:h']]
+	else
+		vim.cmd [[echo 'Filetype not supported']]
 	end
 end
