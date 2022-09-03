@@ -8,7 +8,7 @@ require("mason-lspconfig").setup({
 })
 
 require("lspconfig").emmet_ls.setup({
-	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
+	filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte', 'markdown' },
 })
 
 for _, client in ipairs(servers) do

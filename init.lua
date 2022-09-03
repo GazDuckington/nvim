@@ -18,16 +18,40 @@ require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 
 require('bufferline').setup({
-  clickable = true
+	clickable = true
+})
+
+require('telescope').setup({
+	defaults = {
+		prompt_prefix = "  ",
+		selection_caret = "❯ ",
+		path_display = { "truncate" },
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.87,
+			height = 0.80,
+			preview_cutoff = 10,
+		},
+	}
 })
 
 require 'lspconfig'.sumneko_lua.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-    },
-  },
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { 'vim' },
+			},
+		},
+	},
 }

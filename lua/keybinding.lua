@@ -5,56 +5,55 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 local ops = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = false, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
+	mode = "n", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = false, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = false, -- use `nowait` when creating keymaps
 }
 
 local mappings = {
-  ["."] = {":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config"},
-  q = { ":q!<cr>", "Quit (C-q)" },
-  s = { ":w!<cr>", "Save (C-s)" },
-  ["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
-  i = { ":cd %:p:h<cr>", "Cd to Buffer" },
-  e = { ":e ", "Open/Create File" },
-  g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-  v = {
-    name = "Split View",
-    s = {":new<cr>", "Split New Horizontal"},
-    v = {":vnew<cr>", "Split New Vertical"},
-    S = {":split<cr>", "Split Editor Horizontal"},
-    V = {":vsplit<cr>", "Split Editor Vertical"},
-  },
-  b = {
-    name = "Buffer Control",
-    j = {":BufferPrevious<cr>", "Previous Buffer (C-,)"},
-    k = {":BufferNext<cr>", "Next Buffer (C-.)"},
-    J = {":BufferMovePrevious<cr>", "Move Buffer to Previous (C-1)"},
-    K = {":BufferMoveNext<cr>", "Move Buffer to Next (C-2)"},
-    q = {":bdelete<cr>", "Close Buffer"}
-  },
-  p = {
-    name = "Writer Stuff",
-    m = { ":!pandoc % -o %:r.pdf<cr>:redraw!<cr>", "Markdown to PDF"},
-    t = { ":!pdflatex % -output-directory=%:p:h >/dev/null 2>&1<cr>:redraw!<cr>", "LaTeX to PDF"},
-    r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" }
-  },
-  r = {
-    name = "Code Runner",
-    g = { ":TermExec cmd='go run %:p:r.go' dir='%:p:h'<cr>", "Golang" },
-    p = { ":TermExec cmd='python %:p:r.py' dir='%:p:h'<cr>", "Python" },
-    n = { ":TermExec cmd='pnpm run dev -- --open' dir='%:p:h'<cr>", "Node Server" },
-  },
-  t = {
-    name = "Telescope",
-    f = { "<cmd>Telescope find_files<cr>", "Find Files (C-f)" },
-    g = { "<cmd>Telescope live_grep<cr>", "Grep String (C-g)" },
-    b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
-    h = { "<cmd>Telescope help_tags<cr>", "Help (C-h)" },
-  },
+	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
+	q = { ":q!<cr>", "Quit (C-q)" },
+	s = { ":w!<cr>", "Save (C-s)" },
+	["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
+	i = { ":cd %:p:h<cr>", "Cd to Buffer" },
+	e = { ":e ", "Open/Create File" },
+	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+	v = {
+		name = "Split View",
+		s = { ":new<cr>", "Split New Horizontal" },
+		v = { ":vnew<cr>", "Split New Vertical" },
+		S = { ":split<cr>", "Split Editor Horizontal" },
+		V = { ":vsplit<cr>", "Split Editor Vertical" },
+	},
+	b = {
+		name = "Buffer Control",
+		j = { ":BufferPrevious<cr>", "Previous Buffer (C-,)" },
+		k = { ":BufferNext<cr>", "Next Buffer (C-.)" },
+		J = { ":BufferMovePrevious<cr>", "Move Buffer to Previous (C-1)" },
+		K = { ":BufferMoveNext<cr>", "Move Buffer to Next (C-2)" },
+		q = { ":bdelete<cr>", "Close Buffer" }
+	},
+	p = {
+		name = "Writer Stuff",
+		e = { ":lua _EXPORT_PDF()<cr>", "Export to PDF" },
+		r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" },
+	},
+	r = {
+		name = "Code Runner",
+		g = { ":TermExec cmd='go run %:p:r.go' dir='%:p:h'<cr>", "Golang" },
+		p = { ":TermExec cmd='python %:p:r.py' dir='%:p:h'<cr>", "Python" },
+		n = { ":TermExec cmd='pnpm run dev -- --open' dir='%:p:h'<cr>", "Node Server" },
+	},
+	t = {
+		name = "Telescope",
+		f = { "<cmd>Telescope find_files<cr>", "Find Files (C-f)" },
+		g = { "<cmd>Telescope live_grep<cr>", "Grep String (C-g)" },
+		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help (C-h)" },
+	},
 }
 
 local wk = require("which-key")
@@ -94,11 +93,10 @@ map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
 
 -- FZF
--- map("n", "<C-p>", "<cmd>FZF<cr>", opts)
+map("n", "<C-p>", "<cmd>lua _EXPORT_PDF()<cr>", opts)
 
 -- telescope
-map("n", "<C-f>", "<cmd>Telescope find_files theme=dropdown<cr>", opts)
-map("n", "<C-g>", "<cmd>Telescope live_grep theme=dropdown<cr>", opts)
-map("n", "<C-b>", "<cmd>Telescope buffers theme=dropdown<cr>", opts)
-map("n", "<C-h>", "<cmd>Telescope help_tags theme=dropdown<cr>", opts)
-
+map("n", "<C-f>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
+map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<C-h>", "<cmd>Telescope help_tags<cr>", opts)
