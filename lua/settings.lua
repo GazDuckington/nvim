@@ -11,7 +11,6 @@ vim.g.must_lsp = {
 	'marksman',
 	'texlab',
 }
-vim.g.termguicolors = true
 
 -- appearance
 vim.cmd([[highlight WinSeparator guibg=none]])
