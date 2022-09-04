@@ -40,6 +40,12 @@ packer.startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 
+	-- go support
+	use {
+		'ray-x/go.nvim',
+		'ray-x/guihua.lua',
+	}
+
 	-- autocompletion
 	use {
 		'hrsh7th/cmp-nvim-lsp',

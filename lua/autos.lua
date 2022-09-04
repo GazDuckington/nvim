@@ -23,7 +23,17 @@ api.nvim_create_autocmd("BufWritePost", {
 api.nvim_create_autocmd("BufWritePre", {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd [[lua vim.lsp.buf.formatting_sync()]]
+		vim.cmd('lua vim.lsp.buf.formatting_sync()')
+	end,
+	group = gpinit
+})
+
+-- lang. specific
+-- Go
+api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		vim.cmd('silent! GoImport')
 	end,
 	group = gpinit
 })
@@ -56,7 +66,7 @@ function _RUNNER()
 	if ft == 'python' then
 		vim.cmd [[TermExec cmd='python %:p:r.py' dir='%:p:h']]
 	elseif ft == 'go' then
-		vim.cmd [[TermExec cmd='go run %:p:r.go' dir='%:p:h']]
+		vim.cmd [[TermExec cmd='go run .' dir='%:p:h']]
 	else
 		vim.cmd [[echo 'Filetype not supported']]
 	end

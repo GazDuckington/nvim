@@ -1,6 +1,6 @@
 -- GazDuckington
 
--- import inits
+-- user settings
 require('settings')
 require('keybinding')
 require('autos')
@@ -11,11 +11,12 @@ require('statusline')
 require('lsconfig')
 require('autocmp')
 require('term')
-
+-- plugin settings
 require('impatient')
 require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
+require('go').setup()
 
 require('bufferline').setup({
 	clickable = true
@@ -38,7 +39,7 @@ require('telescope').setup({
 			vertical = {
 				mirror = false,
 			},
-			width = 0.87,
+			width = 0.80,
 			height = 0.80,
 			preview_cutoff = 10,
 		},
@@ -49,7 +50,6 @@ require 'lspconfig'.sumneko_lua.setup {
 	settings = {
 		Lua = {
 			diagnostics = {
-				-- Get the language server to recognize the `vim` global
 				globals = { 'vim' },
 			},
 		},
