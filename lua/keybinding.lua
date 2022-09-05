@@ -61,6 +61,10 @@ local mappings = {
 local wk = require("which-key")
 wk.register(mappings, ops)
 
+-- QoL
+map("n", "P", '"0p', opts)
+map("n", ";", ":", opts)
+
 -- save & quit
 map("i", "<c-s>", "<ESC>:w!<cr>", opts)
 map("n", "<c-s>", "<ESC>:w!<cr>", opts)
@@ -94,7 +98,7 @@ map("n", "<C-2>", "<Cmd>BufferMoveNext<cr>", opts)
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
 
--- FZF
+-- export buffer to pdf
 map("n", "<C-p>", "<cmd>lua _EXPORT_PDF()<cr>", opts)
 
 -- telescope

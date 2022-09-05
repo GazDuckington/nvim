@@ -10,6 +10,7 @@ vim.g.must_lsp = {
 	'emmet_ls',
 	'marksman',
 	'texlab',
+	'sourcery',
 }
 
 -- appearance
