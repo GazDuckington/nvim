@@ -33,6 +33,8 @@ packer.init {
 -- install plugins here
 packer.startup(function(use)
 
+	use 'tpope/vim-surround'
+
 	-- LSP
 	use {
 		"williamboman/mason.nvim",
@@ -109,7 +111,6 @@ packer.startup(function(use)
 			})
 		end
 	}
-
 	-- impatient
 	use 'lewis6991/impatient.nvim'
 

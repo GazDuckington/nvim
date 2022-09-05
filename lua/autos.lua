@@ -24,16 +24,25 @@ api.nvim_create_autocmd("BufWritePre", {
 	pattern = { "*" },
 	callback = function()
 		vim.cmd('lua vim.lsp.buf.formatting_sync()')
+		-- vim.cmd('w')
 	end,
 	group = gpinit
 })
 
--- lang. specific
+-- organize imports on save
 -- Go
 api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",
 	callback = function()
 		vim.cmd('silent! GoImport')
+	end,
+	group = gpinit
+})
+-- python
+api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.py",
+	callback = function()
+		-- vim.cmd('PyrightOrganizeImports')
 	end,
 	group = gpinit
 })
