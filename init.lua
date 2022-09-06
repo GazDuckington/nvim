@@ -11,6 +11,7 @@ require('statusline')
 require('lsconfig')
 require('autocmp')
 require('term')
+require('nulls')
 
 -- plugin settings
 require('impatient')

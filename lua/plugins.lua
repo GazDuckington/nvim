@@ -42,6 +42,15 @@ packer.startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 
+	-- null-ls
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("null-ls").setup()
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
 	-- go support
 	use {
 		'ray-x/go.nvim',
