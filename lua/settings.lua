@@ -1,16 +1,16 @@
 -- global settings
-vim.opt_global.shell = 'fish'
+vim.opt_global.shell = "fish"
 vim.g.must_lsp = {
 	'sumneko_lua',
 	'pyright',
-	'gopls',
-	'svelte',
-	'tsserver',
-	'tailwindcss',
-	'emmet_ls',
-	'marksman',
-	'texlab',
-	'sourcery',
+	"gopls",
+	"svelte",
+	"tsserver",
+	"tailwindcss",
+	"emmet_ls",
+	"marksman",
+	"texlab",
+	"sourcery",
 }
 
 -- appearance
@@ -21,7 +21,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- mouse
-vim.cmd [[set mouse+=a]]
+vim.cmd([[set mouse+=a]])
 vim.opt.hidden = true
 
 -- indentation

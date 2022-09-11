@@ -33,7 +33,8 @@ packer.init {
 -- install plugins here
 packer.startup(function(use)
 
-	use 'tpope/vim-surround'
+	use "ellisonleao/glow.nvim"
+	use "tpope/vim-surround"
 
 	-- LSP
 	use {
@@ -41,15 +42,6 @@ packer.startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	}
-
-	-- null-ls
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("null-ls").setup()
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
 
 	-- go support
 	use {

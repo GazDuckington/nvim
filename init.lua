@@ -11,7 +11,6 @@ require('statusline')
 require('lsconfig')
 require('autocmp')
 require('term')
-require('nulls')
 
 -- plugin settings
 require('impatient')
@@ -23,6 +22,11 @@ require('go').setup()
 -- barbar line
 require('bufferline').setup({
 	clickable = true
+})
+
+-- glow preview
+require('glow').setup({
+	style = "dark",
 })
 
 require('telescope').setup({
