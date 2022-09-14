@@ -1,8 +1,9 @@
 local api = vim.api
+local autocmd = api.nvim_create_autocmd
 local gpinit = api.nvim_create_augroup("Init", { clear = true })
 
 -- Auto-reload init.lua on save
-api.nvim_create_autocmd("BufWritePost", {
+autocmd("BufWritePost", {
 	pattern = "init.lua",
 	callback = function()
 		vim.cmd([[so %]])
@@ -11,7 +12,7 @@ api.nvim_create_autocmd("BufWritePost", {
 })
 
 -- Run PackerSync on save
-api.nvim_create_autocmd("BufWritePost", {
+autocmd("BufWritePost", {
 	pattern = "plugins.lua",
 	callback = function()
 		vim.cmd([[so % | PackerSync]])
@@ -20,7 +21,7 @@ api.nvim_create_autocmd("BufWritePost", {
 })
 
 -- autoformat on save
-api.nvim_create_autocmd("BufWritePre", {
+autocmd("BufWritePre", {
 	pattern = { "*" },
 	callback = function()
 		vim.cmd("lua vim.lsp.buf.formatting_sync()")
@@ -30,7 +31,7 @@ api.nvim_create_autocmd("BufWritePre", {
 
 -- organize imports on save
 -- Go
-api.nvim_create_autocmd("BufWritePre", {
+autocmd("BufWritePre", {
 	pattern = "*.go",
 	callback = function()
 		vim.cmd("silent! GoImport")
@@ -38,7 +39,7 @@ api.nvim_create_autocmd("BufWritePre", {
 	group = gpinit,
 })
 -- python
-api.nvim_create_autocmd("BufWritePre", {
+autocmd("BufWritePre", {
 	pattern = "*.py",
 	callback = function()
 		-- vim.cmd("PyrightOrganizeImports")
@@ -78,14 +79,4 @@ function _RUNNER()
 	else
 		vim.cmd([[echo 'Filetype not supported']])
 	end
-end
-
--- glrnvim
-if vim.g.glrnvim_gui then
-	api.nvim_create_autocmd("VimEnter", {
-		callback = function()
-			vim.cmd('cd %:p:h')
-			require('keybinding')
-		end
-	})
 end

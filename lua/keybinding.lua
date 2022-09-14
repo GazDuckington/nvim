@@ -84,7 +84,7 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- close buffer
-map("n", "<C-w>", ":bdelete!<cr>", opts)
+map("n", "<C-S-w>", ":bdelete!<cr>", opts)
 
 -- Move to previous/next
 map("n", "<C-,>", "<Cmd>BufferPrevious<cr>", opts)

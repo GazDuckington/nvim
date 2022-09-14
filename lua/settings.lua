@@ -29,3 +29,12 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
+
+-- glrnvim
+if vim.g.glrnvim_gui then
+	vim.api.nvim_create_autocmd("VimEnter", {
+		callback = function()
+			vim.cmd('cd %:p:h')
+		end
+	})
+end
