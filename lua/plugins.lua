@@ -76,6 +76,7 @@ packer.startup(function(use)
 		'windwp/nvim-ts-autotag',
 		'windwp/nvim-autopairs',
 	}
+	use { 'Djancyp/better-comments.nvim' }
 
 	-- terminal
 	use {

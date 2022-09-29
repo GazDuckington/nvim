@@ -20,6 +20,9 @@ require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('go').setup()
 
+-- better comments
+require('better-comment').Setup()
+
 -- barbar line
 require('bufferline').setup({
 	clickable = true
