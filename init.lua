@@ -21,7 +21,24 @@ require('nvim_comment').setup()
 require('go').setup()
 
 -- better comments
-require('better-comment').Setup()
+require('better-comment').Setup({
+	tags = {
+		{
+			name = "!",
+			fg = "",
+			bg = "",
+			bold = true,
+			virtual_text = "",
+		},
+		{
+			name = "!!",
+			fg = "#f44747",
+			bg = "",
+			bold = true,
+			virtual_text = "",
+		}
+	}
+})
 
 -- barbar line
 require('bufferline').setup({
