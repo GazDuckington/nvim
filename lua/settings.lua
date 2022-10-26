@@ -9,7 +9,6 @@ vim.g.must_lsp = {
 	"tailwindcss",
 	"emmet_ls",
 	"marksman",
-	"texlab",
 	"sourcery",
 }
 
@@ -38,3 +37,12 @@ if vim.g.glrnvim_gui then
 		end
 	})
 end
+
+-- disable diagnostics inline texts
+vim.diagnostic.config({
+	virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
