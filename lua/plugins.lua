@@ -41,6 +41,17 @@ packer.startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
+		"onsails/lspkind.nvim",
+	}
+	-- Trouble
+	use {
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup {
+				use_diagnostic_signs = false
+			}
+		end
 	}
 
 	-- go support

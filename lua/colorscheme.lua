@@ -5,6 +5,7 @@ require("catppuccin").setup({
 	-- term_colors = true,
 	ts_rainbow = true,
 	barbar = true,
+	lsp_trouble = true,
 	custom_highlights = {
 		Comment = { fg = '#7e8991' },
 		LineNr = { fg = '#7e8991' },

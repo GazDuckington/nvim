@@ -21,6 +21,7 @@ local mappings = {
 	i = { ":cd %:p:h<cr>", "Cd to Buffer" },
 	e = { ":e ", "Open/Create File" },
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+	x = { "<cmd>TroubleToggle quickfix<cr>", "Open diagnostics" },
 	v = {
 		name = "Split View",
 		s = { ":new<cr>", "Split New Horizontal" },
