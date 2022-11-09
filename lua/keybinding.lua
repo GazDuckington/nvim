@@ -65,6 +65,7 @@ wk.register(mappings, ops)
 -- QoL
 map("n", "P", '"0p', opts)
 map("n", ";", ":", opts)
+map("i", "jk", "<ESC>", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC>:w!<cr>", opts)
@@ -92,8 +93,8 @@ map("n", "<C-,>", "<Cmd>BufferPrevious<cr>", opts)
 map("n", "<C-.>", "<Cmd>BufferNext<cr>", opts)
 
 -- Re-order to previous/next
-map("n", "<C-1>", "<Cmd>BufferMovePrevious<cr>", opts)
-map("n", "<C-2>", "<Cmd>BufferMoveNext<cr>", opts)
+map("n", "<leader>j", "<Cmd>BufferMovePrevious<cr>", opts)
+map("n", "<leader>k", "<Cmd>BufferMoveNext<cr>", opts)
 
 -- comment line
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
@@ -107,3 +108,10 @@ map("n", "<C-f>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
+
+-- terminal
+for var = 1, 3 do
+	local key = string.format("<C-%s>", var)
+	local term = string.format("<cmd>%sToggleTerm<cr>", var)
+	map("n", key, term, opts)
+end
