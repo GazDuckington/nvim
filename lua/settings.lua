@@ -1,8 +1,8 @@
 -- global settings
 vim.opt_global.shell = "fish"
 vim.g.must_lsp = {
-	'sumneko_lua',
-	'pyright',
+	"sumneko_lua",
+	"jedi_language_server",
 	"gopls",
 	"svelte",
 	"tsserver",

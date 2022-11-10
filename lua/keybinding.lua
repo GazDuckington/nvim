@@ -22,6 +22,7 @@ local mappings = {
 	e = { ":e ", "Open/Create File" },
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	x = { "<cmd>TroubleToggle quickfix<cr>", "Open diagnostics" },
+	r = { "<cmd>Greyjoy()<cr>", "Greyjoy launcher" },
 	v = {
 		name = "Split View",
 		s = { ":new<cr>", "Split New Horizontal" },
@@ -42,13 +43,6 @@ local mappings = {
 		e = { ":lua _EXPORT_PDF()<cr>", "Export to PDF" },
 		r = { ":lua _READ_PDF()<cr>", "Read File" },
 		-- r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" },
-	},
-	r = {
-		name = "Code Runner",
-		-- g = { ":TermExec cmd='go run %:p:r.go' dir='%:p:h'<cr>", "Golang" },
-		-- p = { ":TermExec cmd='python %:p:r.py' dir='%:p:h'<cr>", "Python" },
-		r = { ":lua _RUNNER()<cr>", "Run File" },
-		n = { ":TermExec cmd='pnpm run dev -- --open' dir='%:p:h'<cr>", "Node Dev Server" },
 	},
 	t = {
 		name = "Telescope",

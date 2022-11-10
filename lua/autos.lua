@@ -70,13 +70,13 @@ function _READ_PDF()
 end
 
 -- runner
-function _RUNNER()
-	local ft = vim.bo.filetype
-	if ft == "python" then
-		vim.cmd([[9TermExec cmd='python %:p:r.py' dir='%:p:h']])
-	elseif ft == "go" then
-		vim.cmd([[9TermExec cmd='go run .' dir='%:p:h']])
-	else
-		vim.cmd([[echo 'Filetype not supported']])
-	end
-end
+-- function _RUNNER()
+-- 	local ft = vim.bo.filetype
+-- 	if ft == "python" then
+-- 		vim.cmd([[9TermExec cmd='python %:p:r.py' dir='%:p:h']])
+-- 	elseif ft == "go" then
+-- 		vim.cmd([[9TermExec cmd='go run .' dir='%:p:h']])
+-- 	else
+-- 		vim.cmd([[echo 'Filetype not supported']])
+-- 	end
+-- end

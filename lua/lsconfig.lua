@@ -4,7 +4,12 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig = require("lspconfig")
 
 -- setup lsp installer
-require("mason").setup()
+require("mason").setup({
+	providers = {
+		"mason.providers.client",
+		"mason.providers.registry-api"
+	}
+})
 require("mason-lspconfig").setup({
 	ensure_installed = servers
 })
