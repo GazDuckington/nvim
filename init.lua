@@ -27,9 +27,9 @@ require('bufferline').setup({
 })
 
 -- glow preview
-require('glow').setup({
-	style = "dark",
-})
+-- require('glow').setup({
+-- style = "dark",
+-- })
 
 -- lsp lang servers.
 -- lsconfig only contain the automated setups
