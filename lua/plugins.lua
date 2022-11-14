@@ -168,6 +168,8 @@ packer.startup(function(use)
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
+	use("stevearc/dressing.nvim")
+
 	use({ "desdic/greyjoy.nvim",
 		config = function()
 			local greyjoy = require("greyjoy")

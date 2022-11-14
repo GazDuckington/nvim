@@ -20,6 +20,7 @@ require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 -- require('go').setup()
 require('better-comment').Setup()
+require('dressing').setup()
 
 -- barbar line
 require('bufferline').setup({
