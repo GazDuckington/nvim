@@ -58,7 +58,6 @@ wk.register(mappings, ops)
 
 -- QoL
 map("n", "P", '"0p', opts)
-map("n", ";", ":", opts)
 map("i", "jk", "<ESC>", opts)
 
 -- save & quit

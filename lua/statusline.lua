@@ -1,6 +1,7 @@
 require('lualine').setup({
 	sections = {
-		lualine_a = { 'mode' },
+		-- lualine_a = { 'mode' },
+		lualine_a = { { 'mode', fmt = function() return ' ' end } },
 		lualine_b = { 'branch' },
 		lualine_c = {
 			{
