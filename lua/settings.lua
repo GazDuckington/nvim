@@ -19,6 +19,13 @@ vim.o.laststatus = 3
 vim.opt.relativenumber = true
 vim.opt.number = true
 
+vim.opt.list = true
+vim.opt.listchars = {
+	eol = '⏎',
+	tab = '-',
+	trail = '·',
+}
+
 -- mouse
 vim.cmd([[set mouse+=a]])
 vim.opt.hidden = true
