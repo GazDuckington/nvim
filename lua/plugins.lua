@@ -147,11 +147,19 @@ packer.startup(function(use)
 		end,
 	}
 
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+	}
+
 	-- indentation lines
 	use "lukas-reineke/indent-blankline.nvim"
 
 	-- comment
 	use "terrortylor/nvim-comment"
+	use "ggandor/leap.nvim"
 
 	-- tabline
 	use {

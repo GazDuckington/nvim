@@ -21,6 +21,8 @@ require('nvim_comment').setup()
 -- require('go').setup()
 require('better-comment').Setup()
 require('dressing').setup()
+require('leap').add_default_mappings()
+require('nvim-tree').setup()
 
 -- barbar line
 require('bufferline').setup({
