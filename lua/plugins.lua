@@ -123,7 +123,7 @@ packer.startup(function(use)
 				},
 				layout = {
 					height = { min = 4 },
-					width = { max = 10 },
+					width = { min = 10 },
 					spacing = 5,
 				}
 			})
