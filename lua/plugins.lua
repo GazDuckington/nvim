@@ -45,7 +45,6 @@ packer.init({
 -- install plugins here
 packer.startup(function(use)
 	use "wbthomason/packer.nvim"
-	-- use "ellisonleao/glow.nvim"
 	use "tpope/vim-surround"
 
 	-- LSP
@@ -65,12 +64,6 @@ packer.startup(function(use)
 			}
 		end
 	}
-
-	-- go support
-	-- use {
-	-- 	'ray-x/go.nvim',
-	-- 	'ray-x/guihua.lua',
-	-- }
 
 	-- autocompletion
 	use {
@@ -129,8 +122,8 @@ packer.startup(function(use)
 					border = "single"
 				},
 				layout = {
-					height = { min = 5 },
-					width = { min = 10 },
+					height = { min = 4 },
+					width = { max = 10 },
 					spacing = 5,
 				}
 			})

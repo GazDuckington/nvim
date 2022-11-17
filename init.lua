@@ -29,11 +29,6 @@ require('bufferline').setup({
 	clickable = true
 })
 
--- glow preview
--- require('glow').setup({
--- style = "dark",
--- })
-
 -- lsp lang servers.
 -- lsconfig only contain the automated setups
 require('lspconfig').sourcery.setup({

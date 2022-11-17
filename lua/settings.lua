@@ -1,6 +1,11 @@
+local o = vim.opt
+local g = vim.g
+local cmd = vim.cmd
+local api = vim.api
+
 -- global settings
 vim.opt_global.shell = "fish"
-vim.g.must_lsp = {
+g.must_lsp = {
 	"sumneko_lua",
 	"jedi_language_server",
 	"gopls",
@@ -13,34 +18,34 @@ vim.g.must_lsp = {
 }
 
 -- appearance
-vim.cmd([[highlight WinSeparator guibg=none]])
-vim.o.cursorline = true
-vim.o.laststatus = 3
-vim.opt.relativenumber = true
-vim.opt.number = true
+cmd([[highlight WinSeparator guibg=none]])
+o.cursorline = true
+o.laststatus = 3
+o.relativenumber = true
+o.number = true
 
-vim.opt.list = true
-vim.opt.listchars = {
+o.list = true
+o.listchars = {
 	tab = ' ',
 	trail = '·',
 	eol = '',
 }
 
 -- mouse
-vim.cmd([[set mouse+=a]])
-vim.opt.hidden = true
+cmd([[set mouse+=a]])
+o.hidden = true
 
 -- indentation
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.smartindent = true
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
+o.smartindent = true
 
 -- glrnvim
-if vim.g.glrnvim_gui then
-	vim.api.nvim_create_autocmd("VimEnter", {
+if g.glrnvim_gui then
+	api.nvim_create_autocmd("VimEnter", {
 		callback = function()
-			vim.cmd('cd %:p:h')
+			cmd('cd %:p:h')
 		end
 	})
 end
@@ -51,5 +56,5 @@ vim.diagnostic.config({
 })
 
 -- Show line diagnostics automatically in hover window
-vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+o.updatetime = 250
+cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

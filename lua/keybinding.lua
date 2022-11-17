@@ -14,43 +14,42 @@ local ops = {
 }
 
 local mappings = {
-	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
-	q = { ":q!<cr>", "Quit (C-q)" },
-	s = { ":w!<cr>", "Save (C-s)" },
 	["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
+	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	i = { ":cd %:p:h<cr>", "Cd to Buffer" },
-	o = { ":e ", "Open/Create File" },
 	e = { ":NvimTreeToggle<cr>", "Open tree view" },
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-	x = { "<cmd>TroubleToggle quickfix<cr>", "Open diagnostics" },
 	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
+	m = { "<cmd>TroubleToggle quickfix<cr>", "Open diagnostics" },
+	f = {
+		name = "Files",
+		o = { ":e ", "Open/Create File" },
+		s = { ":w!<cr>", "Save (C-s)" },
+		S = { ":saveas ", "Save buffer as (C-S-s)" },
+		q = { ":q!<cr>", "Quit (C-q)" },
+	},
 	v = {
-		name = "Split View",
+		name = "Views",
 		s = { ":new<cr>", "Split New Horizontal" },
 		v = { ":vnew<cr>", "Split New Vertical" },
 		S = { ":split<cr>", "Split Editor Horizontal" },
 		V = { ":vsplit<cr>", "Split Editor Vertical" },
 	},
 	b = {
-		name = "Buffer Control",
+		name = "Buffers",
 		j = { ":BufferPrevious<cr>", "Previous Buffer (C-,)" },
 		k = { ":BufferNext<cr>", "Next Buffer (C-.)" },
-		J = { ":BufferMovePrevious<cr>", "Move Buffer to Previous (C-1)" },
-		K = { ":BufferMoveNext<cr>", "Move Buffer to Next (C-2)" },
+		J = { ":BufferMovePrevious<cr>", "Move Buffer to Previous (C-j)" },
+		K = { ":BufferMoveNext<cr>", "Move Buffer to Next (C-k)" },
 		q = { ":bdelete<cr>", "Close Buffer" }
-	},
-	p = {
-		name = "Writer Stuff",
-		e = { ":lua _EXPORT_PDF()<cr>", "Export to PDF" },
-		r = { ":lua _READ_PDF()<cr>", "Read File" },
-		-- r = { ":!zathura --synctex-forward :: %:r.pdf &<cr>:redraw!<cr>", "Read in Zathura" },
 	},
 	t = {
 		name = "Telescope",
 		f = { "<cmd>Telescope find_files<cr>", "Find Files (C-f)" },
 		g = { "<cmd>Telescope live_grep<cr>", "Grep String (C-g)" },
 		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help (C-h)" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
 }
 
@@ -87,15 +86,12 @@ map("n", "<C-,>", "<Cmd>BufferPrevious<cr>", opts)
 map("n", "<C-.>", "<Cmd>BufferNext<cr>", opts)
 
 -- Re-order to previous/next
-map("n", "<leader>j", "<Cmd>BufferMovePrevious<cr>", opts)
-map("n", "<leader>k", "<Cmd>BufferMoveNext<cr>", opts)
+map("n", "<c-j>", "<Cmd>BufferMovePrevious<cr>", opts)
+map("n", "<c-k>", "<Cmd>BufferMoveNext<cr>", opts)
 
 -- comment line
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
-
--- export buffer to pdf
-map("n", "<C-p>", "<cmd>lua _EXPORT_PDF()<cr>", opts)
 
 -- telescope
 map("n", "<C-f>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
@@ -104,7 +100,7 @@ map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
 
 -- terminal
-for var = 1, 3 do
+for var = 1, 9 do
 	local key = string.format("<C-%s>", var)
 	local term = string.format("<cmd>%sToggleTerm<cr>", var)
 	map("n", key, term, opts)
