@@ -21,7 +21,7 @@ require("mason-lspconfig").setup_handlers({
 			capabilities = capabilities,
 			init_options = {
 				documentFormatting = true,
-			}
+			},
 		})
 	end,
 })

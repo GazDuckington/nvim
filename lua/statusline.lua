@@ -13,7 +13,7 @@ require('lualine').setup({
 		},
 		lualine_x = { 'diagnostics', 'diff' },
 		lualine_y = { 'filetype' },
-		lualine_z = { 'location', 'progress' },
+		lualine_z = { 'location' },
 	},
 	options = {
 		theme = "catppuccin",

@@ -141,10 +141,8 @@ packer.startup(function(use)
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
-	use {
-		"stevearc/dressing.nvim",
-		"desdic/greyjoy.nvim",
-	}
+	use "stevearc/dressing.nvim"
+	use "desdic/greyjoy.nvim"
 
 	if packer_bootstrap then
 		require("packer").sync()

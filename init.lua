@@ -15,10 +15,9 @@ require('teleconfig')
 require('whichkey')
 require('gjoy')
 
--- plugin settings
+-- init plugins
 require('impatient')
 require("toggleterm").setup()
-require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('better-comment').Setup()
@@ -26,6 +25,7 @@ require('dressing').setup()
 require('leap').add_default_mappings()
 require('nvim-tree').setup()
 require("colorizer").setup()
+-- require('nvim-ts-autotag').setup()
 
 -- GENERAL PLUGIN SETTINGS
 -- problems
@@ -57,15 +57,18 @@ require 'lspconfig'.sumneko_lua.setup {
 }
 
 require("lspconfig").emmet_ls.setup({
-	filetypes = {
-		'html',
-		'typescriptreact',
-		'javascriptreact',
-		'css',
-		'sass',
-		'scss',
-		'less',
-		'svelte',
-		'markdown'
-	},
+	filetypes = vim.g.web_filetypes
+})
+
+-- rainbow tabline
+require("indent_blankline").setup({
+	-- char_highlight_list = {
+	-- 	"IndentBlanklineIndent1",
+	-- 	"IndentBlanklineIndent2",
+	-- 	"IndentBlanklineIndent3",
+	-- 	"IndentBlanklineIndent4",
+	-- 	"IndentBlanklineIndent5",
+	-- 	"IndentBlanklineIndent6",
+	-- },
+	show_current_context = true,
 })

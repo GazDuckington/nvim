@@ -16,9 +16,21 @@ g.must_lsp = {
 	"marksman",
 	"sourcery",
 }
+g.web_filetypes = {
+	'html',
+	'typescriptreact',
+	'javascriptreact',
+	'css',
+	'sass',
+	'scss',
+	'less',
+	'svelte',
+	'markdown'
+}
 
 -- appearance
 cmd([[highlight WinSeparator guibg=none]])
+o.termguicolors = true
 o.cursorline = true
 o.laststatus = 3
 o.relativenumber = true
@@ -26,9 +38,11 @@ o.number = true
 
 o.list = true
 o.listchars = {
-	tab = ' ',
-	trail = '·',
-	eol = '',
+	-- tab = ' ',
+	tab = '  ',
+	trail = '◦',
+	space = '•',
+	eol = '↴',
 }
 
 -- mouse

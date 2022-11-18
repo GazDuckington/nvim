@@ -5,14 +5,6 @@ greyjoy.setup({
 	extensions = {
 		generic = {
 			commands = {
-				["run test.py"] = {
-					command = { "./test.py" },
-					filetype = "python"
-				},
-				["run {filename}"] = {
-					command = { "go", "run", "{filename}" },
-					filetype = "go"
-				}
 			}
 		},
 		kitchen = {

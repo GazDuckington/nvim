@@ -2,10 +2,18 @@
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 require("catppuccin").setup({
 	transparent_background = false,
-	-- term_colors = true,
-	ts_rainbow = true,
-	barbar = true,
-	lsp_trouble = true,
+	term_colors = true,
+	integrations = {
+		ts_rainbow = true,
+		nvimtree = true,
+		barbar = true,
+		which_key = true,
+		lsp_trouble = true,
+		indent_blankline = {
+			enabled = true,
+			colored_indent_levels = false,
+		},
+	},
 	custom_highlights = {
 		Comment = { fg = '#7e8991' },
 		LineNr = { fg = '#7e8991' },
