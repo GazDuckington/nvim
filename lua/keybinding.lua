@@ -20,7 +20,7 @@ local mappings = {
 	e = { ":NvimTreeToggle<cr>", "Open tree view" },
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
-	m = { "<cmd>TroubleToggle quickfix<cr>", "Open diagnostics" },
+	m = { "<cmd>TroubleToggle quickfix<cr>", "Toggle trouble" },
 	f = {
 		name = "Files",
 		o = { ":e ", "Open/Create File" },
@@ -45,11 +45,11 @@ local mappings = {
 	},
 	t = {
 		name = "Telescope",
-		f = { "<cmd>Telescope find_files<cr>", "Find Files (C-f)" },
+		f = { "<cmd>Telescope find_files<cr>", "Find Files (C-p)" },
 		g = { "<cmd>Telescope live_grep<cr>", "Grep strings live in cwd (C-g)" },
 		s = { "<cmd>Telescope grep_string<cr>", "Grep strings under cursor" },
 		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
 }
@@ -86,19 +86,18 @@ map("n", "<C-S-w>", ":bdelete!<cr>", opts)
 map("n", "<C-,>", "<Cmd>BufferPrevious<cr>", opts)
 map("n", "<C-.>", "<Cmd>BufferNext<cr>", opts)
 
--- Re-order to previous/next
-map("n", "<c-j>", "<Cmd>BufferMovePrevious<cr>", opts)
-map("n", "<c-k>", "<Cmd>BufferMoveNext<cr>", opts)
-
 -- comment line
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
 map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
 
 -- telescope
-map("n", "<C-f>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
+map("n", "<C-p>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
+map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
+map("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
+map("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 
 -- terminal
 for var = 1, 9 do

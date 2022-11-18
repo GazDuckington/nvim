@@ -58,11 +58,6 @@ packer.startup(function(use)
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup {
-				use_diagnostic_signs = false
-			}
-		end
 	}
 
 	-- autocompletion
@@ -98,9 +93,6 @@ packer.startup(function(use)
 	use {
 		"akinsho/toggleterm.nvim",
 		tag = 'v2.*',
-		config = function()
-			require("toggleterm").setup()
-		end
 	}
 
 	-- telescope
@@ -113,32 +105,12 @@ packer.startup(function(use)
 	-- which key
 	use {
 		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({
-				plugins = {
-					spelling = { enabled = true }
-				},
-				window = {
-					border = "single"
-				},
-				layout = {
-					height = { min = 4 },
-					width = { min = 10 },
-					spacing = 5,
-				}
-			})
-		end
 	}
 	-- impatient
 	use 'lewis6991/impatient.nvim'
 
 	-- colorizer
-	use {
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	}
+	use 'norcalli/nvim-colorizer.lua'
 
 	use {
 		'nvim-tree/nvim-tree.lua',
@@ -169,43 +141,10 @@ packer.startup(function(use)
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
-	use("stevearc/dressing.nvim")
-
-	use({ "desdic/greyjoy.nvim",
-		config = function()
-			local greyjoy = require("greyjoy")
-			greyjoy.setup({
-				output_results = "toggleterm",
-				last_first = true,
-				extensions = {
-					generic = {
-						commands = {
-							["run test.py"] = {
-								command = { "./test.py" },
-								filetype = "python"
-							},
-							["run {filename}"] = {
-								command = { "go", "run", "{filename}" },
-								filetype = "go"
-							}
-						}
-					},
-					kitchen = {
-						targets = { "converge", "verify" },
-						include_all = false,
-					}
-				},
-				run_groups = {
-					fast = { "generic", "makefile", "cargo" },
-				}
-			})
-			greyjoy.load_extension("generic")
-			greyjoy.load_extension("vscode_tasks")
-			greyjoy.load_extension("makefile")
-			greyjoy.load_extension("kitchen")
-			greyjoy.load_extension("cargo")
-		end
-	})
+	use {
+		"stevearc/dressing.nvim",
+		"desdic/greyjoy.nvim",
+	}
 
 	if packer_bootstrap then
 		require("packer").sync()

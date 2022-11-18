@@ -12,17 +12,26 @@ require('lsconfig')
 require('autocmp')
 require('term')
 require('teleconfig')
+require('whichkey')
+require('gjoy')
 
 -- plugin settings
 require('impatient')
+require("toggleterm").setup()
 require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
--- require('go').setup()
 require('better-comment').Setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
 require('nvim-tree').setup()
+require("colorizer").setup()
+
+-- GENERAL PLUGIN SETTINGS
+-- problems
+require("trouble").setup {
+	use_diagnostic_signs = false
+}
 
 -- barbar line
 require('bufferline').setup({

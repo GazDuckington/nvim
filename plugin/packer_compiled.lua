@@ -130,7 +130,6 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/dressing.nvim"
   },
   ["greyjoy.nvim"] = {
-    config = { "\27LJ\2\n‘\4\0\0\t\0\29\0,6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\14\0005\5\f\0005\6\a\0005\a\5\0005\b\4\0=\b\6\a=\a\b\0065\a\n\0005\b\t\0=\b\6\a=\a\v\6=\6\r\5=\5\15\0045\5\17\0005\6\16\0=\6\18\5=\5\19\4=\4\20\0035\4\22\0005\5\21\0=\5\23\4=\4\24\3B\1\2\0019\1\25\0'\3\15\0B\1\2\0019\1\25\0'\3\26\0B\1\2\0019\1\25\0'\3\27\0B\1\2\0019\1\25\0'\3\19\0B\1\2\0019\1\25\0'\3\28\0B\1\2\1K\0\1\0\ncargo\rmakefile\17vscode_tasks\19load_extension\15run_groups\tfast\1\0\0\1\4\0\0\fgeneric\rmakefile\ncargo\15extensions\fkitchen\ftargets\1\0\1\16include_all\1\1\3\0\0\rconverge\vverify\fgeneric\1\0\0\rcommands\1\0\0\19run {filename}\1\0\1\rfiletype\ago\1\4\0\0\ago\brun\15{filename}\16run test.py\1\0\0\fcommand\1\0\1\rfiletype\vpython\1\2\0\0\14./test.py\1\0\2\15last_first\2\19output_results\15toggleterm\nsetup\fgreyjoy\frequire\0" },
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/greyjoy.nvim",
     url = "https://github.com/desdic/greyjoy.nvim"
@@ -181,7 +180,6 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0" },
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
@@ -237,13 +235,11 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["trouble.nvim"] = {
-    config = { "\27LJ\2\nR\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\25use_diagnostic_signs\1\nsetup\ftrouble\frequire\0" },
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
@@ -254,7 +250,6 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-surround"
   },
   ["which-key.nvim"] = {
-    config = { "\27LJ\2\nÙ\1\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vlayout\nwidth\1\0\1\bmin\3\n\vheight\1\0\1\fspacing\3\5\1\0\1\bmin\3\4\vwindow\1\0\1\vborder\vsingle\fplugins\1\0\0\rspelling\1\0\0\1\0\1\fenabled\2\nsetup\14which-key\frequire\0" },
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -262,26 +257,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\nR\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\25use_diagnostic_signs\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\nÙ\1\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vlayout\nwidth\1\0\1\bmin\3\n\vheight\1\0\1\fspacing\3\5\1\0\1\bmin\3\4\vwindow\1\0\1\vborder\vsingle\fplugins\1\0\0\rspelling\1\0\0\1\0\1\fenabled\2\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: greyjoy.nvim
-time([[Config for greyjoy.nvim]], true)
-try_loadstring("\27LJ\2\n‘\4\0\0\t\0\29\0,6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\14\0005\5\f\0005\6\a\0005\a\5\0005\b\4\0=\b\6\a=\a\b\0065\a\n\0005\b\t\0=\b\6\a=\a\v\6=\6\r\5=\5\15\0045\5\17\0005\6\16\0=\6\18\5=\5\19\4=\4\20\0035\4\22\0005\5\21\0=\5\23\4=\4\24\3B\1\2\0019\1\25\0'\3\15\0B\1\2\0019\1\25\0'\3\26\0B\1\2\0019\1\25\0'\3\27\0B\1\2\0019\1\25\0'\3\19\0B\1\2\0019\1\25\0'\3\28\0B\1\2\1K\0\1\0\ncargo\rmakefile\17vscode_tasks\19load_extension\15run_groups\tfast\1\0\0\1\4\0\0\fgeneric\rmakefile\ncargo\15extensions\fkitchen\ftargets\1\0\1\16include_all\1\1\3\0\0\rconverge\vverify\fgeneric\1\0\0\rcommands\1\0\0\19run {filename}\1\0\1\rfiletype\ago\1\4\0\0\ago\brun\15{filename}\16run test.py\1\0\0\fcommand\1\0\1\rfiletype\vpython\1\2\0\0\14./test.py\1\0\2\15last_first\2\19output_results\15toggleterm\nsetup\fgreyjoy\frequire\0", "config", "greyjoy.nvim")
-time([[Config for greyjoy.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
