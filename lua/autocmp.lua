@@ -1,6 +1,33 @@
 local cmp = require 'cmp'
 local luasnip = require("luasnip")
-local lspkind = require('lspkind')
+
+local kind_icons = {
+	Text = "",
+	Method = "",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "ﴯ",
+	Interface = "",
+	Module = "",
+	Property = "ﰠ",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = ""
+}
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -57,18 +84,19 @@ cmp.setup({
 		{ name = 'path' },
 	}),
 	formatting = {
-		format = lspkind.cmp_format({
-			mode = "symbol_text",
-			menu = ({
-				buffer = "[Buffer]",
-				cmdline = "[CmdLine]",
-				path = "[Path]",
-				nvim_lsp = "[LSP]",
-				luasnip = "[LuaSnip]",
-				sourcery = "[Sourcery]",
-				cmp_tabnine = "[TabNine]"
-			})
-		}),
+		format = function(entry, vim_item)
+			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			vim_item.menu = ({
+				buffer = "[Buf]",
+				cmdline = "[Cmd]",
+				path = "[Pth]",
+				nvim_lsp = "[Lsp]",
+				luasnip = "[Lua]",
+				sourcery = "[Scy]",
+				cmp_tabnine = "[Tnn]",
+			})[entry.source.name]
+			return vim_item
+		end,
 	},
 })
 

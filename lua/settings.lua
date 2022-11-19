@@ -28,6 +28,9 @@ g.web_filetypes = {
 	'markdown'
 }
 
+-- unlimited undo
+o.undofile = true
+
 -- appearance
 cmd([[highlight WinSeparator guibg=none]])
 o.termguicolors = true
