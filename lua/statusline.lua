@@ -1,15 +1,16 @@
 require('lualine').setup({
 	sections = {
 		-- lualine_a = { 'mode' },
-		lualine_a = { { 'mode', fmt = function(res) return res:sub(1, 3) end } },
+		lualine_a = { { 'mode', fmt = function(res) return res:sub(1, 1) end } },
 		lualine_b = { 'branch' },
 		lualine_c = {
+			'filesize',
 			{
 				'filename',
 				file_status = true,
 				newfile_status = true,
 				path = 3,
-			}
+			},
 		},
 		lualine_x = { 'diagnostics', 'diff' },
 		lualine_y = { 'filetype' },

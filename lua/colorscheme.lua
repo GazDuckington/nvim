@@ -4,8 +4,12 @@ require("catppuccin").setup({
 	transparent_background = false,
 	term_colors = true,
 	integrations = {
+		mason = true,
+		leap = true,
+		treesitter = true,
 		ts_rainbow = true,
 		nvimtree = true,
+		telescope = true,
 		barbar = true,
 		which_key = true,
 		lsp_trouble = true,
