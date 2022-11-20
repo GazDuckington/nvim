@@ -78,3 +78,27 @@ require("indent_blankline").setup({
 	-- },
 	show_current_context = true,
 })
+
+require("nvim-tree").setup({
+	view = {
+		adaptive_size = true,
+		float = {
+			enable = true,
+		},
+	},
+	renderer = {
+		icons = {
+			glyphs = {
+				git = {
+					unstaged = "",
+					staged = "",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "",
+					deleted = "﫧",
+					ignored = "◌",
+				},
+			},
+		},
+	},
+})

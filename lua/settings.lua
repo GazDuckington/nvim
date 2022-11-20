@@ -27,6 +27,8 @@ g.web_filetypes = {
 	'svelte',
 	'markdown'
 }
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 -- unlimited undo
 o.undofile = true

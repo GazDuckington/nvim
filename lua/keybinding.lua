@@ -45,7 +45,7 @@ local mappings = {
 	},
 	t = {
 		name = "Telescope",
-		f = { "<cmd>Telescope find_files<cr>", "Find Files (C-p)" },
+		p = { "<cmd>Telescope find_files<cr>", "Find Files (C-p)" },
 		g = { "<cmd>Telescope live_grep<cr>", "Grep strings live in cwd (C-g)" },
 		s = { "<cmd>Telescope grep_string<cr>", "Grep strings under cursor" },
 		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
