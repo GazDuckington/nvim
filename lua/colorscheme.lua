@@ -15,7 +15,7 @@ require("catppuccin").setup({
 		lsp_trouble = true,
 		indent_blankline = {
 			enabled = true,
-			colored_indent_levels = false,
+			colored_indent_levels = true,
 		},
 	},
 	custom_highlights = {
