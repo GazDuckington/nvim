@@ -81,6 +81,7 @@ require("indent_blankline").setup({
 
 require("nvim-tree").setup({
 	view = {
+		side = 'right',
 		adaptive_size = true,
 		float = {
 			enable = true,
