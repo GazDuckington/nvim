@@ -55,10 +55,10 @@ packer.startup(function(use)
 		-- "onsails/lspkind.nvim",
 	}
 	-- Trouble
-	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-	}
+	-- use {
+	-- 	"folke/trouble.nvim",
+	-- 	requires = "kyazdani42/nvim-web-devicons",
+	-- }
 
 	-- autocompletion
 	use {
@@ -104,6 +104,7 @@ packer.startup(function(use)
 	-- which key
 	use {
 		"folke/which-key.nvim",
+		"folke/zen-mode.nvim",
 	}
 	-- impatient
 	use 'lewis6991/impatient.nvim'

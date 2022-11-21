@@ -32,10 +32,24 @@ require('nvim-tree').setup()
 require("colorizer").setup()
 
 -- GENERAL PLUGIN SETTINGS
+require("zen-mode").setup({
+	window = {
+		width = .85,
+		height = .95
+	},
+	-- on_open = function()
+	-- 	vim.cmd([[set spell]])
+	-- 	vim.cmd([[set linebreak]])
+	-- end,
+	-- on_close = function()
+	-- 	vim.cmd([[set nospell]])
+	-- 	vim.cmd([[set nolinebreak]])
+	-- end
+})
 -- problems
-require("trouble").setup {
-	use_diagnostic_signs = false
-}
+-- require("trouble").setup {
+-- 	use_diagnostic_signs = false
+-- }
 
 -- barbar line
 require('bufferline').setup({
