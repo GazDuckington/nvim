@@ -26,12 +26,10 @@ require('impatient')
 require("toggleterm").setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
-require('better-comment').Setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
 require('nvim-tree').setup()
 require("colorizer").setup()
--- require('nvim-ts-autotag').setup()
 
 -- GENERAL PLUGIN SETTINGS
 -- problems
@@ -84,10 +82,13 @@ require("nvim-tree").setup({
 		side = 'right',
 		adaptive_size = true,
 		float = {
-			enable = true,
+			enable = false,
 		},
 	},
 	renderer = {
+		indent_markers = {
+			enable = true,
+		},
 		icons = {
 			glyphs = {
 				git = {

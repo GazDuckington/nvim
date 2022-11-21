@@ -24,7 +24,7 @@ autocmd("BufWritePost", {
 autocmd("BufWritePre", {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd("lua vim.lsp.buf.formatting_sync()")
+		vim.cmd("lua vim.lsp.buf.format()")
 	end,
 	group = gpinit,
 })

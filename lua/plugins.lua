@@ -87,7 +87,6 @@ packer.startup(function(use)
 		'windwp/nvim-ts-autotag',
 		'windwp/nvim-autopairs',
 	}
-	use { 'Djancyp/better-comments.nvim' }
 
 	-- terminal
 	use {
@@ -117,6 +116,7 @@ packer.startup(function(use)
 		requires = {
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
+		tag = 'nightly'
 	}
 
 	-- indentation lines

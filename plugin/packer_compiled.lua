@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
-  ["better-comments.nvim"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/better-comments.nvim",
-    url = "https://github.com/Djancyp/better-comments.nvim"
-  },
   catppuccin = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/catppuccin",
