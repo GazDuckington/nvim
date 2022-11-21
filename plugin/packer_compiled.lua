@@ -229,6 +229,11 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["twilight.nvim"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/vim-surround",

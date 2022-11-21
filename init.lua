@@ -34,6 +34,7 @@ require("colorizer").setup()
 -- GENERAL PLUGIN SETTINGS
 require("zen-mode").setup({
 	window = {
+		backdrop = .95,
 		width = .85,
 		height = .95
 	},
@@ -80,14 +81,15 @@ require("lspconfig").emmet_ls.setup({
 
 -- rainbow tabline
 require("indent_blankline").setup({
-	-- char_highlight_list = {
-	-- 	"IndentBlanklineIndent1",
-	-- 	"IndentBlanklineIndent2",
-	-- 	"IndentBlanklineIndent3",
-	-- 	"IndentBlanklineIndent4",
-	-- 	"IndentBlanklineIndent5",
-	-- 	"IndentBlanklineIndent6",
-	-- },
+	char_highlight_list = {
+		-- "IndentBlanklineIndent1",
+		-- "IndentBlanklineIndent2",
+		-- "IndentBlanklineIndent3",
+		-- "IndentBlanklineIndent4",
+		-- "IndentBlanklineIndent5",
+		-- "IndentBlanklineIndent6",
+	},
+	space_char_blankline = " ",
 	show_current_context = true,
 })
 

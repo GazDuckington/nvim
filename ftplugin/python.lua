@@ -1,5 +1,7 @@
+local o = vim.opt
+
 -- indentation
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.smartindent = true
