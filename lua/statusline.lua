@@ -1,26 +1,35 @@
 require('lualine').setup({
 	sections = {
-		-- lualine_a = { 'mode' },
-		lualine_a = { { 'mode', fmt = function(res) return res:sub(1, 1) end } },
+		lualine_a = {
+			{ 'mode',
+				fmt = function(res) return res:sub(1, 1) end,
+			}
+		},
 		lualine_b = { 'branch' },
 		lualine_c = {
-			'filesize',
 			{
 				'filename',
 				file_status = true,
 				newfile_status = true,
-				path = 3,
+				path = 1,
 			},
 		},
-		lualine_x = { 'diagnostics', 'diff' },
+		lualine_x = {
+			'diagnostics', 'diff',
+			{
+				'filesize',
+				padding = { left = 0, right = 1 }
+			}
+		},
 		lualine_y = { 'filetype' },
-		lualine_z = { 'location' },
+		lualine_z = {
+			{ 'location', padding = { left = 0, right = 1 } }
+		},
 	},
 	options = {
-		theme = "catppuccin",
+		theme = 'catppuccin',
 		global_status = true,
 		component_separators = '',
-		-- section_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
 	},
 })

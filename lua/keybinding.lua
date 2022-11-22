@@ -21,7 +21,6 @@ local mappings = {
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	z = { "<cmd>ZenMode<cr>", "Keybind Zen mode" },
-	-- m = { "<cmd>TroubleToggle quickfix<cr>", "Toggle trouble" },
 	f = {
 		name = "Files",
 		o = { ":e ", "Open/Create File" },

@@ -23,34 +23,26 @@ require('gjoy')
 
 -- init plugins
 require('impatient')
-require("toggleterm").setup()
+require('toggleterm').setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
 require('nvim-tree').setup()
-require("colorizer").setup()
+require('colorizer').setup()
 
 -- GENERAL PLUGIN SETTINGS
-require("zen-mode").setup({
+require('zen-mode').setup({
 	window = {
 		backdrop = .95,
 		width = .85,
 		height = .95
 	},
 	-- on_open = function()
-	-- 	vim.cmd([[set spell]])
-	-- 	vim.cmd([[set linebreak]])
 	-- end,
 	-- on_close = function()
-	-- 	vim.cmd([[set nospell]])
-	-- 	vim.cmd([[set nolinebreak]])
 	-- end
 })
--- problems
--- require("trouble").setup {
--- 	use_diagnostic_signs = false
--- }
 
 -- barbar line
 require('bufferline').setup({
@@ -65,7 +57,7 @@ require('lspconfig').sourcery.setup({
 	}
 })
 
-require 'lspconfig'.sumneko_lua.setup {
+require('lspconfig').sumneko_lua.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -73,15 +65,16 @@ require 'lspconfig'.sumneko_lua.setup {
 			},
 		},
 	},
-}
+})
 
-require("lspconfig").emmet_ls.setup({
+require('lspconfig').emmet_ls.setup({
 	filetypes = vim.g.web_filetypes
 })
 
 -- rainbow tabline
-require("indent_blankline").setup({
+require('indent_blankline').setup({
 	char_highlight_list = {
+		-- uncomment for rainbow
 		-- "IndentBlanklineIndent1",
 		-- "IndentBlanklineIndent2",
 		-- "IndentBlanklineIndent3",
@@ -93,7 +86,7 @@ require("indent_blankline").setup({
 	show_current_context = true,
 })
 
-require("nvim-tree").setup({
+require('nvim-tree').setup({
 	view = {
 		side = 'right',
 		adaptive_size = true,
