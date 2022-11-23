@@ -101,6 +101,7 @@ packer.startup(function(use)
 		"folke/which-key.nvim",
 		"folke/zen-mode.nvim",
 		"folke/twilight.nvim",
+		"folke/trouble.nvim",
 	}
 	-- impatient
 	use 'lewis6991/impatient.nvim'
