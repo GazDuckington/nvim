@@ -84,8 +84,10 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-S-w>", ":bdelete!<cr>", opts)
 
 -- Move to previous/next
-map("n", "<C-,>", "<Cmd>BufferPrevious<cr>", opts)
-map("n", "<C-.>", "<Cmd>BufferNext<cr>", opts)
+map("n", "<A-h>", "<Cmd>BufferPrevious<cr>", opts)
+map("n", "<A-l>", "<Cmd>BufferNext<cr>", opts)
+map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
+map("n", "<A-L>", "<cmd>BufferMoveNext<cr>", opts)
 
 -- comment line
 map("n", "<C-/>", ":CommentToggle<cr>", opts)
@@ -97,8 +99,8 @@ map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
-map("n", "gd", "<cmd>TroubleToggle lsp_definitions<cr>", opts)
-map("n", "gr", "<cmd>TroubleToggle lsp_references<cr>", opts)
+map("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
+map("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 
 -- terminal
 for var = 1, 9 do
