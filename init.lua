@@ -38,10 +38,14 @@ require('zen-mode').setup({
 		width = .85,
 		height = .95
 	},
-	-- on_open = function()
-	-- end,
-	-- on_close = function()
-	-- end
+	on_open = function()
+		vim.opt.spell = true
+		vim.opt.linebreak = true
+	end,
+	on_close = function()
+		vim.opt.spell = false
+		vim.opt.linebreak = false
+	end
 })
 
 -- barbar line
@@ -54,7 +58,8 @@ require('bufferline').setup({
 -- lsconfig only contain the automated setups
 require('lspconfig').sourcery.setup({
 	init_options = {
-		token = os.getenv("sourcery_token")
+		-- token = os.getenv("SOURCERY_TOKEN"),
+		token = "user_sDKPJj6fcS_yFfhF9CvcqdHwSKcULb__toO47ZVFUSGSctyNvT3X20VOFZM"
 	}
 })
 
