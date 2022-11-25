@@ -99,8 +99,8 @@ map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
-map("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
-map("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+map("n", "gd", "<cmd>Telescope lsp_definitions<cr><esc>", opts)
+map("n", "gr", "<cmd>Telescope lsp_references<cr><esc>", opts)
 
 -- terminal
 for var = 1, 9 do
