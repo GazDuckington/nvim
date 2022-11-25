@@ -142,6 +142,12 @@ packer.startup(function(use)
 	use "stevearc/dressing.nvim"
 	use "desdic/greyjoy.nvim"
 
+	-- hydrovim
+	use {
+		'MunifTanjim/nui.nvim',
+		'smzm/hydrovim'
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

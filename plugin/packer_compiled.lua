@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/greyjoy.nvim",
     url = "https://github.com/desdic/greyjoy.nvim"
   },
+  hydrovim = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/hydrovim",
+    url = "https://github.com/smzm/hydrovim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -158,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

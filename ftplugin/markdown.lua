@@ -16,7 +16,3 @@ local mappings = {
 local wk = require("which-key")
 
 wk.register(mappings, ops)
-
-vim.opt.undofile = true
-vim.opt.spell = true
-vim.opt.linebreak = true
