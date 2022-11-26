@@ -58,6 +58,7 @@ local mappings = {
 		t = { "<cmd>ReplToggle<cr>", "Toggle REPL" },
 		c = { "<cmd>ReplClear<cr>", "Clear REPL" },
 		r = { "<cmd>ReplRunCell<cr>", "Run cell in REPL" },
+		s = { "<cmd>ReplSendLine<cr>", "Send line" }
 	},
 	-- d = {
 	-- 	name = "DAP",
