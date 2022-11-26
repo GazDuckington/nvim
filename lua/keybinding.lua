@@ -53,6 +53,13 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
+	s = {
+		name = "Search and Replace",
+		S = { "<cmd>lua require('spectre').open()<CR>", "Open search and replace" },
+		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (normal)" },
+		s = { "<esc>:lua require('spectre').open_visual()<CR>", "Search current word (visual)" },
+		p = { "viw:lua require('spectre').open_file_search()<cr>", "Search current file" }
+	}
 }
 
 local wk = require("which-key")

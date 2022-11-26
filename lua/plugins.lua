@@ -142,6 +142,12 @@ packer.startup(function(use)
 	use "stevearc/dressing.nvim"
 	use "desdic/greyjoy.nvim"
 
+	-- search and replace
+	use {
+		'windwp/nvim-spectre',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

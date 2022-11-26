@@ -19,7 +19,7 @@ require('lualine').setup({
 			{
 				'filesize',
 				padding = { left = 0, right = 1 }
-			}
+			},
 		},
 		lualine_y = { 'filetype' },
 		lualine_z = {
