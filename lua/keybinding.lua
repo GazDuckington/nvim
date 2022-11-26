@@ -21,7 +21,7 @@ local mappings = {
 	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	z = { "<cmd>ZenMode<cr>", "Keybind Zen mode" },
-	m = { "<cmd>TroubleToggle quickfix<cr>", "Toggle QuickFix" },
+	m = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Toggle QuickFix" },
 	f = {
 		name = "Files",
 		o = { ":e ", "Open/Create File" },
@@ -56,7 +56,9 @@ local mappings = {
 	s = {
 		name = "Search and Replace",
 		S = { "<cmd>lua require('spectre').open()<CR>", "Open search and replace" },
-		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (normal)" },
+		w = {
+			"<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (normal)"
+		},
 		s = { "<esc>:lua require('spectre').open_visual()<CR>", "Search current word (visual)" },
 		p = { "viw:lua require('spectre').open_file_search()<cr>", "Search current file" }
 	},
