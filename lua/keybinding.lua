@@ -62,11 +62,11 @@ local mappings = {
 	},
 	d = {
 		name = "DAP",
-		t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
-		o = { "<cmd>lua require('dapui').open()<cr>", "Open DAP" },
-		x = { "<cmd>lua require('dapui').close()<cr>", "Exit DAP" },
-		k = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
-		l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" }
+		b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
+		d = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
+		e = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
+		l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" },
+		r = { "<cmd>lua require('dapui').float_element('repl')<cr>", "DAP elements" },
 	}
 }
 
