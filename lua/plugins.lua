@@ -148,14 +148,8 @@ packer.startup(function(use)
 		requires = { "stevearc/dressing.nvim" }
 	}
 
-	use {
-		'ACupofAir/nvim-repl',
-		requires = { 'tpope/vim-repeat' }
-	}
 	-- ft
 	use { "nathom/filetype.nvim" }
-
-	-- repl
 
 	-- dap debugger
 	-- use {

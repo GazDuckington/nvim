@@ -53,13 +53,6 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
-	d = {
-		name = "Iron REPL",
-		t = { "<cmd>ReplToggle<cr>", "Toggle REPL" },
-		c = { "<cmd>ReplClear<cr>", "Clear REPL" },
-		r = { "<cmd>ReplRunCell<cr>", "Run cell in REPL" },
-		s = { "<cmd>ReplSendLine<cr>", "Send line" }
-	},
 	-- d = {
 	-- 	name = "DAP",
 	-- 	b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },

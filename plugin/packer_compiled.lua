@@ -199,11 +199,6 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-repl"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-repl",
-    url = "https://github.com/ACupofAir/nvim-repl"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -258,11 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/vim-repeat",
-    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
