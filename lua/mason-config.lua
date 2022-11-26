@@ -5,10 +5,10 @@ local lspconfig = require("lspconfig")
 
 -- setup lsp installer
 require("mason").setup({
-	providers = {
-		"mason.providers.client",
-		"mason.providers.registry-api"
-	}
+	-- providers = {
+	-- "mason.providers.client",
+	-- "mason.providers.registry-api"
+	-- }
 })
 require("mason-lspconfig").setup({
 	ensure_installed = servers
@@ -18,10 +18,22 @@ require("mason-lspconfig").setup({
 require("mason-lspconfig").setup_handlers({
 	function(server_name) -- default handler (optional)
 		lspconfig[server_name].setup({
+			automatic_installation = true,
+			on_attach = on_attach,
 			capabilities = capabilities,
 			init_options = {
 				documentFormatting = true,
+				token = os.getenv('SOURCERY_TOKEN')
 			},
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' },
+					},
+				},
+			},
+			filetypes = vim.g.web_filetypes
+
 		})
 	end,
 })

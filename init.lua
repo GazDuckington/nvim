@@ -14,23 +14,21 @@ require('plugins')
 require('tsconfig')
 require('colorscheme')
 require('statusline')
-require('mason-config')
 require('autocmp')
 require('term')
 require('teleconfig')
 require('whichkey')
 require('gjoy')
+require('mason-config')
 
 -- init plugins
 require('impatient')
-require('toggleterm').setup()
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
-require('nvim-tree').setup()
 require('colorizer').setup()
-require("dapui").setup()
+require('dapui').setup()
 
 -- GENERAL PLUGIN SETTINGS
 require('zen-mode').setup({
@@ -53,29 +51,6 @@ require('zen-mode').setup({
 require('bufferline').setup({
 	auto_hide = true,
 	clickable = true
-})
-
--- lsp lang servers.
--- lsconfig only contain the automated setups
-require('lspconfig').sourcery.setup({
-	init_options = {
-		-- token = os.getenv("SOURCERY_TOKEN"),
-		token = "user_sDKPJj6fcS_yFfhF9CvcqdHwSKcULb__toO47ZVFUSGSctyNvT3X20VOFZM"
-	}
-})
-
-require('lspconfig').sumneko_lua.setup({
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { 'vim' },
-			},
-		},
-	},
-})
-
-require('lspconfig').emmet_ls.setup({
-	filetypes = vim.g.web_filetypes
 })
 
 -- rainbow tabline

@@ -7,7 +7,7 @@ local api = vim.api
 vim.opt_global.shell = "fish"
 g.must_lsp = {
 	"sumneko_lua",
-	"jedi_language_server",
+	"pyright",
 	"gopls",
 	"svelte",
 	"tsserver",
