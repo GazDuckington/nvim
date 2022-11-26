@@ -30,6 +30,7 @@ require('dressing').setup()
 require('leap').add_default_mappings()
 require('nvim-tree').setup()
 require('colorizer').setup()
+require("dapui").setup()
 
 -- GENERAL PLUGIN SETTINGS
 require('zen-mode').setup({

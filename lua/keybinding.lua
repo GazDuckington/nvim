@@ -59,6 +59,14 @@ local mappings = {
 		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (normal)" },
 		s = { "<esc>:lua require('spectre').open_visual()<CR>", "Search current word (visual)" },
 		p = { "viw:lua require('spectre').open_file_search()<cr>", "Search current file" }
+	},
+	d = {
+		name = "DAP",
+		t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
+		o = { "<cmd>lua require('dapui').open()<cr>", "Open DAP" },
+		x = { "<cmd>lua require('dapui').close()<cr>", "Exit DAP" },
+		k = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
+		l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" }
 	}
 }
 

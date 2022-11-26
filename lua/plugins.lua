@@ -147,6 +147,8 @@ packer.startup(function(use)
 		'windwp/nvim-spectre',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
+	-- dap debugger
+	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
 	if packer_bootstrap then
 		require("packer").sync()
