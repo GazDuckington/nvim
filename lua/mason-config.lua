@@ -21,10 +21,6 @@ require("mason-lspconfig").setup_handlers({
 			automatic_installation = true,
 			on_attach = on_attach,
 			capabilities = capabilities,
-			init_options = {
-				documentFormatting = true,
-				token = os.getenv('SOURCERY_TOKEN')
-			},
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -32,8 +28,6 @@ require("mason-lspconfig").setup_handlers({
 					},
 				},
 			},
-			filetypes = vim.g.web_filetypes
-
 		})
 	end,
 })

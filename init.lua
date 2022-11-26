@@ -31,6 +31,10 @@ require('colorizer').setup()
 require('dapui').setup()
 
 -- GENERAL PLUGIN SETTINGS
+require('lspconfig').emmet_ls.setup({
+	filetypes = vim.g.web_filetypes
+})
+
 require('zen-mode').setup({
 	window = {
 		backdrop = .95,
