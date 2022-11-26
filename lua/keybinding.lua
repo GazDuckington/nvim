@@ -53,23 +53,21 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
-	s = {
-		name = "Search and Replace",
-		S = { "<cmd>lua require('spectre').open()<CR>", "Open search and replace" },
-		w = {
-			"<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (normal)"
-		},
-		s = { "<esc>:lua require('spectre').open_visual()<CR>", "Search current word (visual)" },
-		p = { "viw:lua require('spectre').open_file_search()<cr>", "Search current file" }
-	},
 	d = {
-		name = "DAP",
-		b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
-		d = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
-		e = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
-		l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" },
-		r = { "<cmd>lua require('dapui').float_element('repl')<cr>", "DAP elements" },
-	}
+		name = "Iron REPL",
+		t = { "<cmd>ReplToggle<cr>", "Toggle REPL" },
+		c = { "<cmd>ReplClear<cr>", "Clear REPL" },
+		r = { "<cmd>ReplRunCell<cr>", "Run cell in REPL" },
+	},
+	-- d = {
+	-- 	name = "DAP",
+	-- 	b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
+	-- 	c = { "<cmd>lua require('dap').continue()<cr>", "Continue debugging session" },
+	-- 	d = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
+	-- 	e = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
+	-- 	l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" },
+	-- 	r = { "<cmd>lua require('dapui').float_element('repl')<cr>", "DAP elements" },
+	-- }
 }
 
 local wk = require("which-key")
@@ -116,8 +114,6 @@ map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
-map("n", "gd", "<cmd>Telescope lsp_definitions<cr><esc>", opts)
-map("n", "gr", "<cmd>Telescope lsp_references<cr><esc>", opts)
 
 -- terminal
 for var = 1, 9 do

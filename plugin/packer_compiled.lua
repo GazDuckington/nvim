@@ -94,15 +94,15 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
@@ -124,6 +124,16 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  ["filetype.nvim"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/filetype.nvim",
+    url = "https://github.com/nathom/filetype.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["greyjoy.nvim"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/greyjoy.nvim",
@@ -143,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
+  },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -179,25 +194,15 @@ _G.packer_plugins = {
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-spectre"] = {
+  ["nvim-repl"] = {
     loaded = true,
-    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-spectre",
-    url = "https://github.com/windwp/nvim-spectre"
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/nvim-repl",
+    url = "https://github.com/ACupofAir/nvim-repl"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -253,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gaz/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/gaz/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,

@@ -3,6 +3,18 @@ local servers = vim.g.must_lsp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig = require("lspconfig")
 
+-- lsp-zero
+require('mason.settings').set({
+	ui = {
+		border = 'rounded'
+	}
+})
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+
+lsp.setup()
+
 -- setup lsp installer
 require("mason").setup({
 	-- providers = {

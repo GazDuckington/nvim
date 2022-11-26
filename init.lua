@@ -7,30 +7,38 @@
 -- https://gtihub.com/GazDuckington/nvim
 
 -- user settings
+require('plugins')
+require('mason-config')
 require('settings')
+-- require('autocmp')
 require('keybinding')
 require('autos')
-require('plugins')
 require('tsconfig')
 require('colorscheme')
 require('statusline')
-require('autocmp')
 require('term')
 require('teleconfig')
 require('whichkey')
 require('gjoy')
-require('mason-config')
+-- require('dap-config')
 
 -- init plugins
 require('impatient')
+require('filetype')
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
 require('colorizer').setup()
-require('dapui').setup()
+-- require('dapui').setup()
 
 -- GENERAL PLUGIN SETTINGS
+require('lspconfig').sourcery.setup({
+	init_options = {
+		token = os.getenv('SOURCERY_TOKEN')
+	}
+})
+
 require('lspconfig').emmet_ls.setup({
 	filetypes = vim.g.web_filetypes
 })

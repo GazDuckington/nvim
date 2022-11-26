@@ -30,6 +30,10 @@ g.web_filetypes = {
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
+-- repl plugin
+g.repl_split = 'bottom'
+g.repl_height = 15
+
 -- appearance
 cmd([[highlight WinSeparator guibg=none]])
 o.termguicolors = true

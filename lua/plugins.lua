@@ -49,21 +49,25 @@ packer.startup(function(use)
 
 	-- LSP
 	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-		-- "onsails/lspkind.nvim",
-	}
+		'VonHeikemen/lsp-zero.nvim',
+		requires = {
+			-- LSP Support
+			{ 'neovim/nvim-lspconfig' },
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
-	-- autocompletion
-	use {
-		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-buffer',
-		'hrsh7th/cmp-path',
-		'hrsh7th/cmp-cmdline',
-		'hrsh7th/nvim-cmp',
-		'L3MON4D3/LuaSnip',
-		'saadparwaiz1/cmp_luasnip',
+			-- Autocompletion
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-nvim-lua' },
+
+			-- Snippets
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'rafamadriz/friendly-snippets' },
+		}
 	}
 
 	-- tabnine
@@ -139,16 +143,28 @@ packer.startup(function(use)
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
-	use "stevearc/dressing.nvim"
-	use "desdic/greyjoy.nvim"
-
-	-- search and replace
 	use {
-		'windwp/nvim-spectre',
-		requires = { 'nvim-lua/plenary.nvim' }
+		"desdic/greyjoy.nvim",
+		requires = { "stevearc/dressing.nvim" }
 	}
+
+	use {
+		'ACupofAir/nvim-repl',
+		requires = { 'tpope/vim-repeat' }
+	}
+	-- ft
+	use { "nathom/filetype.nvim" }
+
+	-- repl
+
 	-- dap debugger
-	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+	-- use {
+	-- 	"rcarriga/nvim-dap-ui",
+	-- 	requires = {
+	-- 		"mfussenegger/nvim-dap",
+	-- 		"mfussenegger/nvim-dap-python"
+	-- 	}
+	-- }
 
 	if packer_bootstrap then
 		require("packer").sync()
