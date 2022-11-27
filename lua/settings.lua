@@ -27,6 +27,14 @@ g.web_filetypes = {
 	'svelte',
 	'markdown'
 }
+g.ops = {
+	mode = "n", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = false, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = false, -- use `nowait` when creating keymaps
+}
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 

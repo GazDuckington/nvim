@@ -10,7 +10,6 @@
 require('plugins')
 require('mason-config')
 require('settings')
--- require('autocmp')
 require('keybinding')
 require('autos')
 require('tsconfig')

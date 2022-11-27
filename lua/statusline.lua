@@ -2,7 +2,9 @@ require('lualine').setup({
 	sections = {
 		lualine_a = {
 			{ 'mode',
-				fmt = function(res) return res:sub(1, 1) end,
+				fmt = function(res)
+					return res:sub(1, 1)
+				end,
 			}
 		},
 		lualine_b = { 'branch' },
@@ -25,9 +27,7 @@ require('lualine').setup({
 			},
 		},
 		lualine_y = { 'filetype' },
-		lualine_z = {
-			{ 'location', padding = { left = 0, right = 1 } }
-		},
+		lualine_z = { 'location' },
 	},
 	options = {
 		theme = 'catppuccin',

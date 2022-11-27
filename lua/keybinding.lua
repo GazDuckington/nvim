@@ -4,15 +4,6 @@ vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-local ops = {
-	mode = "n", -- NORMAL mode
-	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-	silent = false, -- use `silent` when creating keymaps
-	noremap = true, -- use `noremap` when creating keymaps
-	nowait = false, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
 	["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
@@ -59,7 +50,7 @@ local mappings = {
 }
 
 local wk = require("which-key")
-wk.register(mappings, ops)
+wk.register(mappings, vim.g.ops)
 
 -- QoL
 map("n", "P", '"0p', opts)
