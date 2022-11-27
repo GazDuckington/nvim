@@ -20,7 +20,6 @@ require('term')
 require('teleconfig')
 require('whichkey')
 require('gjoy')
--- require('dap-config')
 
 -- init plugins
 require('impatient')
@@ -30,7 +29,6 @@ require('nvim_comment').setup()
 require('dressing').setup()
 require('leap').add_default_mappings()
 require('colorizer').setup()
--- require('dapui').setup()
 
 -- GENERAL PLUGIN SETTINGS
 require("barbecue").setup({
@@ -38,7 +36,7 @@ require("barbecue").setup({
 		separator = ""
 	}
 })
-require("barbecue.ui").toggle(true)
+require("barbecue.ui").toggle(false)
 
 require('lspconfig').sourcery.setup({
 	init_options = {

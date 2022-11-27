@@ -81,7 +81,6 @@ packer.startup(function(use)
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		'p00f/nvim-ts-rainbow',
-
 		-- auto tag for html
 		'windwp/nvim-ts-autotag',
 		'windwp/nvim-autopairs',
@@ -92,7 +91,7 @@ packer.startup(function(use)
 		requires = {
 			"neovim/nvim-lspconfig",
 			"smiteshp/nvim-navic",
-			"kyazdani42/nvim-web-devicons", -- optional
+			"nvim-tree/nvim-web-devicons", -- optional
 		},
 	}
 
@@ -139,13 +138,13 @@ packer.startup(function(use)
 	-- tabline
 	use {
 		'romgrk/barbar.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' }
+		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
 
 	-- lualine
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
 
 	-- colorscheme
@@ -158,15 +157,6 @@ packer.startup(function(use)
 
 	-- ft
 	use { "nathom/filetype.nvim" }
-
-	-- dap debugger
-	-- use {
-	-- 	"rcarriga/nvim-dap-ui",
-	-- 	requires = {
-	-- 		"mfussenegger/nvim-dap",
-	-- 		"mfussenegger/nvim-dap-python"
-	-- 	}
-	-- }
 
 	if packer_bootstrap then
 		require("packer").sync()

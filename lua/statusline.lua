@@ -13,7 +13,7 @@ require('lualine').setup({
 				newfile_status = true,
 				path = 1,
 				fmt = function(res)
-					return ' ' .. res
+					return ' ' .. res
 				end
 			},
 		},

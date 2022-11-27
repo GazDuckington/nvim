@@ -56,15 +56,6 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 	},
-	-- d = {
-	-- 	name = "DAP",
-	-- 	b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
-	-- 	c = { "<cmd>lua require('dap').continue()<cr>", "Continue debugging session" },
-	-- 	d = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle DAP" },
-	-- 	e = { "<cmd>lua require('dapui').eval()<cr>", "Eval DAP" },
-	-- 	l = { "<cmd>lua require('dapui').float_element()<cr>", "DAP elements" },
-	-- 	r = { "<cmd>lua require('dapui').float_element('repl')<cr>", "DAP elements" },
-	-- }
 }
 
 local wk = require("which-key")
