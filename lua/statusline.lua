@@ -12,6 +12,9 @@ require('lualine').setup({
 				file_status = true,
 				newfile_status = true,
 				path = 1,
+				fmt = function(res)
+					return ' ' .. res
+				end
 			},
 		},
 		lualine_x = {

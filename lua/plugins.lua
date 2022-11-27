@@ -87,6 +87,15 @@ packer.startup(function(use)
 		'windwp/nvim-autopairs',
 	}
 
+	use {
+		"utilyre/barbecue.nvim",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"smiteshp/nvim-navic",
+			"kyazdani42/nvim-web-devicons", -- optional
+		},
+	}
+
 	-- terminal
 	use {
 		"akinsho/toggleterm.nvim",
@@ -96,8 +105,7 @@ packer.startup(function(use)
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		requires = { 'nvim-lua/plenary.nvim' }
 	}
 
 	-- which key

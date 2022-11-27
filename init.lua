@@ -33,6 +33,13 @@ require('colorizer').setup()
 -- require('dapui').setup()
 
 -- GENERAL PLUGIN SETTINGS
+require("barbecue").setup({
+	symbols = {
+		separator = ""
+	}
+})
+require("barbecue.ui").toggle(true)
+
 require('lspconfig').sourcery.setup({
 	init_options = {
 		token = os.getenv('SOURCERY_TOKEN')
