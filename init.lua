@@ -35,7 +35,7 @@ require("barbecue").setup({
 		separator = ""
 	}
 })
-require("barbecue.ui").toggle(false)
+-- require("barbecue.ui").toggle(false)
 
 require('lspconfig').sourcery.setup({
 	init_options = {
