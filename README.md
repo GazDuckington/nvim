@@ -10,6 +10,12 @@ Just clone or link the `nvim` directory to your `$XDG_CONFIG_HOME` and run `Pack
 
 # Features
 
+Very rudimentary filetype specific code runner based on `ftplugin` and `whichkey`. For more complex commands create a `Makefile` (that's what I use) in the root directory (where `.git` is) and launch [Greyjoy](https://github.com/desdic/greyjoy.nvim/) by pressing `<leader>l`*.
+
+* `<leader>` is `space`
+
+Catppuccin colorscheme.
+
 List of plugins used can be seen at `lua/plugins.lua`.
 
 # Screenshots
