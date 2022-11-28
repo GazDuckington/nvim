@@ -29,7 +29,7 @@ require("config/nvimtree")
 require("config/zen")
 require("config/bbq")
 
--- plugin inits
+-- plugin inits (default settings)
 require("nvim-autopairs").setup()
 require("nvim_comment").setup()
 require("dressing").setup()
