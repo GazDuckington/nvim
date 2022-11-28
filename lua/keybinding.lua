@@ -1,42 +1,52 @@
 -- set leader key
 vim.g.mapleader = " "
 
+local wk = require("which-key")
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 local mappings = {
 	["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
-	i = { ":cd %:p:h<cr>", "Cd to Buffer" },
-	e = { ":NvimTreeToggle<cr>", "Open tree view" },
-	g = { ":lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
+	e = { "<cmd>NvimTreeToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	z = { "<cmd>ZenMode<cr>", "Keybind Zen mode" },
 	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP renamer" },
-	m = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Toggle QuickFix" },
+	g = {
+		name = "Goto",
+		d = { "<cmd>Telescope lsp_definitions<cr>", "Definitions" },
+		r = { "<cmd>Telescope lsp_references<cr>", "References" },
+	},
+	m = {
+		name = "Problems",
+		m = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+		q = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
+	},
 	f = {
 		name = "Files",
 		f = { "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>", "Find symbols" },
-		o = { ":e ", "Open/Create File" },
-		s = { ":w!<cr>", "Save (C-s)" },
-		S = { ":saveas ", "Save buffer as (C-S-s)" },
-		q = { ":q!<cr>", "Quit (C-q)" },
-		b = { ":Barbecue toggle<cr>", "Toggle breadcrumb" },
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+		o = { "<cmd>e ", "Open/Create File" },
+		s = { "<cmd>w!<cr>", "Save (C-s)" },
+		S = { "<cmd>saveas ", "Save buffer as (C-S-s)" },
+		q = { "<cmd>q!<cr>", "Quit (C-q)" },
+		b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	},
 	v = {
 		name = "Views",
-		s = { ":new<cr>", "Split New Horizontal" },
-		v = { ":vnew<cr>", "Split New Vertical" },
-		S = { ":split<cr>", "Split Editor Horizontal" },
-		V = { ":vsplit<cr>", "Split Editor Vertical" },
+		s = { "<cmd>new<cr>", "Split New Horizontal" },
+		v = { "<cmd>vnew<cr>", "Split New Vertical" },
+		S = { "<cmd>split<cr>", "Split Editor Horizontal" },
+		V = { "<cmd>vsplit<cr>", "Split Editor Vertical" },
 	},
 	b = {
 		name = "Buffers",
-		j = { ":BufferPrevious<cr>", "Previous Buffer (C-,)" },
-		k = { ":BufferNext<cr>", "Next Buffer (C-.)" },
-		J = { ":BufferMovePrevious<cr>", "Move Buffer to Previous (C-j)" },
-		K = { ":BufferMoveNext<cr>", "Move Buffer to Next (C-k)" },
-		q = { ":bdelete<cr>", "Close Buffer" }
+		j = { "<cmd>BufferPrevious<cr>", "Previous Buffer (C-,)" },
+		k = { "<cmd>BufferNext<cr>", "Next Buffer (C-.)" },
+		J = { "<cmd>BufferMovePrevious<cr>", "Move Buffer to Previous (C-j)" },
+		K = { "<cmd>BufferMoveNext<cr>", "Move Buffer to Next (C-k)" },
+		q = { "<cmd>bdelete<cr>", "Close Buffer" }
 	},
 	t = {
 		name = "Telescope",
@@ -49,7 +59,6 @@ local mappings = {
 	},
 }
 
-local wk = require("which-key")
 wk.register(mappings, vim.g.ops)
 
 -- QoL

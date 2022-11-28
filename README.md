@@ -6,15 +6,20 @@ This configuration is mainly setup for `Python`, `Svelte`, `Lua`, and `Go`.
 
 # Installation
 
-Just clone or link the `nvim` directory to your `$XDG_CONFIG_HOME` and run `PackerSync`.
+1. Just clone or link the `nvim` directory to your `$XDG_CONFIG_HOME`.
+
+2. Check `lua/settings.lua` and `lua/config/` to see if the defaults is to your liking.
+
+3. Run `PackerSync`.
 
 # Features
 
-Very rudimentary filetype specific code runner based on `ftplugin` and `whichkey`. For more complex commands create a `Makefile` (that's what I use) in the root directory (where `.git` is) and launch [Greyjoy](https://github.com/desdic/greyjoy.nvim/) by pressing `<leader>l`*.
+Plugins management with [packer.nvim](https://github.com/wbthomason/packer.nvim)
+FileType management with [filetype.nvim](https://github.com/nathom/filetype.nvim)
 
-* `<leader>` is `space`
+Very rudimentary file type specific code runner based on `ftplugin`, `filetype.nvim` and `whichkey`. For more complex commands create a `Makefile` (that's what I use) in the root directory (where `.git` is) and launch [greyjoy](https://github.com/desdic/greyjoy.nvim/) by pressing `<leader>l`, leader is space.
 
-Catppuccin colorscheme.
+Catppuccin color scheme.
 
 List of plugins used can be seen at `lua/plugins.lua`.
 

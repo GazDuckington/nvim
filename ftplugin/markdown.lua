@@ -6,3 +6,6 @@ local mappings = {
 	}
 }
 require("which-key").register(mappings, vim.g.ops)
+
+vim.opt.spell = true
+vim.opt.linebreak = true

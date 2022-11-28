@@ -4,7 +4,9 @@ local cmd = vim.cmd
 local api = vim.api
 
 -- global settings
+-- default shell
 vim.opt_global.shell = "fish"
+-- must install lsp servers
 g.must_lsp = {
 	"sumneko_lua",
 	"pyright",
@@ -16,6 +18,7 @@ g.must_lsp = {
 	"marksman",
 	"sourcery",
 }
+-- filetypes for emmet
 g.web_filetypes = {
 	'html',
 	'typescriptreact',
@@ -27,6 +30,7 @@ g.web_filetypes = {
 	'svelte',
 	'markdown'
 }
+-- options for whichkey
 g.ops = {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
@@ -35,12 +39,9 @@ g.ops = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = false, -- use `nowait` when creating keymaps
 }
+
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-
--- repl plugin
-g.repl_split = 'bottom'
-g.repl_height = 15
 
 -- appearance
 cmd([[highlight WinSeparator guibg=none]])
@@ -50,6 +51,7 @@ o.laststatus = 3
 o.relativenumber = true
 o.number = true
 
+-- whitespace character
 o.list = true
 o.listchars = {
 	-- tab = ' ',

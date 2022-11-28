@@ -24,11 +24,12 @@ autocmd("BufWritePost", {
 autocmd("BufWritePre", {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd([[ lua vim.lsp.buf.format() ]])
+		vim.lsp.buf.format()
 	end,
 	group = gpinit,
 })
 
+-- filetype management
 autocmd("BufEnter", {
 	pattern = { "*" },
 	callback = function()

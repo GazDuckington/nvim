@@ -3,4 +3,5 @@ require("barbecue").setup({
 		separator = ""
 	}
 })
+-- uncomment to disable by default
 -- require("barbecue.ui").toggle(false)
