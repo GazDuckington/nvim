@@ -19,14 +19,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 
--- Autocommand that reloads neovim whenever you save the packer_init.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
@@ -98,7 +90,7 @@ packer.startup(function(use)
 	-- terminal
 	use {
 		"akinsho/toggleterm.nvim",
-		tag = 'v2.*',
+		tag = '*',
 	}
 
 	-- telescope
