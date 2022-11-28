@@ -35,5 +35,3 @@ require("nvim_comment").setup()
 require("dressing").setup()
 require("leap").add_default_mappings()
 require("colorizer").setup()
-
-require("./plugin/packer_compiled")
