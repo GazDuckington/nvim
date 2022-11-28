@@ -28,3 +28,11 @@ autocmd("BufWritePre", {
 	end,
 	group = gpinit,
 })
+
+autocmd("BufEnter", {
+	pattern = { "*" },
+	callback = function()
+		require('filetype').resolve()
+	end,
+	group = gpinit,
+})

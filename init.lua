@@ -23,6 +23,7 @@ require('gjoy')
 -- init plugins
 require('impatient')
 require('filetype')
+require('filetype')
 require('nvim-autopairs').setup()
 require('nvim_comment').setup()
 require('dressing').setup()
