@@ -6,26 +6,30 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
 
--- user settings
+-- general settings
 require("impatient")
 require("plugins")
-require("lsconfig")
-require("mason-config")
 require("settings")
 require("keybinding")
-require("autos")
-require("tsconfig")
+require("autocommands")
 require("colorscheme")
-require("statusline")
-require("term")
-require("teleconfig")
-require("whichkey")
-require("gjoy")
-require("indent-config")
-require("nvimtree-config")
-require("zen-config")
-require("bbq-config")
 
+-- plugin configs
+require("config/statusline")
+require("config/bufferline")
+require("config/whichkey")
+require("config/ls")
+require("config/ts")
+require("config/mason")
+require("config/toggleterm")
+require("config/telescope")
+require("config/greyjoy")
+require("config/indent")
+require("config/nvimtree")
+require("config/zen")
+require("config/bbq")
+
+-- plugin inits
 require("nvim-autopairs").setup()
 require("nvim_comment").setup()
 require("dressing").setup()

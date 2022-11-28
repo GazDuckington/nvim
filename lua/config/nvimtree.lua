@@ -3,7 +3,7 @@ require('nvim-tree').setup({
 		side = 'right',
 		adaptive_size = true,
 		float = {
-			enable = true,
+			enable = false,
 		},
 	},
 	renderer = {

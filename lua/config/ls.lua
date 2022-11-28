@@ -7,9 +7,3 @@ require('lspconfig').sourcery.setup({
 require('lspconfig').emmet_ls.setup({
 	filetypes = vim.g.web_filetypes
 })
-
--- barbar line
-require('bufferline').setup({
-	auto_hide = true,
-	clickable = true
-})
