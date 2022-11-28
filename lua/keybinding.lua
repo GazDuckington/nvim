@@ -27,9 +27,9 @@ local mappings = {
 		name = "Files",
 		f = { "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>", "Find symbols" },
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-		o = { "<cmd>e ", "Open/Create File" },
+		o = { ":e ", "Open/Create File" },
 		s = { "<cmd>w!<cr>", "Save (C-s)" },
-		S = { "<cmd>saveas ", "Save buffer as (C-S-s)" },
+		S = { ":saveas ", "Save buffer as (C-S-s)" },
 		q = { "<cmd>q!<cr>", "Quit (C-q)" },
 		b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	},
@@ -66,9 +66,9 @@ map("n", "P", '"0p', opts)
 map("i", "jk", "<ESC>", opts)
 
 -- save & quit
-map("i", "<c-s>", "<ESC>:w!<cr>", opts)
-map("n", "<c-s>", "<ESC>:w!<cr>", opts)
-map("n", "<c-q>", ":q!<cr>", opts)
+map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
+map("n", "<c-s>", "<ESC><cmd>w!<cr>", opts)
+map("n", "<c-q>", "<cmd>q!<cr>", opts)
 
 -- move line up & down
 map("n", "<A-k>", "<Esc><cmd>m .-2<cr>==", opts)
@@ -84,7 +84,7 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- close buffer
-map("n", "<C-S-w>", ":bdelete!<cr>", opts)
+map("n", "<C-S-w>", "<cmd>bdelete!<cr>", opts)
 
 -- Move to previous/next
 map("n", "<A-h>", "<Cmd>BufferPrevious<cr>", opts)
@@ -93,8 +93,8 @@ map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
 map("n", "<A-L>", "<cmd>BufferMoveNext<cr>", opts)
 
 -- comment line
-map("n", "<C-/>", ":CommentToggle<cr>", opts)
-map("v", "<C-/>", ":'<,'>CommentToggle<cr>", opts)
+map("n", "<C-/>", "<cmd>CommentToggle<cr>", opts)
+map("v", "<C-/>", "<cmd>'<,'>CommentToggle<cr>", opts)
 
 -- telescope
 map("n", "<C-p>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)

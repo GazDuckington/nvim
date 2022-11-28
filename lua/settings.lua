@@ -6,6 +6,7 @@ local api = vim.api
 -- global settings
 -- default shell
 vim.opt_global.shell = "fish"
+
 -- must install lsp servers
 g.must_lsp = {
 	"sumneko_lua",
@@ -39,6 +40,9 @@ g.ops = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = false, -- use `nowait` when creating keymaps
 }
+
+-- breadcrumb default
+g.breadcrumb_enabled = true
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
