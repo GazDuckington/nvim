@@ -17,6 +17,7 @@ local mappings = {
 		name = "Goto",
 		d = { "<cmd>Telescope lsp_definitions<cr>", "Definitions" },
 		r = { "<cmd>Telescope lsp_references<cr>", "References" },
+		t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definitions" },
 	},
 	m = {
 		name = "Problems",

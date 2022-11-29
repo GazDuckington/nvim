@@ -41,9 +41,7 @@ g.ops = {
 	nowait = false, -- use `nowait` when creating keymaps
 }
 
--- breadcrumb default
 g.breadcrumb_enabled = true
-
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
