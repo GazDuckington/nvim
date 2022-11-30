@@ -85,6 +85,7 @@ packer.startup(function(use)
 			"smiteshp/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional
 		},
+		tag = 'dev'
 	}
 
 	-- terminal

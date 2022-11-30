@@ -22,7 +22,7 @@ local mappings = {
 	m = {
 		name = "Problems",
 		m = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		q = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
+		n = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
 	},
 	f = {
 		name = "Files",
