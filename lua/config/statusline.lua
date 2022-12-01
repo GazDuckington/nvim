@@ -24,10 +24,10 @@ require('lualine').setup({
 			{
 				'filesize',
 				padding = { left = 0, right = 1 }
-			},
+			}, 'filetype',
 		},
-		lualine_y = { 'filetype' },
-		lualine_z = { 'location' },
+		lualine_y = { 'location' },
+		lualine_z = {},
 	},
 	options = {
 		theme = 'catppuccin',
