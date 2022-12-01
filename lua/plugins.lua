@@ -108,6 +108,7 @@ packer.startup(function(use)
 	}
 	-- impatient
 	use 'lewis6991/impatient.nvim'
+	use 'tweekmonster/startuptime.vim'
 
 	-- colorizer
 	use 'norcalli/nvim-colorizer.lua'
