@@ -29,9 +29,4 @@ require("config/barbecue")
 require("config/treesitter")
 require("config/bufferline")
 
--- plugin inits (default settings)
-require("nvim-autopairs").setup()
-require("nvim_comment").setup()
-require("dressing").setup()
-require("leap").add_default_mappings()
-require("colorizer").setup()
+-- plugins with default settings are setup on lua/plugins.lua

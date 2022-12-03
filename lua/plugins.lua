@@ -75,7 +75,11 @@ packer.startup(function(use)
 		'p00f/nvim-ts-rainbow',
 		-- auto tag for html
 		'windwp/nvim-ts-autotag',
-		'windwp/nvim-autopairs',
+	}
+	use { 'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup()
+		end
 	}
 
 	use {
@@ -111,7 +115,11 @@ packer.startup(function(use)
 	use 'tweekmonster/startuptime.vim'
 
 	-- colorizer
-	use 'norcalli/nvim-colorizer.lua'
+	use { 'norcalli/nvim-colorizer.lua',
+		config = function()
+			require('colorizer').setup()
+		end
+	}
 
 	use {
 		'nvim-tree/nvim-tree.lua',
@@ -122,12 +130,19 @@ packer.startup(function(use)
 	}
 
 	-- indentation lines
-	use "lukas-reineke/indent-blankline.nvim"
+	use 'lukas-reineke/indent-blankline.nvim'
 
 	-- comment
-	use "terrortylor/nvim-comment"
-	use "ggandor/leap.nvim"
-
+	use { 'terrortylor/nvim-comment',
+		config = function()
+			require('nvim_comment').setup()
+		end
+	}
+	use { 'ggandor/leap.nvim',
+		config = function()
+			require('leap').add_default_mappings()
+		end
+	}
 	-- tabline
 	use {
 		'romgrk/barbar.nvim',
@@ -145,8 +160,12 @@ packer.startup(function(use)
 	use { "catppuccin/nvim", as = "catppuccin" }
 
 	use {
-		"desdic/greyjoy.nvim",
-		requires = { "stevearc/dressing.nvim" }
+		'desdic/greyjoy.nvim',
+		requires = { 'stevearc/dressing.nvim',
+			config = function()
+				require('dressing').setup()
+			end
+		}
 	}
 
 	-- ft
