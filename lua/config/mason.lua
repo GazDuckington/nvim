@@ -15,13 +15,6 @@ lsp.preset('recommended')
 
 lsp.setup()
 
--- setup lsp installer
-require("mason").setup({
-	-- providers = {
-	-- "mason.providers.client",
-	-- "mason.providers.registry-api"
-	-- }
-})
 require("mason-lspconfig").setup({
 	ensure_installed = servers
 })

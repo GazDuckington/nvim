@@ -52,6 +52,7 @@ o.cursorline = true
 o.laststatus = 3
 o.relativenumber = true
 o.number = true
+o.clipboard = unammedplus
 
 -- whitespace character
 o.list = true
