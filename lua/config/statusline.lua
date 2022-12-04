@@ -1,3 +1,7 @@
+local function session_name()
+	return require('possession.session').session_name or ''
+end
+
 require('lualine').setup({
 	sections = {
 		lualine_a = {
@@ -28,7 +32,7 @@ require('lualine').setup({
 			{ "require'lsp-status'.status()" },
 		},
 		lualine_y = { 'location' },
-		lualine_z = {},
+		lualine_z = { { session_name } },
 	},
 	options = {
 		theme = 'catppuccin',

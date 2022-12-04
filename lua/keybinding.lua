@@ -57,6 +57,7 @@ local mappings = {
 		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
+		f = { "<cmd>Telescope possession list<cr>", "List all sessions" },
 	},
 }
 

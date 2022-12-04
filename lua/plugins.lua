@@ -171,6 +171,15 @@ packer.startup(function(use)
 	-- ft
 	use { "nathom/filetype.nvim" }
 
+	-- session mgmt
+	use {
+		'jedrzejboczar/possession.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			require('possession').setup()
+		end
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
