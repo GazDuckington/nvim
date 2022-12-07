@@ -59,6 +59,13 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 		f = { "<cmd>Telescope possession list<cr>", "List all sessions" },
 	},
+	h = {
+		name = "Harpoon",
+		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark current file" },
+		b = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Lists all marks" },
+		m = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
+		n = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
+	}
 }
 
 wk.register(mappings, vim.g.ops)
@@ -89,10 +96,10 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-S-w>", "<cmd>bdelete!<cr>", opts)
 
 -- Move to previous/next
-map("n", "<A-h>", "<Cmd>BufferPrevious<cr>", opts)
-map("n", "<A-l>", "<Cmd>BufferNext<cr>", opts)
-map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
-map("n", "<A-L>", "<cmd>BufferMoveNext<cr>", opts)
+map("n", "<A-h>", "<Cmd>bp<cr>", opts)
+map("n", "<A-l>", "<Cmd>bn<cr>", opts)
+-- map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
+-- map("n", "<A-L>", "<cmd>BufferMoveNext<cr>", opts)
 
 -- comment line
 map("n", "<C-/>", "<cmd>CommentToggle<cr>", opts)

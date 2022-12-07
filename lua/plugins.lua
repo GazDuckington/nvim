@@ -143,10 +143,11 @@ packer.startup(function(use)
 			require('leap').add_default_mappings()
 		end
 	}
-	-- tabline
+
+	-- harpoon
 	use {
-		'romgrk/barbar.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons' }
+		'ThePrimeagen/harpoon',
+		requires = { 'nvim-lua/plenary.nvim' }
 	}
 
 	-- lualine
