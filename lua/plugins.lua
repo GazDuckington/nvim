@@ -155,7 +155,11 @@ packer.startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
-	use 'nvim-lua/lsp-status.nvim'
+	-- barbar line
+	use {
+		'romgrk/barbar.nvim',
+		requires = 'nvim-tree/nvim-web-devicons',
+	}
 
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }

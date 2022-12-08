@@ -27,7 +27,7 @@ require("config/nvimtree")
 require("config/zen")
 require("config/barbecue")
 require("config/treesitter")
--- require("config/bufferline")
+require("config/bufferline")
 require("config/session")
 
 -- plugins with default settings are setup on lua/plugins.lua

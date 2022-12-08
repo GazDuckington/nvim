@@ -29,7 +29,6 @@ require('lualine').setup({
 				'filesize',
 				padding = { left = 0, right = 1 }
 			}, 'filetype',
-			{ "require'lsp-status'.status()" },
 		},
 		lualine_y = { 'location' },
 		lualine_z = { { session_name } },

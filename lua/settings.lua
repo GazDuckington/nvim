@@ -61,7 +61,7 @@ o.listchars = {
 	tab = '  ',
 	trail = '◦',
 	space = '•',
-	eol = '↴',
+	eol = '⮧',
 }
 
 -- mouse
