@@ -50,8 +50,8 @@ cmd([[highlight WinSeparator guibg=none]])
 o.termguicolors = true
 o.cursorline = true
 o.laststatus = 3
-o.relativenumber = true
 o.number = true
+o.relativenumber = true
 
 vim.cmd([[set clipboard+=unnamedplus]])
 -- whitespace character

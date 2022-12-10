@@ -87,7 +87,7 @@ packer.startup(function(use)
 		requires = {
 			"neovim/nvim-lspconfig",
 			"smiteshp/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional
+			"nvim-tree/nvim-web-devicons",
 		},
 		tag = 'dev'
 	}
@@ -124,7 +124,7 @@ packer.startup(function(use)
 	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+			'nvim-tree/nvim-web-devicons',
 		},
 		tag = 'nightly'
 	}
@@ -184,17 +184,11 @@ packer.startup(function(use)
 			require('possession').setup()
 		end
 	}
-
-	use { "anuvyklack/windows.nvim",
-		requires = {
-			"anuvyklack/middleclass",
-			"anuvyklack/animation.nvim"
-		},
+	-- resize on focus
+	use {
+		"beauwilliams/focus.nvim",
 		config = function()
-			vim.o.winwidth = 10
-			vim.o.winminwidth = 10
-			vim.o.equalalways = false
-			require('windows').setup()
+			require("focus").setup()
 		end
 	}
 

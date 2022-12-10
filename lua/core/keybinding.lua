@@ -36,10 +36,10 @@ local mappings = {
 	},
 	v = {
 		name = "Views",
-		s = { "<cmd>new<cr>", "Split New Horizontal" },
-		v = { "<cmd>vnew<cr>", "Split New Vertical" },
-		S = { "<cmd>split<cr>", "Split Editor Horizontal" },
-		V = { "<cmd>vsplit<cr>", "Split Editor Vertical" },
+		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
+		l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
+		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
+		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
 	},
 	b = {
 		name = "Buffers",
