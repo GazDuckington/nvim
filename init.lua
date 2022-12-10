@@ -6,13 +6,14 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
 
--- general settings
+-- plugins with default settings are setup on lua/plugins.lua
 require("plugins")
 require("impatient")
-require("settings")
-require("keybinding")
-require("autocommands")
+
+-- keybindings inc. whichkey
+-- general nvim settings
+-- autocmmands
+require("core")
 
 -- plugin configs
 require("config")
--- plugins with default settings are setup on lua/plugins.lua
