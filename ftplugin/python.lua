@@ -1,4 +1,3 @@
-local o = vim.opt
 local mappings = {
 	c = {
 		name = string.format("%s runner", vim.bo.filetype),
@@ -7,11 +6,3 @@ local mappings = {
 	}
 }
 require("which-key").register(mappings, vim.g.ops)
-
--- indentation
-o.tabstop = 4
-o.softtabstop = 4
-o.shiftwidth = 4
-o.smartindent = true
-o.spell = false
-o.linebreak = false
