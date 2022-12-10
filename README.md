@@ -10,7 +10,7 @@ This configuration is mainly setup for `Python`, `Svelte`, `Lua`, and `Go`.
 
 2. Check `lua/settings.lua` and `lua/config/` to see if the defaults is to your liking.
 
-3. Run `PackerSync`.
+3. Run `:lua require("plugins")`.
 
 # Features
 
