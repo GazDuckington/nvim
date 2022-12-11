@@ -21,6 +21,11 @@ telescope.setup({
 			height = 0.80,
 			preview_cutoff = 10,
 		},
+	},
+	pickers = {
+		find_files = {
+			find_command = { "fd", "--hidden", "--glob", "" },
+		},
 	}
 })
 
