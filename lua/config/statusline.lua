@@ -7,7 +7,7 @@ require('lualine').setup({
 		lualine_a = {
 			{ 'mode',
 				fmt = function(res)
-					return res:sub(1, 1)
+					return res:sub(1, 3)
 				end,
 			}
 		},
@@ -24,14 +24,10 @@ require('lualine').setup({
 			},
 		},
 		lualine_x = {
-			'diagnostics', 'diff',
-			{
-				'filesize',
-				padding = { left = 0, right = 1 }
-			}, 'filetype',
+			'diagnostics', 'diff', 'filetype'
 		},
-		lualine_y = { 'location' },
-		lualine_z = { { session_name } },
+		lualine_y = { { session_name }, 'location' },
+		lualine_z = { 'progress' },
 	},
 	options = {
 		theme = 'catppuccin',
