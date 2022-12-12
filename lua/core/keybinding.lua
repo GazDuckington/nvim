@@ -11,6 +11,8 @@ local mappings = {
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP variable renamer" },
+	o = { ":e ", "Open/Create File" },
+	s = { ":saveas ", "Save buffer as" },
 	g = {
 		name = "Goto",
 		d = { "<cmd>Telescope lsp_definitions<cr>", "Definitions" },
@@ -18,7 +20,7 @@ local mappings = {
 		t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definitions" },
 	},
 	m = {
-		name = "Problems",
+		name = "LSP Buf",
 		m = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		n = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
@@ -27,14 +29,10 @@ local mappings = {
 	},
 	f = {
 		name = "Files",
-		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols" },
-		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols" },
+		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in document" },
+		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols in workspace" },
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-		o = { ":e ", "Open/Create File" },
-		s = { "<cmd>w!<cr>", "Save (C-s)" },
-		S = { ":saveas ", "Save buffer as (C-S-s)" },
-		q = { "<cmd>q!<cr>", "Quit (C-q)" },
 		b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	},
 	v = {
