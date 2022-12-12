@@ -6,12 +6,10 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 local mappings = {
-	["/"] = { "<cmd>CommentToggle<cr>", "Comment Line (C-/)" },
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
-	z = { "<cmd>ZenMode<cr>", "Keybind Zen mode" },
 	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP variable renamer" },
 	g = {
 		name = "Goto",
@@ -29,7 +27,9 @@ local mappings = {
 	},
 	f = {
 		name = "Files",
-		f = { "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>", "Find symbols" },
+		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols" },
+		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols" },
+		m = { "<cmd>Mason<cr>", "Open Mason menu" },
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 		o = { ":e ", "Open/Create File" },
 		s = { "<cmd>w!<cr>", "Save (C-s)" },
