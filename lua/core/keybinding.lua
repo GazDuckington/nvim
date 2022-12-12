@@ -23,6 +23,9 @@ local mappings = {
 		name = "Problems",
 		m = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		n = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
+		k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Lsp hover" },
+		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Lsp format" },
 	},
 	f = {
 		name = "Files",
