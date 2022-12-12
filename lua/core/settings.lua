@@ -65,7 +65,7 @@ o.listchars = {
 }
 
 -- mouse
-cmd([[set mouse+=a]])
+o.mouse = "a"
 o.hidden = true
 
 -- indentation
