@@ -86,7 +86,5 @@ end
 vim.diagnostic.config({
 	virtual_text = false
 })
-
--- Show line diagnostics automatically in hover window
+-- wait time until diagnostics is shown
 o.updatetime = 250
-cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
