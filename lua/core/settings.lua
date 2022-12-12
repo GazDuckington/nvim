@@ -52,8 +52,8 @@ o.cursorline = true
 o.laststatus = 3
 o.number = true
 o.relativenumber = true
+o.clipboard = "unnamedplus"
 
-vim.cmd([[set clipboard+=unnamedplus]])
 -- whitespace character
 o.list = true
 o.listchars = {
