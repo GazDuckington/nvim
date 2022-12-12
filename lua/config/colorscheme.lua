@@ -1,7 +1,9 @@
+local color = require("catppuccin.palettes").get_palette "mocha"
+
 -- colorscheme
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 require("catppuccin").setup({
-	transparent_background = false,
+	flavour = "mocha",
+	transparent_background = true,
 	term_colors = true,
 	integrations = {
 		mason = true,
@@ -18,12 +20,17 @@ require("catppuccin").setup({
 		},
 	},
 	custom_highlights = {
-		Comment = { fg = '#7e8991' },
-		LineNr = { fg = '#7e8991' },
-		CursorLine = { bg = '#181825' },
+		Comment = { fg = color.overlay0 },
+		LineNr = { fg = color.surface2 },
+		CursorLine = { bg = color.crust },
 		CursorLineNr = {
-			fg = '#04b956',
-			bg = '#181825'
+			fg = color.green,
+			bg = color.crust,
+			bold = true
+		},
+		IndentBlanklineContextChar = {
+			fg = color.mauve,
+			nocombine = true,
 		},
 	},
 })
