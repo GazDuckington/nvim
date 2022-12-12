@@ -3,7 +3,7 @@ local color = require("catppuccin.palettes").get_palette "mocha"
 -- colorscheme
 require("catppuccin").setup({
 	flavour = "mocha",
-	transparent_background = true,
+	transparent_background = false,
 	term_colors = true,
 	integrations = {
 		mason = true,
@@ -22,10 +22,10 @@ require("catppuccin").setup({
 	custom_highlights = {
 		Comment = { fg = color.overlay0 },
 		LineNr = { fg = color.surface2 },
-		CursorLine = { bg = color.crust },
+		CursorLine = { bg = color.mantle },
 		CursorLineNr = {
 			fg = color.green,
-			bg = color.crust,
+			bg = color.mantle,
 			bold = true
 		},
 		IndentBlanklineContextChar = {

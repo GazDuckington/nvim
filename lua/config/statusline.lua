@@ -2,17 +2,26 @@ local function session_name()
 	return require('possession.session').session_name or ''
 end
 
+local line = { function()
+	return " "
+end,
+	padding = 0,
+}
+
 require('lualine').setup({
 	sections = {
 		lualine_a = {
+			line
+		},
+		lualine_b = {
 			{ 'mode',
 				fmt = function(res)
 					return res:sub(1, 3)
 				end,
 			}
 		},
-		lualine_b = { 'branch' },
 		lualine_c = {
+			'branch',
 			{
 				'filename',
 				file_status = true,
@@ -24,10 +33,10 @@ require('lualine').setup({
 			},
 		},
 		lualine_x = {
-			'diagnostics', 'diff', 'filetype'
+			'diagnostics', 'diff', 'filetype', 'location'
 		},
-		lualine_y = { { session_name }, 'location' },
-		lualine_z = { 'progress' },
+		lualine_y = { { session_name }, 'progress' },
+		lualine_z = { line },
 	},
 	options = {
 		theme = 'catppuccin',
