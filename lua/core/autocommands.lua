@@ -50,5 +50,5 @@ autocmd(
 			vim.diagnostic.open_float(nil, { focus = false })
 		end,
 		group = gpinit,
-	},
+	}
 )
