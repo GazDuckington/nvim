@@ -1,7 +1,6 @@
 require("config.statusline")
 require("config.whichkey")
 require("config.lsp_config")
-require("config.mason")
 require("config.toggleterm")
 require("config.telescope")
 require("config.greyjoy")
