@@ -2,6 +2,7 @@
 local servers = vim.g.must_lsp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig = require("lspconfig")
+local lsp = require('lsp-zero')
 
 lspconfig.sourcery.setup({
 	init_options = {
@@ -13,14 +14,13 @@ lspconfig.emmet_ls.setup({
 	filetypes = vim.g.web_filetypes
 })
 
--- lsp-zero
 require('mason.settings').set({
 	ui = {
 		border = 'rounded'
 	}
 })
 
-local lsp = require('lsp-zero')
+-- lsp-zero
 lsp.preset('recommended')
 
 lsp.setup()

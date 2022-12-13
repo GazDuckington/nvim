@@ -1,5 +1,6 @@
 require('indent_blankline').setup({
-	char_highlight_list = {
+	char_highlight_list =
+	{
 		-- uncomment for rainbow
 		-- "IndentBlanklineIndent1",
 		-- "IndentBlanklineIndent2",
