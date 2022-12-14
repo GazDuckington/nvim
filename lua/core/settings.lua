@@ -74,15 +74,6 @@ o.softtabstop = 2
 o.shiftwidth = 2
 o.smartindent = true
 
--- glrnvim
-if g.glrnvim_gui then
-	api.nvim_create_autocmd("VimEnter", {
-		callback = function()
-			cmd('cd %:p:h')
-		end
-	})
-end
-
 -- disable diagnostics inline texts
 vim.diagnostic.config({
 	virtual_text = false
