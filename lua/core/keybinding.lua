@@ -26,11 +26,11 @@ local mappings = {
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
 		k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Lsp hover" },
 		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Lsp format" },
+		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in document" },
+		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols in workspace" },
 	},
 	f = {
 		name = "Files",
-		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in document" },
-		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols in workspace" },
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 		b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
@@ -51,7 +51,7 @@ local mappings = {
 		q = { "<cmd>bdelete<cr>", "Close Buffer" }
 	},
 	t = {
-		name = "Telescope",
+		name = "Telescope Searches",
 		p = { "<cmd>Telescope find_files<cr>", "Find Files (C-p)" },
 		g = { "<cmd>Telescope live_grep<cr>", "Grep strings live in cwd (C-g)" },
 		s = { "<cmd>Telescope grep_string<cr>", "Grep strings under cursor" },

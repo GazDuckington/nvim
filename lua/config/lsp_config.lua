@@ -1,4 +1,5 @@
--- vars
+vim.opt.signcolumn = 'yes'
+
 local servers = vim.g.must_lsp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig = require("lspconfig")
@@ -22,12 +23,8 @@ require('mason.settings').set({
 
 -- lsp-zero
 lsp.preset('recommended')
-
+lsp.ensure_installed(servers)
 lsp.setup()
-
-require("mason-lspconfig").setup({
-	ensure_installed = servers
-})
 
 -- config all installed servers
 require("mason-lspconfig").setup_handlers({

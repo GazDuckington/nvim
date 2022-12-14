@@ -179,7 +179,11 @@ packer.startup(function(use)
 		'jedrzejboczar/possession.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
-			require('possession').setup()
+			require('possession').setup({
+				plugins = {
+					delete_hidden_buffers = false,
+				},
+			})
 		end
 	}
 	-- resize on focus
