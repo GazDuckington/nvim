@@ -21,7 +21,7 @@ require('lualine').setup({
 			}
 		},
 		lualine_c = {
-			'branch',
+			'branch', 'diff',
 			{
 				'filename',
 				file_status = true,
@@ -33,7 +33,7 @@ require('lualine').setup({
 			},
 		},
 		lualine_x = {
-			'diagnostics', 'diff', 'filetype', 'location'
+			'diagnostics', 'filetype', 'location'
 		},
 		lualine_y = { { session_name }, 'progress' },
 		lualine_z = { line },
