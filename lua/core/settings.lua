@@ -1,7 +1,6 @@
 local o = vim.opt
 local g = vim.g
 local cmd = vim.cmd
-local api = vim.api
 
 -- global settings
 -- default shell
@@ -52,7 +51,7 @@ o.laststatus = 3
 o.number = true
 o.relativenumber = true
 
-vim.cmd([[set clipboard+=unnamedplus]])
+cmd([[set clipboard+=unnamedplus]])
 
 -- whitespace character
 o.list = true
