@@ -43,6 +43,7 @@ g.ops = {
 g.breadcrumb_enabled = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+-- end of global settings
 
 -- appearance
 o.termguicolors = true
@@ -80,5 +81,6 @@ vim.diagnostic.config({
 })
 
 -- for glrnvim
--- if vim.fn.exists("g:glrnvim") ~= 0 then
--- end
+if g.glrnvim_gui then
+	cmd([[cd %:p:h]])
+end
