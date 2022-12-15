@@ -52,6 +52,7 @@ o.number = true
 o.relativenumber = true
 
 cmd([[set clipboard+=unnamedplus]])
+o.updatetime = 250
 
 -- whitespace character
 o.list = true
@@ -60,7 +61,7 @@ o.listchars = {
 	tab = '  ',
 	trail = '◦',
 	space = '•',
-	eol = '⮧',
+	eol = '',
 }
 
 -- mouse
@@ -77,5 +78,3 @@ o.smartindent = true
 vim.diagnostic.config({
 	virtual_text = false
 })
--- wait time until diagnostics is shown
-o.updatetime = 250
