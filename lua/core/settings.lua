@@ -78,3 +78,7 @@ o.smartindent = true
 vim.diagnostic.config({
 	virtual_text = false
 })
+
+-- for glrnvim
+-- if vim.fn.exists("g:glrnvim") ~= 0 then
+-- end
