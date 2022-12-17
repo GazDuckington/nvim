@@ -44,7 +44,9 @@ g.breadcrumb_enabled = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 -- end of global settings
+--
 
+o.path = { "." }
 -- appearance
 o.termguicolors = true
 o.cursorline = true
