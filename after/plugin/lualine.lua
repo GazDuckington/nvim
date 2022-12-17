@@ -10,7 +10,7 @@ end,
 
 --local md = { 'mode',
 --	fmt = function(res)
---		return res:sub(1, 1)
+--		return res:sub(1, 3)
 --	end,
 --}
 
@@ -21,7 +21,8 @@ local fn = {
 	path = 1,
 	fmt = function(res)
 		return ' ' .. res
-	end
+	end,
+	padding = 0
 }
 
 require('lualine').setup({
@@ -29,8 +30,9 @@ require('lualine').setup({
 		lualine_a = {
 			line
 		},
-		lualine_b = { { 'branch', padding = { left = 0, right = 1 } }, },
+		lualine_b = {},
 		lualine_c = {
+			'branch',
 			fn
 		},
 		lualine_x = {
