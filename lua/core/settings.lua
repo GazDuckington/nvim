@@ -13,6 +13,7 @@ g.must_lsp = {
 	"gopls",
 	"svelte",
 	"tsserver",
+	"eslint",
 	"tailwindcss",
 	"emmet_ls",
 	"marksman",
@@ -39,7 +40,8 @@ g.ops = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = false, -- use `nowait` when creating keymaps
 }
-
+-- keymap options
+g.opts = { noremap = true, silent = true }
 g.breadcrumb_enabled = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
@@ -54,7 +56,7 @@ o.laststatus = 3
 o.number = true
 o.relativenumber = true
 
-cmd([[set clipboard+=unnamedplus]])
+cmd.set("clipboard+=unnamedplus")
 o.updatetime = 250
 
 -- whitespace character
@@ -79,7 +81,11 @@ o.smartindent = true
 
 -- disable diagnostics inline texts
 vim.diagnostic.config({
-	virtual_text = false
+	virtual_text = true,
+	float = {
+		source = 'always',
+		border = 'rounded',
+	}
 })
 
 -- for glrnvim

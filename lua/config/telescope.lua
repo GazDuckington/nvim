@@ -4,6 +4,7 @@ telescope.setup({
 	defaults = {
 		prompt_prefix = "  ",
 		selection_caret = "❯ ",
+		preview_cutoff = 1,
 		path_display = { "truncate" },
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",

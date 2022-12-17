@@ -8,34 +8,35 @@ end,
 	padding = 0,
 }
 
+--local md = { 'mode',
+--	fmt = function(res)
+--		return res:sub(1, 1)
+--	end,
+--}
+
+local fn = {
+	'filename',
+	file_status = true,
+	newfile_status = true,
+	path = 1,
+	fmt = function(res)
+		return ' ' .. res
+	end
+}
+
 require('lualine').setup({
 	sections = {
 		lualine_a = {
 			line
 		},
-		lualine_b = {
-			{ 'mode',
-				fmt = function(res)
-					return res:sub(1, 3)
-				end,
-			}
-		},
+		lualine_b = { { 'branch', padding = { left = 0, right = 1 } }, },
 		lualine_c = {
-			'branch', 'diff',
-			{
-				'filename',
-				file_status = true,
-				newfile_status = true,
-				path = 1,
-				fmt = function(res)
-					return ' ' .. res
-				end
-			},
+			fn
 		},
 		lualine_x = {
-			'diagnostics', 'filetype', 'location'
+			'diff', 'diagnostics', 'filetype', 'location', 'progress'
 		},
-		lualine_y = { { session_name }, 'progress' },
+		lualine_y = { session_name },
 		lualine_z = { line },
 	},
 	options = {

@@ -3,7 +3,7 @@ local color = require("catppuccin.palettes").get_palette "mocha"
 -- colorscheme
 require("catppuccin").setup({
 	flavour = "mocha",
-	transparent_background = false,
+	transparent_background = true,
 	term_colors = true,
 	integrations = {
 		mason = true,
@@ -34,4 +34,4 @@ require("catppuccin").setup({
 		},
 	},
 })
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd.colorscheme("catppuccin")

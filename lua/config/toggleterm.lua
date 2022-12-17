@@ -25,7 +25,7 @@ require("toggleterm").setup {
 }
 
 local bmap = vim.api.nvim_buf_set_keymap
-local opts = { noremap = true, silent = true }
+local opts = vim.g.opts
 function _G.set_terminal_keymaps()
 	bmap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
 	bmap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)

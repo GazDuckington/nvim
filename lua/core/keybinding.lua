@@ -3,32 +3,18 @@ vim.g.mapleader = " "
 
 local wk = require("which-key")
 local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local opts = vim.g.opts
 
 local mappings = {
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
-	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP variable renamer" },
 	o = { ":e ", "Open/Create File" },
-	s = { ":saveas ", "Save buffer as" },
-	g = {
-		name = "Goto",
-		d = { "<cmd>Telescope lsp_definitions<cr>", "Definitions" },
-		r = { "<cmd>Telescope lsp_references<cr>", "References" },
-		t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definitions" },
-	},
-	m = {
-		name = "LSP Buf",
-		m = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		n = { "<cmd>Telescope quickfix<cr>", "Quickfixes (if available)" },
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
-		k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Lsp hover" },
-		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Lsp format" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in document" },
-		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols in workspace" },
-	},
+	w = { ":saveas ", "Save buffer as" },
+	d = { name = "Diagnostics" },
+	s = { name = "Symbols" },
+	g = { name = "Go To" },
 	f = {
 		name = "Files",
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
@@ -42,28 +28,20 @@ local mappings = {
 		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
 		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
 	},
-	b = {
-		name = "Buffers",
-		j = { "<cmd>BufferPrevious<cr>", "Previous Buffer (C-,)" },
-		k = { "<cmd>BufferNext<cr>", "Next Buffer (C-.)" },
-		J = { "<cmd>BufferMovePrevious<cr>", "Move Buffer to Previous (C-j)" },
-		K = { "<cmd>BufferMoveNext<cr>", "Move Buffer to Next (C-k)" },
-		q = { "<cmd>bdelete<cr>", "Close Buffer" }
-	},
 	t = {
 		name = "Telescope Searches",
-		p = { "<cmd>Telescope find_files<cr>", "Find Files (C-p)" },
-		g = { "<cmd>Telescope live_grep<cr>", "Grep strings live in cwd (C-g)" },
-		s = { "<cmd>Telescope grep_string<cr>", "Grep strings under cursor" },
-		b = { "<cmd>Telescope buffers<cr>", "List Buffers (C-b)" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help (C-S-h)" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-		f = { "<cmd>Telescope possession list<cr>", "List all sessions" },
+		s = { "<cmd>Telescope possession list<cr>", "List all sessions" },
+		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
+		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
+
 	},
 	h = {
 		name = "Harpoon",
-		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark current file" },
-		b = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Lists all marks" },
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
 		m = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
 		n = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
 	}
@@ -93,10 +71,8 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- close buffer
+-- barbar buffer controls
 map("n", "<C-S-w>", "<cmd>BufferClose<cr>", opts)
-
--- Move to previous/next
 map("n", "<A-h>", "<Cmd>BufferPrevious<cr>", opts)
 map("n", "<A-l>", "<Cmd>BufferNext<cr>", opts)
 map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
@@ -107,11 +83,10 @@ map("n", "<C-/>", "<cmd>CommentToggle<cr>", opts)
 map("v", "<C-/>", "<cmd>'<,'>CommentToggle<cr>", opts)
 
 -- telescope
-map("n", "<C-p>", "<cmd>Telescope find_files preview_cutoff=1<cr>", opts)
-map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
 
 -- terminal
 for var = 1, 9 do
