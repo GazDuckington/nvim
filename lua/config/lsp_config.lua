@@ -1,5 +1,3 @@
-vim.opt.signcolumn = 'yes'
-
 local servers = vim.g.must_lsp
 local lspconfig = require("lspconfig")
 local lsp = require('lsp-zero')

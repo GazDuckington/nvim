@@ -33,12 +33,12 @@ g.web_filetypes = {
 }
 -- options for whichkey
 g.ops = {
-	mode = "n", -- NORMAL mode
+	mode = "n",
 	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-	silent = false, -- use `silent` when creating keymaps
-	noremap = true, -- use `noremap` when creating keymaps
-	nowait = false, -- use `nowait` when creating keymaps
+	buffer = nil,
+	silent = false,
+	noremap = true,
+	nowait = false,
 }
 -- keymap options
 g.opts = { noremap = true, silent = true }
@@ -46,9 +46,7 @@ g.breadcrumb_enabled = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 -- end of global settings
---
 
-o.path = { "." }
 -- appearance
 o.termguicolors = true
 o.cursorline = true
@@ -56,8 +54,11 @@ o.laststatus = 3
 o.number = true
 o.relativenumber = true
 
+o.path = { "." }
+o.signcolumn = "yes"
 cmd.set("clipboard+=unnamedplus")
-o.updatetime = 250
+o.updatetime = 50
+o.scrolloff = 8
 
 -- whitespace character
 o.list = true
@@ -73,11 +74,19 @@ o.listchars = {
 o.mouse = "a"
 o.hidden = true
 
+-- search
+o.hlsearch = false
+o.incsearch = true
+
 -- indentation
 o.tabstop = 2
 o.softtabstop = 2
 o.shiftwidth = 2
 o.smartindent = true
+
+-- undo
+o.undofile = true
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- disable diagnostics inline texts
 vim.diagnostic.config({
