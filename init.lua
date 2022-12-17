@@ -14,6 +14,3 @@ require("impatient")
 -- general nvim settings
 -- autocmmands
 require("core")
-
--- plugin configs
-require("config")
