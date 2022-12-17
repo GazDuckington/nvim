@@ -79,12 +79,10 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- barbar buffer controls
-map("n", "<C-S-w>", "<cmd>BufferClose<cr>", opts)
-map("n", "<A-h>", "<Cmd>BufferPrevious<cr>", opts)
-map("n", "<A-l>", "<Cmd>BufferNext<cr>", opts)
-map("n", "<A-H>", "<cmd>BufferMovePrevious<cr>", opts)
-map("n", "<A-L>", "<cmd>BufferMoveNext<cr>", opts)
+-- buffer controls
+map("n", "W", "<cmd>bd<cr>", opts)
+map("n", "J", "<cmd>bp<cr>", opts)
+map("n", "K", "<cmd>bn<cr>", opts)
 
 -- comment line
 map("n", "<C-/>", "<cmd>CommentToggle<cr>", opts)
@@ -94,7 +92,7 @@ map("v", "<C-/>", "<cmd>'<,'>CommentToggle<cr>", opts)
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
 map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<C-b>", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<C-n>", "<cmd>Telescope buffers  previewer=false<cr>", opts)
 
 -- terminal
 for var = 1, 9 do
