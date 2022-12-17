@@ -3,8 +3,8 @@ local map = vim.api.nvim_set_keymap
 local opts = vim.g.opts
 
 local mappings = {
-	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
+	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	o = { ":e ", "Open/Create File" },
@@ -35,7 +35,7 @@ local mappings = {
 		name = "Telescope Searches",
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-		s = { "<cmd>Telescope possession list<cr>", "List all sessions" },
+		s = { "<cmd>Telescope possession list theme=dropdown previewer=false<cr>", "List all sessions" },
 		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
 		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
@@ -92,7 +92,7 @@ map("v", "<C-/>", "<cmd>'<,'>CommentToggle<cr>", opts)
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
 map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<C-n>", "<cmd>Telescope buffers  previewer=false<cr>", opts)
+map("n", "<C-n>", "<cmd>Telescope buffers<cr>", opts)
 
 -- terminal
 for var = 1, 9 do

@@ -7,7 +7,7 @@ require("focus").setup({
 		'NvimTree',
 	},
 	excluded_buftypes = {
-		'help',
+		-- 'help',
 		'prompt',
 		'popup',
 	},

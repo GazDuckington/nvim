@@ -22,7 +22,6 @@ local fn = {
 	fmt = function(res)
 		return ' ' .. res
 	end,
-	padding = 0
 }
 
 require('lualine').setup({

@@ -40,11 +40,13 @@ lsp.on_attach(function(client, bufnr)
 	end
 
 	map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-	map("n", "gf", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+	map("n", "gf", "<cmd>Telescope lsp_references<cr>", opts)
 	map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 	map("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-	map("n", "<leader>sd", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
-	map("n", "<leader>sw", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>", opts)
+
+	map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+	map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
+
 	map("n", "<leader>dd", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 	map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 	map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
