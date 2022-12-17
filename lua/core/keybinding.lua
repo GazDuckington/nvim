@@ -1,6 +1,3 @@
--- set leader key
-vim.g.mapleader = " "
-
 local wk = require("which-key")
 local map = vim.api.nvim_set_keymap
 local opts = vim.g.opts
@@ -15,6 +12,12 @@ local mappings = {
 	d = { name = "Diagnostics" },
 	s = { name = "Symbols" },
 	g = { name = "Go To" },
+	q = {
+		name = "Quickfixes",
+		o = { ":copen<cr>", "Open" },
+		n = { ":cnext<cr>", "Next" },
+		N = { ":cprevious<cr>", "Previous" },
+	},
 	f = {
 		name = "Files",
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
@@ -50,8 +53,13 @@ local mappings = {
 wk.register(mappings, vim.g.ops)
 
 -- QoL
-map("n", "P", '"0p', opts)
 map("i", "jk", "<ESC>", opts)
+map("n", "P", '"0p', opts)
+map("n", "<c-d>", "<C-d>zz", opts)
+map("n", "<c-u>", "<C-u>zz", opts)
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
+map("x", "<leader>p", "\"_dP", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)

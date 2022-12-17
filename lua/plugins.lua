@@ -76,6 +76,7 @@ packer.startup(function(use)
 		-- auto tag for html
 		'windwp/nvim-ts-autotag',
 	}
+
 	use { 'windwp/nvim-autopairs',
 		config = function()
 			require('nvim-autopairs').setup()

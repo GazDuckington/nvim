@@ -41,6 +41,7 @@ g.ops = {
 	nowait = false,
 }
 -- keymap options
+g.mapleader = " "
 g.opts = { noremap = true, silent = true }
 g.breadcrumb_enabled = true
 g.loaded_netrw = 1
