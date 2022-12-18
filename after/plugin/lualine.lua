@@ -3,7 +3,7 @@ local function session_name()
 end
 
 local line = { function()
-	-- 	return " "
+	return " "
 end,
 	padding = 0,
 }
@@ -31,14 +31,13 @@ require('lualine').setup({
 		},
 		lualine_b = {},
 		lualine_c = {
-			'branch',
-			fn
+			fn,
 		},
 		lualine_x = {
-			'diff', 'diagnostics', 'filetype', 'location', session_name
+			'diff', 'branch', 'diagnostics', 'filetype', 'location', session_name
 		},
 		lualine_y = {},
-		lualine_z = {},
+		lualine_z = { line },
 	},
 	options = {
 		theme = 'catppuccin',

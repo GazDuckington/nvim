@@ -2,6 +2,14 @@ local servers = vim.g.must_lsp
 local lspconfig = require("lspconfig")
 local lsp = require('lsp-zero')
 
+lspconfig.sumneko_lua.setup({
+	settings = {
+		diagnostics = {
+			globals = { "vim" }
+		}
+	}
+})
+
 lspconfig.sourcery.setup({
 	init_options = {
 		token = os.getenv('SOURCERY_TOKEN')
@@ -10,14 +18,6 @@ lspconfig.sourcery.setup({
 
 lspconfig.emmet_ls.setup({
 	filetypes = vim.g.web_filetypes
-})
-
-lspconfig.sumneko_lua.setup({
-	settings = {
-		diagnostics = {
-			globals = { "vim" }
-		}
-	}
 })
 
 require('mason.settings').set({

@@ -58,7 +58,7 @@ o.relativenumber = true
 o.path = { "." }
 o.signcolumn = "yes"
 cmd.set("clipboard+=unnamedplus")
-o.updatetime = 50
+o.updatetime = 250
 o.scrolloff = 8
 
 -- whitespace character

@@ -24,7 +24,7 @@ telescope.setup({
 			theme = "dropdown",
 			previewer = false,
 		},
-		live_grep = { theme = "ivy" },
+		live_grep = {},
 		lsp_references = { theme = "cursor" },
 		buffers = {
 			theme = "dropdown",
