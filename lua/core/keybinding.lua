@@ -11,7 +11,6 @@ local mappings = {
 	w = { ":saveas ", "Save buffer as" },
 	d = { name = "Diagnostics" },
 	s = { name = "Symbols" },
-	g = { name = "Go To" },
 	q = {
 		name = "Quickfixes",
 		o = { ":copen<cr>", "Open" },
@@ -100,3 +99,17 @@ for var = 1, 9 do
 	local term = string.format("<cmd>%sToggleTerm<cr>", var)
 	map("n", key, term, opts)
 end
+
+-- lspstuff
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+map("n", "gf", "<cmd>Telescope lsp_references<cr>", opts)
+map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+map("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
+map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
+map("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+map("n", "<leader>ff", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
