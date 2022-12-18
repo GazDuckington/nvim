@@ -77,9 +77,9 @@ packer.startup(function(use)
 		'windwp/nvim-ts-autotag',
 	}
 
-	use { 'windwp/nvim-autopairs',
+	use { 'm4xshen/autoclose.nvim',
 		config = function()
-			require('nvim-autopairs').setup()
+			require('autoclose').setup({})
 		end
 	}
 
