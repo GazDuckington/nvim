@@ -3,16 +3,16 @@ local function session_name()
 end
 
 local line = { function()
-	return " "
+	-- 	return " "
 end,
 	padding = 0,
 }
 
---local md = { 'mode',
---	fmt = function(res)
---		return res:sub(1, 3)
---	end,
---}
+local md = { 'mode',
+	fmt = function(res)
+		return res:sub(1, 3)
+	end,
+}
 
 local fn = {
 	'filename',
@@ -27,7 +27,7 @@ local fn = {
 require('lualine').setup({
 	sections = {
 		lualine_a = {
-			line
+			md
 		},
 		lualine_b = {},
 		lualine_c = {
@@ -35,10 +35,10 @@ require('lualine').setup({
 			fn
 		},
 		lualine_x = {
-			'diff', 'diagnostics', 'filetype', 'location', 'progress'
+			'diff', 'diagnostics', 'filetype', 'location', session_name
 		},
-		lualine_y = { session_name },
-		lualine_z = { line },
+		lualine_y = {},
+		lualine_z = {},
 	},
 	options = {
 		theme = 'catppuccin',

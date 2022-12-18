@@ -83,10 +83,6 @@ map("n", "W", "<cmd>bd<cr>", opts)
 map("n", "J", "<cmd>bp<cr>", opts)
 map("n", "K", "<cmd>bn<cr>", opts)
 
--- comment line
-map("n", "<C-/>", "<cmd>CommentToggle<cr>", opts)
-map("v", "<C-/>", "<cmd>'<,'>CommentToggle<cr>", opts)
-
 -- telescope
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
 map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
