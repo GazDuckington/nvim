@@ -96,11 +96,8 @@ for var = 1, 9 do
 	map("n", key, term, opts)
 end
 
--- lspstuff
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+-- lsp stuff
 map("n", "gf", "<cmd>Telescope lsp_references<cr>", opts)
-map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-map("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)

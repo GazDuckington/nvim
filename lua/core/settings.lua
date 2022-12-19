@@ -54,6 +54,7 @@ o.cursorline = true
 o.laststatus = 3
 o.number = true
 o.relativenumber = true
+o.guifont = { "FiraCode Nerd Font", ":h10" }
 
 o.path = { "." }
 o.signcolumn = "yes"
@@ -99,6 +100,6 @@ vim.diagnostic.config({
 })
 
 -- for glrnvim
-if g.glrnvim_gui then
+if g.glrnvim_gui or g.neovide then
 	cmd([[cd %:p:h]])
 end

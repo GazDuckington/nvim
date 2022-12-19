@@ -9,7 +9,7 @@ telescope.setup({
 		layout_config = {
 			vertical = {
 				prompt_position = "top",
-				width = 0.5,
+				-- width = 0.5,
 				height = 0.5,
 			}
 		},
