@@ -170,18 +170,6 @@ packer.startup(function(use)
 	-- ft
 	use { "nathom/filetype.nvim" }
 
-	-- session mgmt
-	use {
-		'jedrzejboczar/possession.nvim',
-		requires = { 'nvim-lua/plenary.nvim' },
-		config = function()
-			require('possession').setup({
-				plugins = {
-					delete_hidden_buffers = false,
-				},
-			})
-		end
-	}
 	-- resize on focus
 	use {
 		"beauwilliams/focus.nvim",
