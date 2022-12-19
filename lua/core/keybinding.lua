@@ -34,7 +34,6 @@ local mappings = {
 		name = "Telescope Searches",
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-		s = { "<cmd>Telescope possession list theme=dropdown previewer=false<cr>", "List all sessions" },
 		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
 		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },

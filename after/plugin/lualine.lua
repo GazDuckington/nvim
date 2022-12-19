@@ -1,7 +1,3 @@
-local function session_name()
-	return require('possession.session').session_name or ''
-end
-
 local line = { function()
 	return " "
 end,
@@ -34,7 +30,7 @@ require('lualine').setup({
 			fn,
 		},
 		lualine_x = {
-			'diff', 'branch', 'diagnostics', 'filetype', 'location', session_name
+			'diff', 'branch', 'diagnostics', 'filetype', 'location'
 		},
 		lualine_y = {},
 		lualine_z = { line },
