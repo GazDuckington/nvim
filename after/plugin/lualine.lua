@@ -1,12 +1,12 @@
 local colors = {
-	blue  = '#80A0FF',
-	cyan  = '#79DAC8',
 	black = '#181825',
-	white = '#CDD6F4',
-	red   = '#F38BA8',
-	peach = '#FAB387',
 	grey  = '#313244',
+	white = '#CDD6F4',
+	blue  = '#89B4FA',
+	cyan  = '#89DCEB',
 	green = '#A6E3A1',
+	peach = '#FAB387',
+	red   = '#F38BA8',
 }
 
 local catto = {
@@ -24,7 +24,7 @@ local catto = {
 	inactive = {
 		a = { fg = colors.white, bg = colors.black },
 		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.black, bg = colors.black },
+		c = { fg = colors.grey, bg = colors.black },
 	},
 }
 
