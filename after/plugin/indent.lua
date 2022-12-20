@@ -9,6 +9,6 @@ require('indent_blankline').setup({
 		-- "IndentBlanklineIndent5",
 		-- "IndentBlanklineIndent6",
 	},
-	space_char_blankline = " ",
+	space_char_blankline = "",
 	show_current_context = true,
 })

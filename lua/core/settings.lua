@@ -64,7 +64,6 @@ o.scrolloff = 8
 -- whitespace character
 o.list = true
 o.listchars = {
-	-- tab = ' ',
 	tab = '  ',
 	trail = '◦',
 	space = '•',
