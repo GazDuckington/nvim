@@ -175,6 +175,18 @@ packer.startup(function(use)
 		"beauwilliams/focus.nvim",
 	}
 
+	use({
+		'https://github.com/nat-418/boole.nvim',
+		config = function()
+			require('boole').setup({
+				mappings = {
+					increment = '<C-a>',
+					decrement = '<C-x>'
+				},
+			})
+		end
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
