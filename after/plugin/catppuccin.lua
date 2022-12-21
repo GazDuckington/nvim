@@ -30,6 +30,9 @@ require("catppuccin").setup({
 			fg = color.mauve,
 			nocombine = true,
 		},
+		IndentBlanklineSpaceChar = {
+			fg = color.overlay0,
+		},
 	},
 })
 

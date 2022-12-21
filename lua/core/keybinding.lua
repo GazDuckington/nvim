@@ -79,8 +79,8 @@ map("n", "<C-l>", "<C-w>l", opts)
 
 -- buffer controls
 map("n", "W", "<cmd>bd<cr>", opts)
-map("n", "J", "<cmd>bp<cr>", opts)
-map("n", "K", "<cmd>bn<cr>", opts)
+map("n", "H", "<cmd>bp<cr>", opts)
+map("n", "L", "<cmd>bn<cr>", opts)
 
 -- telescope
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
