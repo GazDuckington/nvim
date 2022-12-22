@@ -31,7 +31,7 @@ require("catppuccin").setup({
 			nocombine = true,
 		},
 		IndentBlanklineSpaceChar = {
-			fg = color.overlay0,
+			fg = color.surface0,
 		},
 	},
 })

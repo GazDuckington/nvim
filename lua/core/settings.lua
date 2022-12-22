@@ -51,7 +51,8 @@ g.loaded_netrwPlugin = 1
 -- appearance
 o.termguicolors = true
 o.cursorline = true
-o.laststatus = 3
+-- overirded by lualine
+-- o.laststatus = 3
 o.number = true
 o.relativenumber = true
 
