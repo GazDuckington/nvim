@@ -1,9 +1,15 @@
 require('nvim-tree').setup({
 	view = {
 		side = 'right',
-		adaptive_size = true,
+		adaptive_size = false,
+		number = true,
+		relativenumber = true,
 		float = {
 			enable = true,
+			open_win_config = {
+				width = 45,
+				height = 45,
+			}
 		},
 	},
 	renderer = {

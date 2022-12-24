@@ -180,8 +180,8 @@ packer.startup(function(use)
 		config = function()
 			require('boole').setup({
 				mappings = {
-					increment = '<C-a>',
-					decrement = '<C-x>'
+					increment = 't',
+					decrement = 'T'
 				},
 			})
 		end

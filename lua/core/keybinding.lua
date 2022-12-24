@@ -11,17 +11,14 @@ local mappings = {
 	w = { ":saveas ", "Save buffer as" },
 	d = { name = "Diagnostics" },
 	s = { name = "Symbols" },
+	m = { "<cmd>Mason<cr>", "Open Mason menu" },
+	b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
+	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	q = {
 		name = "Quickfixes",
 		o = { ":copen<cr>", "Open" },
 		n = { ":cnext<cr>", "Next" },
 		N = { ":cprevious<cr>", "Previous" },
-	},
-	f = {
-		name = "Files",
-		m = { "<cmd>Mason<cr>", "Open Mason menu" },
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-		b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	},
 	v = {
 		name = "Views",
