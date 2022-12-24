@@ -96,7 +96,7 @@ for var = 1, 9 do
 end
 
 -- lsp stuff
-map("n", "gf", "<cmd>Telescope lsp_references<cr>", opts)
+map("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", opts)
 map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)

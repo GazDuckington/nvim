@@ -1,30 +1,21 @@
-local colors = {
-	black = '#181825',
-	grey  = '#313244',
-	white = '#CDD6F4',
-	blue  = '#89B4FA',
-	cyan  = '#89DCEB',
-	green = '#A6E3A1',
-	peach = '#FAB387',
-	red   = '#F38BA8',
-}
+local colors = require("catppuccin.palettes").get_palette "mocha"
 
 local catto = {
 	normal = {
-		a = { fg = colors.black, bg = colors.blue },
-		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.white, bg = colors.black },
+		a = { fg = colors.base, bg = colors.blue },
+		b = { fg = colors.text, bg = colors.surface0, gui = 'bold' },
+		c = { fg = colors.text, bg = colors.base },
 	},
 
-	insert = { a = { fg = colors.black, bg = colors.green } },
-	visual = { a = { fg = colors.black, bg = colors.peach } },
-	replace = { a = { fg = colors.black, bg = colors.red } },
-	command = { a = { fg = colors.black, bg = colors.cyan } },
+	insert = { a = { fg = colors.base, bg = colors.green } },
+	visual = { a = { fg = colors.base, bg = colors.peach } },
+	replace = { a = { fg = colors.base, bg = colors.mauve } },
+	command = { a = { fg = colors.base, bg = colors.red } },
 
 	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.grey, bg = colors.black },
+		a = { fg = colors.text, bg = colors.base },
+		b = { fg = colors.text, bg = colors.base },
+		c = { fg = colors.grey, bg = colors.base },
 	},
 }
 
@@ -70,6 +61,7 @@ require('lualine').setup({
 		theme = catto,
 		globalstatus = true,
 		component_separators = '',
+		-- section_separators = { left = '🭐', right = '🭅' },
 		section_separators = { left = '', right = '' },
 	},
 })

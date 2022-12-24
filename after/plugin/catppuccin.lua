@@ -14,6 +14,7 @@ require("catppuccin").setup({
 		telescope = true,
 		barbar = true,
 		which_key = true,
+		gitsigns = true,
 		indent_blankline = {
 			enabled = true,
 			colored_indent_levels = true,
