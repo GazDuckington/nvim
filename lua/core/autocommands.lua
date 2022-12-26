@@ -35,7 +35,7 @@ autocmd(
 	{
 		pattern = { "*" },
 		callback = function()
-			require('filetype').resolve()
+			require("filetype").resolve()
 		end,
 		group = gpinit,
 	}
