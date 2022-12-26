@@ -1,4 +1,6 @@
 local o = vim.opt_local
+local map = vim.keymap.set
+
 o.spell = true
 o.linebreak = true
 
@@ -10,3 +12,5 @@ local mappings = {
 	}
 }
 require("which-key").register(mappings, vim.g.ops)
+
+map({ "n", "v" }, "mt", "<cmd>ToggleCheckbox<cr>", vim.g.opts)

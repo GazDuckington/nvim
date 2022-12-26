@@ -8,10 +8,6 @@ lspconfig.sourcery.setup({
 	}
 })
 
-lspconfig.emmet_ls.setup({
-	filetypes = vim.g.web_filetypes
-})
-
 require('mason.settings').set({
 	ui = {
 		border = 'rounded'

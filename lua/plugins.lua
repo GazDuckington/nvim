@@ -194,6 +194,8 @@ packer.startup(function(use)
 		end
 	}
 
+	use { "dkarter/bullets.vim" }
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

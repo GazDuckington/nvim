@@ -15,7 +15,7 @@ local mappings = {
 	b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	q = {
-		name = "Quickfixes",
+		name = "Quickfix",
 		o = { ":copen<cr>", "Open" },
 		n = { ":cnext<cr>", "Next" },
 		N = { ":cprevious<cr>", "Previous" },
@@ -55,6 +55,7 @@ map("n", "<c-u>", "<C-u>zz", opts)
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("x", "<leader>p", "\"_dP", opts)
+map("i", "<c-o>", "<C-O>o", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
@@ -62,11 +63,12 @@ map("n", "<c-s>", "<ESC><cmd>w!<cr>", opts)
 map("n", "<c-q>", "<cmd>q!<cr>", opts)
 
 -- move line up & down
-map("n", "<A-k>", "<Esc><cmd>m .-2<cr>==", opts)
-map("n", "<A-j>", "<Esc><cmd>m .+1<cr>==", opts)
-map("v", "<A-k>", "<Esc><cmd>m '<-2<cr>gv=gv", opts)
-map("v", "<A-j>", "<Esc><cmd>m '>+1<cr>gv=gv", opts)
-map("i", "<c-o>", "<C-O>o", opts)
+map("n", "<A-k>", ":m .-2<cr>==", opts)
+map("n", "<A-j>", ":m .+1<cr>==", opts)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- window navigation
 map("n", "<C-h>", "<C-w>h", opts)
