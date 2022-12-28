@@ -1,5 +1,5 @@
 local wk = require("which-key")
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = vim.g.opts
 
 local mappings = {
@@ -36,7 +36,7 @@ local mappings = {
 		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
 
 	},
-	h = {
+	n = {
 		name = "Harpoon",
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
@@ -101,6 +101,5 @@ map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-map("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 map("n", "<leader>ff", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
