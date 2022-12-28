@@ -14,6 +14,11 @@ local mappings = {
 	m = { "<cmd>Mason<cr>", "Open Mason menu" },
 	b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+	h = {
+		name = "Gitsigns",
+		b = "full blame line",
+		D = "diff this file HEAD~",
+	},
 	q = {
 		name = "Quickfix",
 		o = { ":copen<cr>", "Open" },

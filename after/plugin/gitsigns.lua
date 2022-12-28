@@ -33,11 +33,10 @@ require('gitsigns').setup {
 		map('n', '<leader>hR', ':Girsigns reset_buffer<CR>')
 		map('n', '<leader>hp', ':Girsigns preview_hunk<CR>')
 		map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-		map('n', '<leader>tb', ':Gitsigns toggle_current_line_blame<CR>')
+		map('n', '<leader>hB', ':Gitsigns toggle_current_line_blame<CR>')
 		map('n', '<leader>hd', ':Gitsigns diffthis<CR>')
 		map('n', '<leader>hD', function() gs.diffthis('~') end)
-		map('n', '<leader>td', ':Gitsigns toggle_deleted<CR>')
-		map('n', '<leader>hB', ':Gitsigns toggle_current_line_blame<CR>')
+		map('n', '<leader>ht', ':Gitsigns toggle_deleted<CR>')
 
 		-- Text object
 		map({ 'o', 'x' }, 'hi', ':<C-U>Gitsigns select_hunk<CR>')
