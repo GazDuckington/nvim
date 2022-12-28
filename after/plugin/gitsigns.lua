@@ -1,5 +1,5 @@
 require('gitsigns').setup {
-	current_line_blame = true,
+	current_line_blame = false,
 	current_line_blame_opts = {
 		delay = 0,
 	},
@@ -37,7 +37,7 @@ require('gitsigns').setup {
 		map('n', '<leader>hd', ':Gitsigns diffthis<CR>')
 		map('n', '<leader>hD', function() gs.diffthis('~') end)
 		map('n', '<leader>td', ':Gitsigns toggle_deleted<CR>')
-		map('n', '<leader>hB', ':Gitsigns toggle_current_line_blame')
+		map('n', '<leader>hB', ':Gitsigns toggle_current_line_blame<CR>')
 
 		-- Text object
 		map({ 'o', 'x' }, 'hi', ':<C-U>Gitsigns select_hunk<CR>')
