@@ -12,7 +12,6 @@ local mappings = {
 	d = { name = "Diagnostics" },
 	s = { name = "Symbols" },
 	m = { "<cmd>Mason<cr>", "Open Mason menu" },
-	b = { "<cmd>Barbecue toggle<cr>", "Toggle breadcrumb" },
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	h = {
 		name = "Gitsigns",

@@ -9,7 +9,7 @@ vim.opt_global.shell = "fish"
 -- must install lsp servers
 g.must_lsp = {
 	"sumneko_lua",
-	"pyright",
+	-- "pyright",
 	"gopls",
 	"svelte",
 	"tsserver",
@@ -49,6 +49,7 @@ g.loaded_netrwPlugin = 1
 -- end of global settings
 
 -- appearance
+o.guifont = { "FiraCode Nerd Font", ":h10" }
 o.termguicolors = true
 o.cursorline = true
 -- overirden by lualine
@@ -101,5 +102,4 @@ vim.diagnostic.config({
 -- for glrnvim
 if g.glrnvim_gui or g.neovide then
 	cmd([[cd %:p:h]])
-	o.guifont = { "FiraCode Nerd Font", ":h10" }
 end

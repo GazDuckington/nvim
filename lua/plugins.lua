@@ -36,8 +36,10 @@ packer.init({
 
 -- install plugins here
 packer.startup(function(use)
-	use "wbthomason/packer.nvim"
-	use "tpope/vim-surround"
+	use { "wbthomason/packer.nvim" }
+
+	-- surround word
+	use { "tpope/vim-surround" }
 
 	-- LSP
 	use {
@@ -77,20 +79,11 @@ packer.startup(function(use)
 		'windwp/nvim-ts-autotag',
 	}
 
+	-- autoclose brackets and stuff
 	use { 'm4xshen/autoclose.nvim',
 		config = function()
 			require('autoclose').setup({})
 		end
-	}
-
-	use {
-		"utilyre/barbecue.nvim",
-		requires = {
-			"neovim/nvim-lspconfig",
-			"smiteshp/nvim-navic",
-			"nvim-tree/nvim-web-devicons",
-		},
-		tag = 'dev'
 	}
 
 	-- terminal
@@ -110,8 +103,8 @@ packer.startup(function(use)
 		"folke/which-key.nvim",
 	}
 	-- impatient
-	use 'lewis6991/impatient.nvim'
-	use 'tweekmonster/startuptime.vim'
+	use { "lewis6991/impatient.nvim" }
+	use { "tweekmonster/startuptime.vim" }
 
 	-- colorizer
 	use { 'norcalli/nvim-colorizer.lua',
@@ -120,24 +113,27 @@ packer.startup(function(use)
 		end
 	}
 
+	-- file explorer
 	use {
-		'nvim-tree/nvim-tree.lua',
+		"nvim-tree/nvim-tree.lua",
 		requires = {
-			'nvim-tree/nvim-web-devicons',
+			"nvim-tree/nvim-web-devicons",
 		},
-		tag = 'nightly'
+		tag = "nightly"
 	}
 
 	-- indentation lines
-	use 'lukas-reineke/indent-blankline.nvim'
+	use { "lukas-reineke/indent-blankline.nvim" }
 
 	-- comment
-	use { 'terrortylor/nvim-comment',
+	use { "terrortylor/nvim-comment",
 		config = function()
-			require('nvim_comment').setup()
+			require("nvim_comment").setup()
 		end
 	}
-	use { 'ggandor/leap.nvim',
+
+	-- search chars
+	use { "ggandor/leap.nvim",
 		config = function()
 			require('leap').add_default_mappings()
 		end
@@ -158,6 +154,7 @@ packer.startup(function(use)
 	-- colorscheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
+	-- command launcher
 	use {
 		'desdic/greyjoy.nvim',
 		requires = { 'stevearc/dressing.nvim',
@@ -175,8 +172,9 @@ packer.startup(function(use)
 		"beauwilliams/focus.nvim",
 	}
 
-	use({
-		'https://github.com/nat-418/boole.nvim',
+	-- toggle boolean
+	use {
+		"nat-418/boole.nvim",
 		config = function()
 			require('boole').setup({
 				mappings = {
@@ -185,8 +183,9 @@ packer.startup(function(use)
 				},
 			})
 		end
-	})
+	}
 
+	-- show git stuff in gutter
 	use {
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -196,10 +195,10 @@ packer.startup(function(use)
 
 	-- markdown
 	use { "dkarter/bullets.vim" }
-	use({
+	use {
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
-	})
+	}
 
 	if packer_bootstrap then
 		require("packer").sync()
