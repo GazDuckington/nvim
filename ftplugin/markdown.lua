@@ -1,9 +1,8 @@
-local o = vim.opt_local
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = vim.g.opts
 
-o.spell = true
-o.linebreak = true
+vim.opt_local.spell = true
+vim.opt_local.linebreak = true
 
 map("n", "mr", "<cmd>TermExec cmd='glow %'<cr>", opts)
 map("n", "mR", "<cmd>TermExec cmd='glow %:p:h'<cr>", opts)

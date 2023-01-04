@@ -17,5 +17,6 @@ telescope.setup({
 			results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
 			preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 		},
+		previewer = false,
 	},
 })

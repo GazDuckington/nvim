@@ -65,6 +65,7 @@ map("i", "<c-o>", "<C-O>o", opts)
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
 map("n", "<c-s>", "<ESC><cmd>w!<cr>", opts)
 map("n", "<c-q>", "<cmd>q!<cr>", opts)
+map("n", "<space>S", "<cmd>mksession ~/vimsession/%:p:h:t.vim<cr>", opts)
 
 -- move line up & down
 map("n", "<A-k>", ":m .-2<cr>==", opts)

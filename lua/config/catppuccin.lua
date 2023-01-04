@@ -21,7 +21,7 @@ require("catppuccin").setup({
 		},
 	},
 	custom_highlights = {
-		Comment = { fg = color.overlay0 },
+		-- Comment = { fg = color.overlay0 },
 		LineNr = { fg = color.surface2 },
 		CursorLineNr = {
 			fg = color.green,
