@@ -98,8 +98,3 @@ vim.diagnostic.config({
 		border = 'rounded',
 	}
 })
-
--- for glrnvim
-if g.glrnvim_gui or g.neovide then
-	cmd([[cd %:p:h]])
-end

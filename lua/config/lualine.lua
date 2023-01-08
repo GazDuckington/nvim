@@ -4,7 +4,7 @@ local catto = {
 	normal = {
 		a = { fg = colors.base, bg = colors.blue },
 		b = { fg = colors.text, bg = colors.surface0, gui = 'bold' },
-		c = { fg = colors.text, bg = colors.base },
+		c = { fg = colors.blue, bg = colors.base },
 	},
 
 	insert = { a = { fg = colors.base, bg = colors.green } },
@@ -15,7 +15,7 @@ local catto = {
 	inactive = {
 		a = { fg = colors.text, bg = colors.base },
 		b = { fg = colors.text, bg = colors.base },
-		c = { fg = colors.grey, bg = colors.base },
+		c = { fg = colors.overlay0, bg = colors.base },
 	},
 }
 
@@ -27,19 +27,9 @@ end,
 
 local md = { 'mode',
 	fmt = function(res)
-		return res:sub(1, 3)
+		return res:sub(1, 1)
 	end,
 	color = { gui = 'bold' }
-}
-
-local fn = {
-	'filename',
-	file_status = true,
-	newfile_status = true,
-	path = 1,
-	fmt = function(res)
-		return ' ' .. res
-	end,
 }
 
 require('lualine').setup({
@@ -49,12 +39,20 @@ require('lualine').setup({
 		},
 		lualine_b = { 'branch' },
 		lualine_c = {
-			fn,
+			{
+				'buffers',
+				show_filename_only = false,
+				symbols = {
+					modified = ' ●',
+					alternate_file = '',
+					directory = '',
+				},
+			},
 		},
 		lualine_x = {
-			'diff', 'diagnostics', 'filetype', 'progress'
+			'diff', 'diagnostics'
 		},
-		lualine_y = { 'location' },
+		lualine_y = { 'progress' },
 		lualine_z = { line },
 	},
 	options = {
