@@ -5,29 +5,28 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
-local reload = require("modules").reload
 
-reload("plugins")
+require("plugins")
 require("impatient")
 
 -- core settings
-reload("core.settings")
-reload("core.keybinding")
-reload("core.autocommands")
+require("core.settings")
+require("core.keybinding")
+require("core.autocommands")
 
 -- plugins configurations
-reload("config.catppuccin")
-reload("config.focus")
-reload("config.gitsigns")
-reload("config.greyjoy")
-reload("config.indent")
-reload("config.lsp")
-reload("config.lualine")
-reload("config.nvimtree")
-reload("config.telescope")
-reload("config.toggleterm")
-reload("config.treesitter")
-reload("config.whichkey")
+require("config.catppuccin")
+require("config.focus")
+require("config.gitsigns")
+require("config.greyjoy")
+require("config.indent")
+require("config.lsp")
+require("config.lualine")
+require("config.nvimtree")
+require("config.telescope")
+require("config.toggleterm")
+require("config.treesitter")
+require("config.whichkey")
 
 -- needs to be loaded here for some reason
 require("lspconfig").sumneko_lua.setup({
