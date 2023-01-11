@@ -5,17 +5,31 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
+local reload = require("reload")
 
-require("plugins")
-require("impatient")
+reload("plugins")
+reload("impatient")
 
 -- core settings
-require("core.settings")
-require("core.keybinding")
-require("core.autocommands")
+reload("core.settings")
+reload("core.keybinding")
+reload("core.autocommands")
 
--- needs to be loaded here for some reason
-require("lspconfig").sumneko_lua.setup({
+-- plugins config
+reload("config.catppuccin")
+reload("config.focus")
+reload("config.gitsigns")
+reload("config.greyjoy")
+reload("config.indent")
+reload("config.lsp")
+reload("config.lualine")
+reload("config.nvimtree")
+reload("config.telescope")
+reload("config.toggleterm")
+reload("config.treesitter")
+reload("config.whichkey")
+
+reload("lspconfig").sumneko_lua.setup({
 	settings = {
 		diagnostics = {
 			globals = { "vim" }

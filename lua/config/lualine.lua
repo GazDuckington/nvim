@@ -41,7 +41,7 @@ require('lualine').setup({
 		lualine_c = {
 			{
 				'buffers',
-				show_filename_only = false,
+				show_filename_only = true,
 				symbols = {
 					modified = ' ●',
 					alternate_file = '',
