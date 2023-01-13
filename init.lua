@@ -7,8 +7,7 @@
 -- https://gtihub.com/GazDuckington/nvim
 local reload = require("reload")
 
-reload("plugins")
-reload("impatient")
+require("plugins")
 
 -- core settings
 reload("core.settings")
@@ -29,7 +28,7 @@ reload("config.toggleterm")
 reload("config.treesitter")
 reload("config.whichkey")
 
-reload("lspconfig").sumneko_lua.setup({
+require("lspconfig").sumneko_lua.setup({
 	settings = {
 		diagnostics = {
 			globals = { "vim" }

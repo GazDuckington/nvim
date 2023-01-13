@@ -6,7 +6,7 @@ local gpinit = api.nvim_create_augroup("Init", { clear = true })
 autocmd("BufWritePost", {
 	pattern = "init.lua",
 	callback = function()
-		vim.cmd([[so %]])
+		vim.cmd([[source $MYVIMRC]])
 	end,
 	group = gpinit,
 })

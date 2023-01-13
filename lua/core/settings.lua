@@ -42,6 +42,7 @@ g.ops = {
 }
 -- keymap options
 g.mapleader = " "
+g.maplocalleader = " "
 g.opts = { noremap = true, silent = true }
 g.breadcrumb_enabled = true
 g.loaded_netrw = 1
@@ -49,7 +50,6 @@ g.loaded_netrwPlugin = 1
 -- end of global settings
 
 -- appearance
-o.guifont = { "FiraCode Nerd Font", ":h10" }
 o.termguicolors = true
 o.cursorline = true
 -- overirden by lualine

@@ -89,7 +89,6 @@ packer.startup(function(use)
 	-- terminal
 	use {
 		"akinsho/toggleterm.nvim",
-		tag = '*',
 	}
 
 	-- telescope
@@ -102,9 +101,6 @@ packer.startup(function(use)
 	use {
 		"folke/which-key.nvim",
 	}
-	-- impatient
-	use { "lewis6991/impatient.nvim" }
-	use { "tweekmonster/startuptime.vim" }
 
 	-- colorizer
 	use { 'norcalli/nvim-colorizer.lua',
