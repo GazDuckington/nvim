@@ -191,10 +191,6 @@ packer.startup(function(use)
 
 	-- markdown
 	use { "dkarter/bullets.vim" }
-	use {
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	}
 
 	if packer_bootstrap then
 		require("packer").sync()
