@@ -77,7 +77,7 @@ o.mouse = "a"
 o.hidden = true
 
 -- search
-o.hlsearch = false
+o.hlsearch = true
 o.incsearch = true
 
 -- indentation
