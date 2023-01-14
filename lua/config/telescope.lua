@@ -1,18 +1,19 @@
 local telescope = require("telescope")
 
-telescope.setup({
+telescope.setup {
 	defaults = {
-		initial_mode = "normal",
 		prompt_prefix = "  ",
 		selection_caret = "→ ",
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
 		layout_config = {
 			horizontal = {
-				width = 0.8,
+				width = 0.7,
+				height = 0.5,
 				prompt_position = "top",
 			}
 		},
+		previewer = false,
 		borderchars = {
 			{ '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 			prompt = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },
@@ -20,4 +21,6 @@ telescope.setup({
 			preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 		},
 	},
-})
+}
+
+telescope.load_extension("ui-select")

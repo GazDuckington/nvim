@@ -9,7 +9,7 @@ vim.opt_global.shell = "fish"
 -- must install lsp servers
 g.must_lsp = {
 	"sumneko_lua",
-	-- "pyright",
+	"pylsp",
 	"gopls",
 	"svelte",
 	"tsserver",

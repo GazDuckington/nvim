@@ -56,11 +56,12 @@ end
 M.require_safe = function(mod)
 	local status_ok, module = pcall(require, mod)
 	if not status_ok then
-		local trace = debug.getinfo(2, "SL")
-		local shorter_src = trace.short_src
-		local lineinfo = shorter_src .. ":" .. (trace.currentline or trace.linedefined)
-		local msg = string.format("%s : skipped loading [%s]", lineinfo, mod)
-		print(msg)
+		-- local trace = debug.getinfo(2, "SL")
+		-- local shorter_src = trace.short_src
+		-- local lineinfo = shorter_src .. ":" .. (trace.currentline or trace.linedefined)
+		-- local msg = string.format("%s : skipped loading [%s]", lineinfo, mod)
+		-- print(msg)
+		return
 	end
 	return module
 end

@@ -39,7 +39,7 @@ packer.startup(function(use)
 	use { "wbthomason/packer.nvim" }
 
 	-- surround word
-	use { "tpope/vim-surround" }
+	use { "tpope/vim-surround", event = "BufEnter" }
 
 	-- LSP
 	use {
@@ -68,42 +68,42 @@ packer.startup(function(use)
 	use {
 		'tzachar/cmp-tabnine',
 		run = './install.sh',
-		requires = 'hrsh7th/nvim-cmp'
+		requires = 'hrsh7th/nvim-cmp',
 	}
 
 	-- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		'p00f/nvim-ts-rainbow',
-		-- auto tag for html
-		'windwp/nvim-ts-autotag',
 	}
+	-- auto tag for html
+	use { 'windwp/nvim-ts-autotag', ft = vim.g.web_filetypes }
 
 	-- autoclose brackets and stuff
 	use { 'm4xshen/autoclose.nvim',
 		config = function()
 			require('autoclose').setup({})
-		end
+		end,
+		event = 'InsertEnter'
 	}
 
 	-- terminal
-	use {
-		"akinsho/toggleterm.nvim",
-	}
+	use { "akinsho/toggleterm.nvim" }
 
 	-- telescope
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { 'nvim-lua/plenary.nvim' }
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope-ui-select.nvim'
+		},
 	}
-
 	-- which key
-	use {
-		"folke/which-key.nvim",
-	}
+	use { "folke/which-key.nvim" }
 
 	-- colorizer
-	use { 'norcalli/nvim-colorizer.lua',
+	use {
+		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require('colorizer').setup()
 		end
@@ -119,17 +119,19 @@ packer.startup(function(use)
 	}
 
 	-- indentation lines
-	use { "lukas-reineke/indent-blankline.nvim" }
+	use { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" }
 
 	-- comment
-	use { "terrortylor/nvim-comment",
+	use {
+		'numToStr/Comment.nvim',
 		config = function()
-			require("nvim_comment").setup()
-		end
+			require('Comment').setup()
+		end,
+		event = 'BufEnter'
 	}
 
 	-- search chars
-	use { "ggandor/leap.nvim",
+	use { "ggandor/leap.nvim", event = "BufEnter",
 		config = function()
 			require('leap').add_default_mappings()
 		end
@@ -138,7 +140,8 @@ packer.startup(function(use)
 	-- harpoon
 	use {
 		'ThePrimeagen/harpoon',
-		requires = { 'nvim-lua/plenary.nvim' }
+		requires = { 'nvim-lua/plenary.nvim' },
+		event = 'BufEnter'
 	}
 
 	-- lualine
@@ -164,13 +167,12 @@ packer.startup(function(use)
 	use { "nathom/filetype.nvim" }
 
 	-- resize on focus
-	use {
-		"beauwilliams/focus.nvim",
-	}
+	use { "beauwilliams/focus.nvim", event = "BufEnter" }
 
 	-- toggle boolean
 	use {
 		"nat-418/boole.nvim",
+		event = "BufEnter",
 		config = function()
 			require('boole').setup({
 				mappings = {
@@ -184,13 +186,14 @@ packer.startup(function(use)
 	-- show git stuff in gutter
 	use {
 		'lewis6991/gitsigns.nvim',
+		event = "BufEnter",
 		config = function()
 			require('gitsigns').setup()
 		end
 	}
 
 	-- markdown
-	use { "dkarter/bullets.vim" }
+	use { "dkarter/bullets.vim", ft = "markdown" }
 
 	if packer_bootstrap then
 		require("packer").sync()

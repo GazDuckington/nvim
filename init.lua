@@ -6,6 +6,7 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
 local reload = require("reload")
+local lspconfig = require("lspconfig")
 
 require("plugins")
 
@@ -28,7 +29,12 @@ reload("config.toggleterm")
 reload("config.treesitter")
 reload("config.whichkey")
 
-require("lspconfig").sumneko_lua.setup({
+lspconfig.sourcery.setup({
+	init_options = {
+		token = os.getenv('SOURCERY_TOKEN')
+	}
+})
+lspconfig.sumneko_lua.setup({
 	settings = {
 		diagnostics = {
 			globals = { "vim" }
