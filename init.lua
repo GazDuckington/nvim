@@ -34,6 +34,7 @@ lspconfig.sourcery.setup({
 		token = os.getenv('SOURCERY_TOKEN')
 	}
 })
+
 lspconfig.sumneko_lua.setup({
 	settings = {
 		diagnostics = {

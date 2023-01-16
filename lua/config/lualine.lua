@@ -50,7 +50,7 @@ require('lualine').setup({
 			},
 		},
 		lualine_x = {
-			'diff', 'diagnostics'
+			'diff', 'diagnostics', 'filetype'
 		},
 		lualine_y = { 'progress' },
 		lualine_z = { line },
