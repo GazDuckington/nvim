@@ -80,11 +80,17 @@ packer.startup(function(use)
 	use { 'windwp/nvim-ts-autotag', ft = vim.g.web_filetypes }
 
 	-- autoclose brackets and stuff
-	use { 'm4xshen/autoclose.nvim',
+	use {
+		"m4xshen/autoclose.nvim",
+		event = "InsertEnter",
 		config = function()
-			require('autoclose').setup({})
-		end,
-		event = 'InsertEnter'
+			require("autoclose").setup({
+				keys = {
+					["*"] = { escape = false, close = true, pair = "**" },
+					["_"] = { escape = false, close = true, pair = "__" },
+				}
+			})
+		end
 	}
 
 	-- terminal
@@ -185,15 +191,22 @@ packer.startup(function(use)
 
 	-- show git stuff in gutter
 	use {
-		'lewis6991/gitsigns.nvim',
-		event = "BufEnter",
+		"lewis6991/gitsigns.nvim",
 		config = function()
-			require('gitsigns').setup()
-		end
+			require("gitsigns").setup()
+		end,
+		event = "BufEnter"
 	}
 
 	-- markdown
 	use { "dkarter/bullets.vim", ft = "markdown" }
+
+	use {
+		"kat0h/bufpreview.vim",
+		run = "deno task prepare",
+		requires = { "vim-denops/denops.vim" },
+		ft = "markdown"
+	}
 
 	if packer_bootstrap then
 		require("packer").sync()
