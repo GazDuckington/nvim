@@ -13,10 +13,20 @@ local mappings = {
 	s = { name = "Symbols" },
 	m = { "<cmd>Mason<cr>", "Open Mason menu" },
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-	h = {
+	n = {
 		name = "Gitsigns",
-		b = "full blame line",
-		D = "diff this file HEAD~",
+		map({ 'n', 'v' }, '<leader>ns', ':Gitsigns stage_hunk<CR>'),
+		map({ 'n', 'v' }, '<leader>nr', ':Gitsigns reset_hunk<CR>'),
+		map('n', '<leader>nS', ':Gitsigns stage_buffer<CR>'),
+		map('n', '<leader>nu', ':Girsigns undo_stage_hunk<CR>'),
+		map('n', '<leader>nR', ':Girsigns reset_buffer<CR>'),
+		map('n', '<leader>np', ':Girsigns preview_hunk<CR>'),
+		map('n', '<leader>nb', ':Gitsigns blame_line full=true<CR>'),
+		map('n', '<leader>nB', ':Gitsigns toggle_current_line_blame<CR>'),
+		map('n', '<leader>nd', ':Gitsigns diffthis<CR>'),
+		map('n', '<leader>nD', ':Gitsigns diffthis ~<CR>'),
+		map('n', '<leader>nt', ':Gitsigns toggle_deleted<CR>'),
+		map({ 'o', 'x' }, 'ni', ':<C-U>Gitsigns select_hunk<CR>'),
 	},
 	q = {
 		name = "Quickfix",
@@ -40,7 +50,7 @@ local mappings = {
 		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
 
 	},
-	n = {
+	h = {
 		name = "Harpoon",
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
@@ -54,6 +64,7 @@ wk.register(mappings, vim.g.ops)
 -- QoL
 map("i", "jk", "<ESC>", opts)
 map("n", "P", '"0p', opts)
+map("n", "J", "mzJ`z", opts)
 map("n", "<c-d>", "<C-d>zz", opts)
 map("n", "<c-u>", "<C-u>zz", opts)
 map("n", "n", "nzzzv", opts)
@@ -98,6 +109,20 @@ for var = 1, 9 do
 	local term = string.format("<cmd>%sToggleTerm<cr>", var)
 	map("n", key, term, opts)
 end
+
+-- gitsigns
+local gs = package.loaded.gitsigns
+map('n', ']c', function()
+	if vim.wo.diff then return ']c' end
+	vim.schedule(function() gs.next_hunk() end)
+	return '<Ignore>'
+end, { expr = true })
+
+map('n', '[c', function()
+	if vim.wo.diff then return '[c' end
+	vim.schedule(function() gs.prev_hunk() end)
+	return '<Ignore>'
+end, { expr = true })
 
 -- lsp stuff
 map("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", opts)
