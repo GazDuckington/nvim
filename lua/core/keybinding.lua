@@ -111,18 +111,8 @@ for var = 1, 9 do
 end
 
 -- gitsigns
-local gs = package.loaded.gitsigns
-map('n', ']c', function()
-	if vim.wo.diff then return ']c' end
-	vim.schedule(function() gs.next_hunk() end)
-	return '<Ignore>'
-end, opts)
-
-map('n', '[c', function()
-	if vim.wo.diff then return '[c' end
-	vim.schedule(function() gs.prev_hunk() end)
-	return '<Ignore>'
-end, opts)
+map('n', ']c', ':Gitsigns next_hunk<cr>', opts)
+map('n', '[c', ':Gitsigns prev_hunk<cr>', opts)
 
 -- lsp stuff
 map("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", opts)
