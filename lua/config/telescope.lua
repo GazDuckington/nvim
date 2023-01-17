@@ -4,6 +4,7 @@ telescope.setup {
 	defaults = {
 		prompt_prefix = "  ",
 		selection_caret = "→ ",
+		results_title = "",
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
 		layout_config = {
