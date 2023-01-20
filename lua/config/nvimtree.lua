@@ -12,7 +12,7 @@ require('nvim-tree').setup({
 		number = true,
 		relativenumber = true,
 		float = {
-			enable = false,
+			enable = true,
 			open_win_config = {
 				width = 40,
 				height = 30,

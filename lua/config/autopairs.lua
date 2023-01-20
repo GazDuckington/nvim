@@ -1,0 +1,6 @@
+local Rule = require('nvim-autopairs.rule')
+local npairs = require('nvim-autopairs')
+npairs.setup({ map_cr = true })
+npairs.add_rule(Rule("$$", "$$", "markdown"))
+npairs.add_rule(Rule("_", "_", "markdown"))
+npairs.add_rule(Rule("*", "*", "markdown"))

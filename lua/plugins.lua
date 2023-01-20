@@ -81,16 +81,8 @@ packer.startup(function(use)
 
 	-- autoclose brackets and stuff
 	use {
-		"m4xshen/autoclose.nvim",
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		config = function()
-			require("autoclose").setup({
-				keys = {
-					["*"] = { escape = false, close = true, pair = "**" },
-					["_"] = { escape = false, close = true, pair = "__" },
-				}
-			})
-		end
 	}
 
 	-- terminal

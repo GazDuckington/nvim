@@ -5,6 +5,7 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
+
 local reload = require("reload")
 local lspconfig = require("lspconfig")
 
@@ -16,6 +17,7 @@ reload("core.keybinding")
 reload("core.autocommands")
 
 -- plugins config
+reload("config.autopairs")
 reload("config.catppuccin")
 reload("config.focus")
 reload("config.gitsigns")
