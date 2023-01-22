@@ -8,8 +8,9 @@ local mappings = {
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	o = { ":e ", "Open/Create File" },
+	c = { name = "Code options" },
 	d = { name = "Diagnostics" },
-	s = { name = "Symbols" },
+	b = { name = "References" },
 	m = {
 		name = "Menus",
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
