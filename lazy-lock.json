@@ -20,7 +20,7 @@
   "greyjoy.nvim": { "branch": "main", "commit": "d0804c393e55f18d538ce1ead149232765b99170" },
   "harpoon": { "branch": "master", "commit": "21d0d1bfa3000e4384740bfaefa0ebc51c773786" },
   "indent-blankline.nvim": { "branch": "master", "commit": "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7" },
-  "lazy.nvim": { "branch": "main", "commit": "fc3104c44b9a140381daf4bdf8d0454988317a93" },
+  "lazy.nvim": { "branch": "main", "commit": "cab4682d22a0451bc36a648694235621b5dd808e" },
   "leap.nvim": { "branch": "main", "commit": "ff4c3663e5a0a0ecbb3fffbc8318825def35d2aa" },
   "lsp-zero.nvim": { "branch": "main", "commit": "0b312c34372ec2b0daec722d1b7fad77b84bef5b" },
   "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" },
