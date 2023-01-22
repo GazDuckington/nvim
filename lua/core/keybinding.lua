@@ -17,21 +17,7 @@ local mappings = {
 		w = { ":saveas ", "Save buffer as" },
 	},
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-	n = {
-		name = "Gitsigns",
-		map({ 'n', 'v' }, '<leader>ns', ':Gitsigns stage_hunk<CR>'),
-		map({ 'n', 'v' }, '<leader>nr', ':Gitsigns reset_hunk<CR>'),
-		map('n', '<leader>nS', ':Gitsigns stage_buffer<CR>'),
-		map('n', '<leader>nu', ':Gitsigns undo_stage_hunk<CR>'),
-		map('n', '<leader>nR', ':Gitsigns reset_buffer<CR>'),
-		map('n', '<leader>np', ':Gitsigns preview_hunk<CR>'),
-		map('n', '<leader>nb', ':Gitsigns blame_line full=true<CR>'),
-		map('n', '<leader>nB', ':Gitsigns toggle_current_line_blame<CR>'),
-		map('n', '<leader>nd', ':Gitsigns diffthis<CR>'),
-		map('n', '<leader>nD', ':Gitsigns diffthis ~<CR>'),
-		map('n', '<leader>nt', ':Gitsigns toggle_deleted<CR>'),
-		map({ 'o', 'x' }, 'ni', ':<C-U>Gitsigns select_hunk<CR>'),
-	},
+	n = { name = "Gitsigns" },
 	q = {
 		name = "Quickfix",
 		o = { ":copen<cr>", "Open" },
@@ -102,31 +88,9 @@ map("n", "W", "<cmd>bd<cr>", opts)
 map("n", "H", "<cmd>bp<cr>", opts)
 map("n", "L", "<cmd>bn<cr>", opts)
 
--- telescope
-map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers initial_mode=normal<cr>", opts)
-
 -- terminal
 for var = 1, 9 do
 	local key = string.format("<C-%s>", var)
 	local term = string.format("<cmd>%sToggleTerm<cr>", var)
 	map("n", key, term, opts)
 end
-
--- gitsigns
-map('n', ']c', ':Gitsigns next_hunk<cr>', opts)
-map('n', '[c', ':Gitsigns prev_hunk<cr>', opts)
-
--- lsp stuff
-map("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", opts)
-map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", opts)
-map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
-map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
-map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
-map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-map("n", "<leader>bf", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
-map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-map("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)

@@ -9,7 +9,7 @@ whichkey.setup({
 	},
 	layout = {
 		height = { min = 4, max = 6 },
-		width = { min = 10, max = 20 },
+		width = { min = 10, max = 30 },
 		spacing = 5,
 	}
 })
