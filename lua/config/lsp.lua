@@ -12,4 +12,26 @@ lsp.on_attach(function(client)
 	end
 end)
 
+
+lsp.configure('sumneko_lua', {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
+})
+
+
+lsp.configure('sumneko_lua', {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" }
+			}
+		}
+	}
+})
+
 lsp.setup()

@@ -15,7 +15,7 @@ autocmd("BufWritePost", {
 autocmd("BufWritePost", {
 	pattern = "plugins.lua",
 	callback = function()
-		vim.cmd([[so % | PackerSync]])
+		vim.cmd([[Lazy sync]])
 	end,
 	group = gpinit,
 })

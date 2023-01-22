@@ -5,7 +5,6 @@ local function open_tab_silent(node)
 end
 
 require('nvim-tree').setup({
-	create_in_closed_folder = true,
 	view = {
 		side = 'right',
 		adaptive_size = false,

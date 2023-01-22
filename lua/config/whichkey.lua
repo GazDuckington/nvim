@@ -8,8 +8,8 @@ whichkey.setup({
 		border = "single"
 	},
 	layout = {
-		height = { min = 4 },
-		width = { min = 10 },
+		height = { min = 4, max = 6 },
+		width = { min = 10, max = 20 },
 		spacing = 5,
 	}
 })

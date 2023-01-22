@@ -2,8 +2,6 @@ local o = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
--- global settings
--- default shell
 vim.opt_global.shell = "fish"
 
 -- must install lsp servers

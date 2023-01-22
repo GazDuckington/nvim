@@ -8,19 +8,23 @@ local mappings = {
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
 	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	o = { ":e ", "Open/Create File" },
-	w = { ":saveas ", "Save buffer as" },
 	d = { name = "Diagnostics" },
 	s = { name = "Symbols" },
-	m = { "<cmd>Mason<cr>", "Open Mason menu" },
+	m = {
+		name = "Menus",
+		m = { "<cmd>Mason<cr>", "Open Mason menu" },
+		l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
+		w = { ":saveas ", "Save buffer as" },
+	},
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 	n = {
 		name = "Gitsigns",
 		map({ 'n', 'v' }, '<leader>ns', ':Gitsigns stage_hunk<CR>'),
 		map({ 'n', 'v' }, '<leader>nr', ':Gitsigns reset_hunk<CR>'),
 		map('n', '<leader>nS', ':Gitsigns stage_buffer<CR>'),
-		map('n', '<leader>nu', ':Girsigns undo_stage_hunk<CR>'),
-		map('n', '<leader>nR', ':Girsigns reset_buffer<CR>'),
-		map('n', '<leader>np', ':Girsigns preview_hunk<CR>'),
+		map('n', '<leader>nu', ':Gitsigns undo_stage_hunk<CR>'),
+		map('n', '<leader>nR', ':Gitsigns reset_buffer<CR>'),
+		map('n', '<leader>np', ':Gitsigns preview_hunk<CR>'),
 		map('n', '<leader>nb', ':Gitsigns blame_line full=true<CR>'),
 		map('n', '<leader>nB', ':Gitsigns toggle_current_line_blame<CR>'),
 		map('n', '<leader>nd', ':Gitsigns diffthis<CR>'),
@@ -41,8 +45,9 @@ local mappings = {
 		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
 		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
 	},
+	f = { name = "Find" },
 	t = {
-		name = "Telescope Searches",
+		name = "Helps",
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
@@ -98,10 +103,10 @@ map("n", "H", "<cmd>bp<cr>", opts)
 map("n", "L", "<cmd>bn<cr>", opts)
 
 -- telescope
-map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
-map("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<C-n>", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers initial_mode=normal<cr>", opts)
 
 -- terminal
 for var = 1, 9 do
@@ -121,7 +126,7 @@ map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-map("n", "<leader>ff", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+map("n", "<leader>bf", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 map("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)

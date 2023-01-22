@@ -6,10 +6,11 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
 
-local reload = require("reload")
-local lspconfig = require("lspconfig")
+vim.opt.termguicolors = true
 
 require("plugins")
+
+local reload = require("reload")
 
 -- core settings
 reload("core.settings")
@@ -30,17 +31,5 @@ reload("config.telescope")
 reload("config.toggleterm")
 reload("config.treesitter")
 reload("config.whichkey")
-
-lspconfig.sourcery.setup({
-	init_options = {
-		token = os.getenv('SOURCERY_TOKEN')
-	}
-})
-
-lspconfig.sumneko_lua.setup({
-	settings = {
-		diagnostics = {
-			globals = { "vim" }
-		}
-	}
-})
+reload("config.boole")
+reload("config.neoscroll")

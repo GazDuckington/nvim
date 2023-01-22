@@ -1,206 +1,181 @@
--- bootstrapping
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({
-			'git',
-			'clone',
-			'--depth',
-			'1',
-			'https://github.com/wbthomason/packer.nvim',
-			install_path
-		})
-		vim.cmd [[packadd packer.nvim]]
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--single-branch",
+		"https://github.com/folke/lazy.nvim.git",
+		lazypath,
+	})
 end
 
-local packer_bootstrap = ensure_packer()
+vim.opt.runtimepath:prepend(lazypath)
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, 'packer')
-if not status_ok then
-	return
-end
+local ok, lazy = pcall(require, "lazy")
+if not ok then return end
 
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require('packer.util').float({ border = 'single' })
-		end
-	}
-})
-
--- install plugins here
-packer.startup(function(use)
-	use { "wbthomason/packer.nvim" }
-
+lazy.setup({
+	ui = { border = "rounded" },
 	-- surround word
-	use { "tpope/vim-surround", event = "BufEnter" }
+	{ "tpope/vim-surround", event = "BufEnter" },
 
 	-- LSP
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		requires = {
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		dependencies = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },
-			{ 'williamboman/mason.nvim' },
-			{ 'williamboman/mason-lspconfig.nvim' },
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 
 			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
-			{ 'saadparwaiz1/cmp_luasnip' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-nvim-lua' },
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
 
 			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },
-			{ 'rafamadriz/friendly-snippets' },
-		}
-	}
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+		},
+	},
 
 	-- tabnine
-	use {
-		'tzachar/cmp-tabnine',
-		run = './install.sh',
-		requires = 'hrsh7th/nvim-cmp',
-	}
+	{
+		"tzachar/cmp-tabnine",
+		build = "./install.sh",
+		dependencies = "hrsh7th/nvim-cmp",
+	},
 
 	-- Treesitter
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		'p00f/nvim-ts-rainbow',
-	}
+	{
+		"nvim-treesitter/nvim-treesitter",
+		"p00f/nvim-ts-rainbow",
+	},
 	-- auto tag for html
-	use { 'windwp/nvim-ts-autotag', ft = vim.g.web_filetypes }
+	{
+		"windwp/nvim-ts-autotag",
+		ft = vim.g.web_filetypes
+	},
 
 	-- autoclose brackets and stuff
-	use {
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-	}
+	},
 
 	-- terminal
-	use { "akinsho/toggleterm.nvim" }
+	{ "akinsho/toggleterm.nvim" },
 
 	-- telescope
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'nvim-telescope/telescope-ui-select.nvim'
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
 		},
-	}
+	},
+	-- telescope extensions
+	{ "nvim-telescope/telescope-ui-select.nvim" },
+
 	-- which key
-	use { "folke/which-key.nvim" }
+	{ "folke/which-key.nvim" },
 
 	-- colorizer
-	use {
+	{
 		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require('colorizer').setup()
-		end
-	}
+		config = true,
+	},
 
 	-- file explorer
-	use {
+	{
 		"nvim-tree/nvim-tree.lua",
-		requires = {
+		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
 		tag = "nightly"
-	}
+	},
 
 	-- indentation lines
-	use { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" }
+	{ "lukas-reineke/indent-blankline.nvim", event = "BufEnter" },
 
 	-- comment
-	use {
-		'numToStr/Comment.nvim',
-		config = function()
-			require('Comment').setup()
-		end,
-		event = 'BufEnter'
-	}
+	{
+		"numToStr/Comment.nvim",
+		config = true,
+		event = "BufEnter"
+	},
 
 	-- search chars
-	use { "ggandor/leap.nvim", event = "BufEnter",
+	{ "ggandor/leap.nvim", event = "BufEnter",
 		config = function()
-			require('leap').add_default_mappings()
+			require("leap").add_default_mappings()
 		end
-	}
+	},
 
 	-- harpoon
-	use {
-		'ThePrimeagen/harpoon',
-		requires = { 'nvim-lua/plenary.nvim' },
-		event = 'BufEnter'
-	}
+	{
+		"ThePrimeagen/harpoon",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		event = "BufEnter"
+	},
 
 	-- lualine
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-	}
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" }
+	},
 
 	-- colorscheme
-	use { "catppuccin/nvim", as = "catppuccin" }
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = true,
+	},
 
 	-- command launcher
-	use {
-		'desdic/greyjoy.nvim',
-		requires = { 'stevearc/dressing.nvim',
-			config = function()
-				require('dressing').setup()
-			end
-		}
-	}
+	{
+		"desdic/greyjoy.nvim",
+		dependencies = { "stevearc/dressing.nvim",
+			config = true,
+			event = "VeryLazy",
+		},
+	},
 
 	-- ft
-	use { "nathom/filetype.nvim" }
+	{ "nathom/filetype.nvim" },
 
 	-- resize on focus
-	use { "beauwilliams/focus.nvim", event = "BufEnter" }
+	{ "beauwilliams/focus.nvim", event = "BufEnter" },
 
 	-- toggle boolean
-	use {
+	{
 		"nat-418/boole.nvim",
 		event = "BufEnter",
-		config = function()
-			require('boole').setup({
-				mappings = {
-					increment = 't',
-					decrement = 'T'
-				},
-			})
-		end
-	}
+	},
+
+	-- smooth scrolling
+	{
+		"karb94/neoscroll.nvim",
+		event = "BufEnter",
+	},
 
 	-- show git stuff in gutter
-	use {
+	{
 		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-		event = "BufEnter"
-	}
+		config = true,
+		event = "BufEnter",
+	},
 
 	-- markdown
-	use { "dkarter/bullets.vim", ft = "markdown" }
+	{ "dkarter/bullets.vim", ft = "markdown" },
 
-	use {
+	{
 		"kat0h/bufpreview.vim",
-		run = "deno task prepare",
-		requires = { "vim-denops/denops.vim" },
-		ft = "markdown"
-	}
-
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+		build = "deno task prepare",
+		dependencies = { "vim-denops/denops.vim" },
+		ft = "markdown",
+	},
+})

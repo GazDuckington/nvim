@@ -25,20 +25,22 @@ end,
 	padding = 0,
 }
 
-local md = { 'mode',
-	fmt = function(res)
-		return res:sub(1, 1)
-	end,
-	color = { gui = 'bold' }
-}
+-- local md = { 'mode',
+-- 	fmt = function(res)
+-- 		return res:sub(1, 1)
+-- 	end,
+-- 	color = { gui = 'bold' },
+-- 	padding = { right = 0, left = 1 }
+-- }
 
 require('lualine').setup({
 	sections = {
 		lualine_a = {
-			md
+			line
 		},
-		lualine_b = { 'branch' },
+		lualine_b = {},
 		lualine_c = {
+			'branch',
 			{
 				'buffers',
 				show_filename_only = true,
@@ -50,9 +52,9 @@ require('lualine').setup({
 			},
 		},
 		lualine_x = {
-			'diff', 'diagnostics', 'filetype'
+			'diff', 'diagnostics', 'filetype', 'progress'
 		},
-		lualine_y = { 'progress' },
+		lualine_y = {},
 		lualine_z = { line },
 	},
 	options = {
