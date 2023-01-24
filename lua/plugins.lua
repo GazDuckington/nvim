@@ -89,7 +89,10 @@ lazy.setup(
 		-- colorizer
 		{
 			"norcalli/nvim-colorizer.lua",
-			config = true,
+			config = function()
+				require("colorizer").setup()
+			end,
+			event = "BufEnter",
 		},
 
 		-- file explorer
@@ -175,7 +178,6 @@ lazy.setup(
 
 		-- markdown
 		{ "dkarter/bullets.vim", ft = "markdown" },
-
 		{
 			"kat0h/bufpreview.vim",
 			build = "deno task prepare",
