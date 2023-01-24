@@ -16,17 +16,17 @@ lsp.on_attach(function(client, bufnr)
 		vim.keymap.set(m, lhs, rhs, opts)
 	end
 	-- references
-	map("n", "<leader>br", "<cmd>Telescope lsp_references<cr>")
-	map("n", "<leader>bd", "<cmd>Telescope lsp_document_symbols<cr>")
-	map("n", "<leader>bw", "<cmd>Telescope lsp_workspace_symbols<cr>")
+	map("n", "<leader>lr", "<cmd>Telescope lsp_references<cr>")
+	map("n", "<leader>ld", "<cmd>Telescope lsp_document_symbols<cr>")
+	map("n", "<leader>lw", "<cmd>Telescope lsp_workspace_symbols<cr>")
 	-- diagnosticso
-	map("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<cr>")
-	map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-	map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+	map("n", "<leader>lo", "<cmd>lua vim.diagnostic.open_float()<cr>")
+	map("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+	map("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 	-- buffer commands
-	map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>")
-	map("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>")
-	map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+	map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>")
+	map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>")
+	map("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 	map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end)
 

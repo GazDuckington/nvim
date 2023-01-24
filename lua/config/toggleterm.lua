@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+local opts = vim.g.opts
+
 require("toggleterm").setup {
 	size = 20,
 	open_mapping = [[<c-`>]],
@@ -25,7 +27,6 @@ require("toggleterm").setup {
 }
 
 local bmap = vim.api.nvim_buf_set_keymap
-local opts = vim.g.opts
 function _G.set_terminal_keymaps()
 	bmap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
 	bmap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
@@ -42,4 +43,12 @@ local lazygit = Terminal:new({ cmd = "lazygit", dir = "%:p:h", hidden = true })
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
+end
+
+-- keybindings
+for var = 1, 9 do
+	local map = vim.keymap.set
+	local key = string.format("<C-%s>", var)
+	local term = string.format("<cmd>%sToggleTerm<cr>", var)
+	map("n", key, term, opts)
 end

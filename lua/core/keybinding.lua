@@ -3,49 +3,50 @@ local map = vim.keymap.set
 local opts = vim.g.opts
 
 local mappings = {
-	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
 	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
-	l = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
+	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
+	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
 	o = { ":e ", "Open/Create File" },
 	c = { name = "Code options" },
 	d = { name = "Diagnostics" },
 	b = { name = "References" },
+	g = { name = "Gitsigns" },
+	s = { name = "Searches" },
+	l = { name = "LSP" },
 	m = {
 		name = "Menus",
-		m = { "<cmd>Mason<cr>", "Open Mason menu" },
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 		l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
+		m = { "<cmd>Mason<cr>", "Open Mason menu" },
 		w = { ":saveas ", "Save buffer as" },
 	},
-	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-	n = { name = "Gitsigns" },
 	q = {
 		name = "Quickfix",
+		N = { ":cprevious<cr>", "Previous" },
 		o = { ":copen<cr>", "Open" },
 		n = { ":cnext<cr>", "Next" },
-		N = { ":cprevious<cr>", "Previous" },
 	},
 	v = {
 		name = "Views",
-		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
 		l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
-		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
+		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
 		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
+		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
 	},
-	f = { name = "Find" },
 	t = {
 		name = "Helps",
-		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
+		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
-		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 
 	},
 	h = {
 		name = "Harpoon",
-		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		m = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
 		n = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
 	}
@@ -88,10 +89,3 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "W", "<cmd>bd<cr>", opts)
 map("n", "H", "<cmd>bp<cr>", opts)
 map("n", "L", "<cmd>bn<cr>", opts)
-
--- terminal
-for var = 1, 9 do
-	local key = string.format("<C-%s>", var)
-	local term = string.format("<cmd>%sToggleTerm<cr>", var)
-	map("n", key, term, opts)
-end

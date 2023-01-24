@@ -1,4 +1,5 @@
 local telescope = require("telescope")
+local actions = require("telescope.actions")
 local opts = vim.g.opts
 local map = vim.keymap.set
 
@@ -11,24 +12,63 @@ telescope.setup {
 		layout_strategy = "horizontal",
 		layout_config = {
 			horizontal = {
-				width = 0.7,
-				height = 0.5,
 				prompt_position = "top",
 			}
 		},
-		previewer = false,
 		borderchars = {
-			{ '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-			prompt = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },
-			results = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-			preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+			-- { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+			{ "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			results = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		},
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+			},
+			n = {
+				["<C-n>"] = actions.move_selection_next,
+				["<C-p>"] = actions.move_selection_previous,
+				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+			}
+		},
+	},
+	pickers = {
+		find_files = {
+			theme = "dropdown",
+			hidden = true,
+			previewer = false,
+		},
+		live_grep = {
+			only_sort_text = true,
+			theme = "dropdown",
+		},
+		grep_string = {
+			only_sort_text = true,
+			theme = "dropdown",
+		},
+		buffers = {
+			theme = "dropdown",
+			previewer = false,
+			initial_mode = "normal",
+			mappings = {
+				i = {
+					["<C-d>"] = actions.delete_buffer,
+				},
+				n = {
+					["dd"] = actions.delete_buffer,
+				},
+			},
 		},
 	},
 }
 
-telescope.load_extension("ui-select")
-
-map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers initial_mode=normal<cr>", opts)
+-- keybindings
+map("n", "<leader>sg", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<leader>sf", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>sr", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>ss", "<cmd>Telescope grep_string<cr>", opts)
+map("n", "<leader>sb", "<cmd>Telescope buffers<cr>", opts)

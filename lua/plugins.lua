@@ -19,7 +19,7 @@ lazy.setup(
 -- plugins
 	{
 		-- surround word
-		{ "tpope/vim-surround", event = "BufEnter" },
+		{ "tpope/vim-surround", event = "InsertEnter" },
 
 		-- LSP
 		{
@@ -80,8 +80,6 @@ lazy.setup(
 				"nvim-lua/plenary.nvim",
 			},
 		},
-		-- telescope extensions
-		{ "nvim-telescope/telescope-ui-select.nvim" },
 
 		-- which key
 		{ "folke/which-key.nvim" },
@@ -160,12 +158,6 @@ lazy.setup(
 		-- toggle boolean
 		{
 			"nat-418/boole.nvim",
-			event = "BufEnter",
-		},
-
-		-- smooth scrolling
-		{
-			"karb94/neoscroll.nvim",
 			event = "BufEnter",
 		},
 
