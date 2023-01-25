@@ -60,7 +60,7 @@ local pretty_ft = TableConcat(vim.g.web_filetypes, { "json", "yaml", "toml", "ra
 local null_ls = require("null-ls")
 
 local sources = {
-	null_ls.builtins.formatting.prettierd.with({
+	null_ls.builtins.formatting.prettier.with({
 		filetypes = pretty_ft
 	}),
 }
