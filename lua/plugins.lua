@@ -111,7 +111,16 @@ lazy.setup(
 		-- comment
 		{
 			"numToStr/Comment.nvim",
-			config = true,
+			config = function()
+				require('Comment').setup({
+					toggler = {
+						line = '<C-/>',
+					},
+					opleader = {
+						line = '<C-/>',
+					}
+				})
+			end,
 			event = "BufEnter"
 		},
 
