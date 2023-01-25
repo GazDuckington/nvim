@@ -25,14 +25,14 @@ telescope.setup {
 		mappings = {
 			i = {
 				["<esc>"] = actions.close,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+				["<A-j>"] = actions.move_selection_next,
+				["<A-k>"] = actions.move_selection_previous,
+				["<A-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 			},
 			n = {
-				["<C-n>"] = actions.move_selection_next,
-				["<C-p>"] = actions.move_selection_previous,
-				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+				["<A-n>"] = actions.move_selection_next,
+				["<A-p>"] = actions.move_selection_previous,
+				["<A-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 			}
 		},
 	},
@@ -56,7 +56,7 @@ telescope.setup {
 			initial_mode = "normal",
 			mappings = {
 				i = {
-					["<C-d>"] = actions.delete_buffer,
+					["<A-d>"] = actions.delete_buffer,
 				},
 				n = {
 					["dd"] = actions.delete_buffer,

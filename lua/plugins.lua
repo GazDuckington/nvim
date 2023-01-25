@@ -19,7 +19,7 @@ lazy.setup(
 -- plugins
 	{
 		-- surround word
-		{ "tpope/vim-surround", event = "InsertEnter" },
+		{ "tpope/vim-surround", event = "BufEnter" },
 
 		-- LSP
 		{
@@ -40,7 +40,7 @@ lazy.setup(
 				{ "L3MON4D3/LuaSnip" },
 				{ "rafamadriz/friendly-snippets" },
 			},
-			event = "BufEnter",
+			event = "InsertEnter",
 		},
 
 		-- tabnine

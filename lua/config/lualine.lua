@@ -25,18 +25,17 @@ end,
 	padding = 0,
 }
 
--- local md = { 'mode',
--- 	fmt = function(res)
--- 		return res:sub(1, 1)
--- 	end,
--- 	color = { gui = 'bold' },
--- 	padding = { right = 0, left = 1 }
--- }
+local md = { 'mode',
+	fmt = function(res)
+		return res:sub(1, 1)
+	end,
+	color = { gui = 'bold' },
+}
 
 require('lualine').setup({
 	sections = {
 		lualine_a = {
-			line
+			md
 		},
 		lualine_b = {},
 		lualine_c = {

@@ -6,8 +6,6 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
 
-vim.opt.termguicolors = true
-
 require("plugins")
 
 local reload = require("reload")
@@ -19,7 +17,7 @@ reload("core.autocommands")
 
 -- plugins config
 reload("config.autopairs")
-reload("config.catppuccin")
+reload("config.colorscheme")
 reload("config.focus")
 reload("config.gitsigns")
 reload("config.greyjoy")
