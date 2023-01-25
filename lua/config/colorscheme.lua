@@ -21,11 +21,12 @@ require("catppuccin").setup({
 		},
 	},
 	custom_highlights = {
-		-- Comment = { fg = color.overlay0 },
+		CursorLine = { bg = color.mantle },
 		LineNr = { fg = color.surface2 },
 		CursorLineNr = {
 			fg = color.green,
-			bold = true
+			bg = color.mantle,
+			bold = true,
 		},
 		IndentBlanklineContextChar = {
 			fg = color.mauve,
