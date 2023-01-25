@@ -8,9 +8,6 @@ local mappings = {
 	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
 	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
 	o = { ":e ", "Open/Create File" },
-	c = { name = "Code options" },
-	d = { name = "Diagnostics" },
-	b = { name = "References" },
 	g = { name = "Gitsigns" },
 	s = { name = "Searches" },
 	l = { name = "LSP" },
@@ -37,19 +34,16 @@ local mappings = {
 	},
 	f = {
 		name = "Helps",
-		F = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Symbols in workspace" },
-		f = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols in document" },
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 
 	},
 	h = {
 		name = "Harpoon",
-		h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
-		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
-		m = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
-		n = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
+		u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
+		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+		k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
+		j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
 	}
 }
 
