@@ -1,5 +1,5 @@
+local lsp = require("lsp-zero")
 local servers = vim.g.must_lsp
-local lsp = require('lsp-zero')
 
 -- lsp-zero
 lsp.preset('recommended')
@@ -30,14 +30,15 @@ lsp.on_attach(function(client, bufnr)
 	map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end)
 
+lsp.configure('sourcery', {
+	init_options = {
+		token = os.getenv('SOURCERY_TOKEN')
+	}
+})
 
-lsp.configure('sumneko_lua', {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { 'vim' }
-			}
-		}
+lsp.configure('cssls', {
+	filetypes = {
+		"css", "scss", "less", "rasi"
 	}
 })
 
@@ -53,3 +54,15 @@ lsp.configure('sumneko_lua', {
 })
 
 lsp.setup()
+
+-- null-ls
+local pretty_ft = TableConcat(vim.g.web_filetypes, { "json", "yaml", "toml", "rasi" })
+local null_ls = require("null-ls")
+
+local sources = {
+	null_ls.builtins.formatting.prettierd.with({
+		filetypes = pretty_ft
+	}),
+}
+
+null_ls.setup({ sources = sources })

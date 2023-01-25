@@ -7,7 +7,7 @@ vim.opt_global.shell = "fish"
 -- must install lsp servers
 g.must_lsp = {
 	"sumneko_lua",
-	"pylsp",
+	"pyright",
 	"gopls",
 	"svelte",
 	"tsserver",
@@ -16,18 +16,20 @@ g.must_lsp = {
 	"emmet_ls",
 	"marksman",
 	"sourcery",
+	"cssls",
 }
 -- filetypes for emmet
 g.web_filetypes = {
-	'html',
-	'typescriptreact',
-	'javascriptreact',
-	'css',
-	'sass',
-	'scss',
-	'less',
-	'svelte',
-	'markdown'
+	"html",
+	"typescriptreact",
+	"javascriptreact",
+	"css",
+	"sass",
+	"scss",
+	"less",
+	"svelte",
+	"markdown",
+	"markdown.mdx",
 }
 -- options for whichkey
 g.ops = {
@@ -96,3 +98,11 @@ vim.diagnostic.config({
 		border = 'rounded',
 	}
 })
+
+-- Concatenate two tables
+function TableConcat(t1, t2)
+	for i = 1, #t2 do
+		t1[#t1 + 1] = t2[i]
+	end
+	return t1
+end

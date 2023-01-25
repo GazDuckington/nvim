@@ -20,6 +20,7 @@ local mappings = {
 		l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
 		m = { "<cmd>Mason<cr>", "Open Mason menu" },
 		w = { ":saveas ", "Save buffer as" },
+		i = { ":LspInfo<cr>", "LSP Info" },
 	},
 	q = {
 		name = "Quickfix",
