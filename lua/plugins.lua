@@ -114,10 +114,10 @@ lazy.setup(
 			config = function()
 				require('Comment').setup({
 					toggler = {
-						line = '<C-/>',
+						line = '<C-c>',
 					},
 					opleader = {
-						line = '<C-/>',
+						line = '<C-c>',
 					}
 				})
 			end,
