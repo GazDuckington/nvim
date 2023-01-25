@@ -4,7 +4,7 @@ local catto = {
 	normal = {
 		a = { fg = colors.base, bg = colors.blue },
 		b = { fg = colors.text, bg = colors.surface0, gui = 'bold' },
-		c = { fg = colors.blue, bg = colors.base },
+		c = { fg = colors.blue, bg = colors.mantle },
 	},
 
 	insert = { a = { fg = colors.base, bg = colors.green } },
@@ -13,9 +13,9 @@ local catto = {
 	command = { a = { fg = colors.base, bg = colors.red } },
 
 	inactive = {
-		a = { fg = colors.text, bg = colors.base },
-		b = { fg = colors.text, bg = colors.base },
-		c = { fg = colors.overlay0, bg = colors.base },
+		a = { fg = colors.text, bg = colors.mantle },
+		b = { fg = colors.text, bg = colors.mantle },
+		c = { fg = colors.surface2, bg = colors.mantle },
 	},
 }
 
