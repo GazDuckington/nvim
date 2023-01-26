@@ -182,6 +182,12 @@ lazy.setup(
 		-- markdown
 		{ "dkarter/bullets.vim", ft = "markdown" },
 		{
+			"antonk52/markdowny.nvim",
+			config = function()
+				require("markdowny").setup()
+			end
+		},
+		{
 			"kat0h/bufpreview.vim",
 			build = "deno task prepare",
 			dependencies = { "vim-denops/denops.vim" },
