@@ -19,10 +19,6 @@ require("toggleterm").setup {
 	float_ops = {
 		border = "curved",
 		winblend = 0,
-		highlights = {
-			border = "Normal",
-			background = "Normal",
-		},
 	}
 }
 
