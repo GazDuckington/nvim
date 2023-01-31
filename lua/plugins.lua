@@ -158,6 +158,7 @@ lazy.setup(
 				config = true,
 				event = "VeryLazy",
 			},
+			event = "VeryLazy"
 		},
 
 		-- ft
@@ -185,7 +186,8 @@ lazy.setup(
 			"antonk52/markdowny.nvim",
 			config = function()
 				require("markdowny").setup()
-			end
+			end,
+			ft = "markdown"
 		},
 		{
 			"kat0h/bufpreview.vim",
