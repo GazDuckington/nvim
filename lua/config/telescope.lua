@@ -45,10 +45,12 @@ telescope.setup {
 		live_grep = {
 			only_sort_text = true,
 			theme = "dropdown",
+			previewer = false,
 		},
 		grep_string = {
 			only_sort_text = true,
 			theme = "dropdown",
+			previewer = false,
 		},
 		buffers = {
 			theme = "dropdown",

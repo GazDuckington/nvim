@@ -5,10 +5,11 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 -- https://gtihub.com/GazDuckington/nvim
+
 local reload = require("reload")
 
+-- load plugins
 require("plugins")
-
 -- core settings
 reload("core.settings")
 reload("core.keybinding")

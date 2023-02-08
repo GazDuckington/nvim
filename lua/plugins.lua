@@ -141,7 +141,8 @@ lazy.setup(
 		-- lualine
 		{
 			"nvim-lualine/lualine.nvim",
-			dependencies = { "nvim-tree/nvim-web-devicons" }
+			dependencies = { "nvim-tree/nvim-web-devicons" },
+			event = "BufEnter"
 		},
 
 		-- barbar buffer line
@@ -152,14 +153,15 @@ lazy.setup(
 				require("bufferline").setup {
 					auto_hide = true,
 				}
-			end
+			end,
+			event = "BufEnter"
 		},
 
 		-- colorscheme
 		{
 			"catppuccin/nvim",
 			name = "catppuccin",
-			lazy = true,
+			event = "VeryLazy",
 		},
 
 		-- command launcher
@@ -173,10 +175,16 @@ lazy.setup(
 		},
 
 		-- ft
-		{ "nathom/filetype.nvim" },
+		{
+			"nathom/filetype.nvim",
+			event = "BufEnter"
+		},
 
 		-- resize on focus
-		{ "beauwilliams/focus.nvim", event = "BufEnter" },
+		{
+			"beauwilliams/focus.nvim",
+			event = "BufEnter"
+		},
 
 		-- toggle boolean
 		{
