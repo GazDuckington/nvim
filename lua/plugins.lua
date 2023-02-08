@@ -144,6 +144,17 @@ lazy.setup(
 			dependencies = { "nvim-tree/nvim-web-devicons" }
 		},
 
+		-- barbar buffer line
+		{
+			"romgrk/barbar.nvim",
+			requires = { "nvim-tree/nvim-web-devicons" },
+			config = function()
+				require("bufferline").setup {
+					auto_hide = true,
+				}
+			end
+		},
+
 		-- colorscheme
 		{
 			"catppuccin/nvim",

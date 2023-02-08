@@ -39,19 +39,29 @@ require('lualine').setup({
 		},
 		lualine_b = {},
 		lualine_c = {
-			'branch',
 			{
-				'buffers',
-				show_filename_only = true,
+				'filename',
+				newfile_status = true,
+				path = 1,
 				symbols = {
-					modified = ' ●',
-					alternate_file = '',
-					directory = '',
-				},
-			},
+					modified = '',
+					readonly = '',
+					unnamed = '[No Name]',
+					newfile = '',
+				}
+			}
+			-- {
+			-- 	'buffers',
+			-- 	show_filename_only = true,
+			-- 	symbols = {
+			-- 		modified = ' ●',
+			-- 		alternate_file = '',
+			-- 		directory = '',
+			-- 	},
+			-- },
 		},
 		lualine_x = {
-			'diff', 'diagnostics', 'filetype', 'progress'
+			'diff', 'branch', 'diagnostics', 'filetype', 'progress'
 		},
 		lualine_y = {},
 		lualine_z = { line },
