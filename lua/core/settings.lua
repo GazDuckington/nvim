@@ -6,39 +6,39 @@ vim.opt_global.shell = "fish"
 
 -- must install lsp servers
 g.must_lsp = {
-	"sumneko_lua",
-	"pyright",
-	"gopls",
-	"svelte",
-	"tsserver",
-	"eslint",
-	"tailwindcss",
-	"emmet_ls",
-	"marksman",
-	"sourcery",
-	"cssls",
+		"lua_ls",
+		"pyright",
+		"gopls",
+		"svelte",
+		"tsserver",
+		"eslint",
+		"tailwindcss",
+		"emmet_ls",
+		"marksman",
+		"sourcery",
+		"cssls",
 }
 -- filetypes for emmet
 g.web_filetypes = {
-	"html",
-	"typescriptreact",
-	"javascriptreact",
-	"css",
-	"sass",
-	"scss",
-	"less",
-	"svelte",
-	"markdown",
-	"markdown.mdx",
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"svelte",
+		"markdown",
+		"markdown.mdx",
 }
 -- options for whichkey
 g.ops = {
-	mode = "n",
-	prefix = "<leader>",
-	buffer = nil,
-	silent = false,
-	noremap = true,
-	nowait = false,
+		mode = "n",
+		prefix = "<leader>",
+		buffer = nil,
+		silent = false,
+		noremap = true,
+		nowait = false,
 }
 -- keymap options
 g.mapleader = " "
@@ -66,10 +66,10 @@ o.scrolloff = 8
 -- whitespace character
 o.list = true
 o.listchars = {
-	tab = '  ',
-	trail = '◦',
-	space = '•',
-	eol = '',
+		tab = '  ',
+		trail = '◦',
+		space = '•',
+		eol = '',
 }
 
 -- mouse
@@ -92,11 +92,11 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- disable diagnostics inline texts
 vim.diagnostic.config({
-	virtual_text = true,
-	float = {
-		source = 'always',
-		border = 'rounded',
-	}
+		virtual_text = true,
+		float = {
+				source = 'always',
+				border = 'rounded',
+		}
 })
 
 -- Concatenate two tables

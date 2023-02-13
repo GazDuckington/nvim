@@ -3,49 +3,50 @@ local map = vim.keymap.set
 local opts = vim.g.opts
 
 local mappings = {
-	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
-	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
-	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
-	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
-	o = { ":e ", "Open/Create File" },
-	b = { name = "Buffers" },
-	s = { name = "Searches" },
-	l = { name = "LSP" },
-	t = { name = "GitSigns" },
-	m = {
-		name = "Menus",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-		l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
-		m = { "<cmd>Mason<cr>", "Open Mason menu" },
-		w = { ":saveas ", "Save buffer as" },
-		i = { ":LspInfo<cr>", "LSP Info" },
-	},
-	q = {
-		name = "Quickfix",
-		N = { ":cprevious<cr>", "Previous" },
-		o = { ":copen<cr>", "Open" },
-		n = { ":cnext<cr>", "Next" },
-	},
-	v = {
-		name = "Views",
-		l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
-		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
-		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
-		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
-	},
-	f = {
-		name = "Helps",
-		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+		["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
+		e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
+		r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
+		i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
+		o = { ":e ", "Open/Create File" },
+		b = { name = "Buffers" },
+		s = { name = "Sessions" },
+		l = { name = "LSP" },
+		t = { name = "GitSigns" },
+		f = { name = "Find" },
+		m = {
+				name = "Menus",
+				g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+				l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
+				m = { "<cmd>Mason<cr>", "Open Mason menu" },
+				w = { ":saveas ", "Save buffer as" },
+				i = { ":LspInfo<cr>", "LSP Info" },
+		},
+		q = {
+				name = "Quickfix",
+				N = { ":cprevious<cr>", "Previous" },
+				o = { ":copen<cr>", "Open" },
+				n = { ":cnext<cr>", "Next" },
+		},
+		v = {
+				name = "Views",
+				l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
+				h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
+				j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
+				k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
+		},
+		h = {
+				name = "Helps",
+				k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
+				h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 
-	},
-	h = {
-		name = "Harpoon",
-		u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
-		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
-		k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
-		j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
-	}
+		},
+		g = {
+				name = "Harpoon",
+				u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
+				h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+				k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
+				j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
+		}
 }
 
 wk.register(mappings, vim.g.ops)
@@ -65,7 +66,6 @@ map("i", "<c-o>", "<C-O>o", opts)
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
 map("n", "<c-s>", "<ESC><cmd>w!<cr>", opts)
 map("n", "<c-q>", "<cmd>q!<cr>", opts)
-map("n", "<space>S", "<cmd>mksession ~/.vim/sessions/%:p:h:t.vim<cr>", opts)
 
 -- move line up & down
 map("n", "<A-k>", ":m .-2<cr>==", opts)
@@ -107,3 +107,11 @@ map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+-- telescope stuff
+-- find
+map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
