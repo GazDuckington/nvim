@@ -1,13 +1,34 @@
 local lsp = require("lsp-zero")
-local servers = vim.g.must_lsp
 
 -- lsp-zero
-lsp.preset('recommended')
-lsp.ensure_installed(servers)
+lsp.preset("recommended")
+
+lsp.configure("sourcery", {
+		init_options = {
+				token = os.getenv('SOURCERY_TOKEN')
+		}
+})
+
+lsp.configure('cssls', {
+		filetypes = {
+				"css", "scss", "less", "rasi"
+		}
+})
+
+
+lsp.configure("lua_ls", {
+		settings = {
+				Lua = {
+						diagnostics = {
+								globals = { "vim" }
+						}
+				}
+		}
+})
 
 lsp.on_attach(function(client, bufnr)
 	if client.name == "eslint" then
-		vim.cmd.LspStop('eslint')
+		vim.cmd.LspStop("eslint")
 		return
 	end
 
@@ -15,6 +36,7 @@ lsp.on_attach(function(client, bufnr)
 		local opts = { remap = false, silent = true, buffer = bufnr }
 		vim.keymap.set(m, lhs, rhs, opts)
 	end
+
 	-- references
 	map("n", "<leader>lr", "<cmd>Telescope lsp_references<cr>")
 	map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>")
@@ -30,39 +52,4 @@ lsp.on_attach(function(client, bufnr)
 	map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end)
 
-lsp.configure('sourcery', {
-	init_options = {
-		token = os.getenv('SOURCERY_TOKEN')
-	}
-})
-
-lsp.configure('cssls', {
-	filetypes = {
-		"css", "scss", "less", "rasi"
-	}
-})
-
-
-lsp.configure('sumneko_lua', {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" }
-			}
-		}
-	}
-})
-
 lsp.setup()
-
--- null-ls
-local pretty_ft = TableConcat(vim.g.web_filetypes, { "json", "yaml", "toml", "rasi" })
-local null_ls = require("null-ls")
-
-local sources = {
-	null_ls.builtins.formatting.prettier.with({
-		filetypes = pretty_ft
-	}),
-}
-
-null_ls.setup({ sources = sources })
