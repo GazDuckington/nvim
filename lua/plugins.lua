@@ -16,11 +16,6 @@ local ok, lazy = pcall(require, "lazy")
 if not ok then return end
 
 lazy.setup(
--- plugins
-		{
-				"LunarVim/bigfile.nvim",
-				event = "VeryLazy"
-		},
 		{
 				-- surround word
 				{
@@ -118,8 +113,6 @@ lazy.setup(
 								"nvim-tree/nvim-web-devicons",
 						},
 						tag = "nightly",
-						event = "BufEnter",
-						cmd = "NvimTreeToggle"
 				},
 
 				-- indentation lines
@@ -174,7 +167,7 @@ lazy.setup(
 						"romgrk/barbar.nvim",
 						requires = { "nvim-tree/nvim-web-devicons" },
 						config = function()
-							require("bufferline").setup()
+							require("bufferline").setup { auto_hide = true, }
 						end,
 						event = "VeryLazy",
 				},
@@ -199,6 +192,7 @@ lazy.setup(
 				-- ft
 				{
 						"nathom/filetype.nvim",
+						event = "BufReadPre"
 				},
 
 				-- resize on focus

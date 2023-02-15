@@ -9,10 +9,14 @@ lsp.configure("sourcery", {
 		}
 })
 
-lsp.configure('cssls', {
+lsp.configure("cssls", {
 		filetypes = {
 				"css", "scss", "less", "rasi"
 		}
+})
+
+lsp.configure("emmet_ls", {
+		filetypes = vim.g.web_filetypes
 })
 
 

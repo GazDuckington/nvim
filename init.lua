@@ -7,6 +7,7 @@
 -- https://gtihub.com/GazDuckington/nvim
 
 local reload = require("reload")
+vim.opt.termguicolors = true
 
 -- load plugins
 require("plugins")

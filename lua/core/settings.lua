@@ -27,6 +27,7 @@ g.web_filetypes = {
 		"sass",
 		"scss",
 		"less",
+		"eruby",
 		"svelte",
 		"markdown",
 		"markdown.mdx",
