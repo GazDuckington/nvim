@@ -134,7 +134,7 @@ lazy.setup(
 									}
 							})
 						end,
-						event = "BufRead"
+						event = "BufEnter"
 				},
 
 				-- search chars
