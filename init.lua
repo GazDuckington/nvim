@@ -12,14 +12,14 @@ vim.opt.termguicolors = true
 -- load plugins
 require("plugins")
 -- core settings
-reload("core.settings")
-reload("core.keybinding")
-reload("core.autocommands")
+require("core.settings")
+require("core.keybinding")
+require("core.autocommands")
 -- plugins config
 reload("config.colorscheme")
 reload("config.toggleterm")
 reload("config.treesitter")
-reload("config.autopairs")
+-- reload("config.autopairs")
 reload("config.telescope")
 reload("config.gitsigns")
 reload("config.nvimtree")

@@ -3,50 +3,50 @@ local map = vim.keymap.set
 local opts = vim.g.opts
 
 local mappings = {
-		["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
-		e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
-		r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
-		i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
-		o = { ":e ", "Open/Create File" },
-		b = { name = "Buffers" },
-		s = { name = "Sessions" },
-		l = { name = "LSP" },
-		t = { name = "GitSigns" },
-		f = { name = "Find" },
-		m = {
-				name = "Menus",
-				g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-				l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
-				m = { "<cmd>Mason<cr>", "Open Mason menu" },
-				w = { ":saveas ", "Save buffer as" },
-				i = { ":LspInfo<cr>", "LSP Info" },
-		},
-		q = {
-				name = "Quickfix",
-				N = { ":cprevious<cr>", "Previous" },
-				o = { ":copen<cr>", "Open" },
-				n = { ":cnext<cr>", "Next" },
-		},
-		v = {
-				name = "Views",
-				l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
-				h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
-				j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
-				k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
-		},
-		h = {
-				name = "Helps",
-				k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
-				h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
+	e = { "<cmd>NvimTreeFindFileToggle<cr>", "Open tree view" },
+	r = { "<cmd>Greyjoy<cr>", "Greyjoy launcher" },
+	i = { "<cmd>cd %:p:h<cr>", "Cd to Buffer" },
+	o = { ":e ", "Open/Create File" },
+	b = { name = "Buffers" },
+	s = { name = "Sessions" },
+	l = { name = "LSP" },
+	t = { name = "GitSigns" },
+	f = { name = "Find" },
+	m = {
+		name = "Menus",
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+		l = { "<cmd>Lazy<cr>", "Open Lazy.nvim menu" },
+		m = { "<cmd>Mason<cr>", "Open Mason menu" },
+		w = { ":saveas ", "Save buffer as" },
+		i = { ":LspInfo<cr>", "LSP Info" },
+	},
+	q = {
+		name = "Quickfix",
+		N = { ":cprevious<cr>", "Previous" },
+		o = { ":copen<cr>", "Open" },
+		n = { ":cnext<cr>", "Next" },
+	},
+	v = {
+		name = "Views",
+		l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
+		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
+		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
+		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
+	},
+	h = {
+		name = "Helps",
+		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 
-		},
-		g = {
-				name = "Harpoon",
-				u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
-				h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
-				k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
-				j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
-		}
+	},
+	g = {
+		name = "Harpoon",
+		u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Marks" },
+		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+		k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
+		j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
+	}
 }
 
 wk.register(mappings, vim.g.ops)
@@ -61,10 +61,11 @@ map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("x", "<leader>p", "\"_dP", opts)
 map("i", "<c-o>", "<C-O>o", opts)
+map({ "i", "n" }, "<c-I>", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
-map("n", "<c-s>", "<ESC><cmd>w!<cr>", opts)
+map("n", "<c-s>", "<cmd>w!<cr>", opts)
 map("n", "<c-q>", "<cmd>q!<cr>", opts)
 
 -- move line up & down
