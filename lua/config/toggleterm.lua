@@ -6,7 +6,7 @@ end
 local opts = vim.g.opts
 
 require("toggleterm").setup {
-	size = 20,
+	size = 10,
 	open_mapping = [[<c-`>]],
 	shade_filetypes = {},
 	shade_terminals = true,
@@ -15,7 +15,7 @@ require("toggleterm").setup {
 	insert_mappings = true,
 	close_on_exit = true,
 	persist_size = true,
-	direction = "float",
+	direction = "horizontal",
 	float_ops = {
 		border = "curved",
 		winblend = 0,
@@ -35,7 +35,7 @@ end
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", dir = "%:p:h", hidden = true })
+local lazygit = Terminal:new({ cmd = "lazygit", dir = "%:p:h", direction = "float", hidden = true })
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()

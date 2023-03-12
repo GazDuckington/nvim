@@ -4,30 +4,30 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.configure("sourcery", {
-		init_options = {
-				token = os.getenv('SOURCERY_TOKEN')
-		}
+	init_options = {
+		token = os.getenv('SOURCERY_TOKEN')
+	}
 })
 
 lsp.configure("cssls", {
-		filetypes = {
-				"css", "scss", "less", "rasi"
-		}
+	filetypes = {
+		"css", "scss", "less", "rasi"
+	}
 })
 
 lsp.configure("emmet_ls", {
-		filetypes = vim.g.web_filetypes
+	filetypes = vim.g.web_filetypes
 })
 
 
 lsp.configure("lua_ls", {
-		settings = {
-				Lua = {
-						diagnostics = {
-								globals = { "vim" }
-						}
-				}
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" }
+			}
 		}
+	}
 })
 
 lsp.on_attach(function(client, bufnr)

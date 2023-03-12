@@ -13,6 +13,7 @@ local mappings = {
 	l = { name = "LSP" },
 	t = { name = "GitSigns" },
 	f = { name = "Find" },
+	c = { ":ColorizerToggle<cr>", "Toggle colorizer" },
 	m = {
 		name = "Menus",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
@@ -38,7 +39,6 @@ local mappings = {
 		name = "Helps",
 		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
-
 	},
 	g = {
 		name = "Harpoon",
@@ -51,7 +51,7 @@ local mappings = {
 
 wk.register(mappings, vim.g.ops)
 
--- QoL
+-- quality of life
 map("i", "jk", "<ESC>", opts)
 map("n", "P", '"0p', opts)
 map("n", "J", "mzJ`z", opts)
@@ -59,9 +59,9 @@ map("n", "<c-d>", "<C-d>zz", opts)
 map("n", "<c-u>", "<C-u>zz", opts)
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
+map("n", "<C-a>", "ggVG", opts)
 map("x", "<leader>p", "\"_dP", opts)
 map("i", "<c-o>", "<C-O>o", opts)
-map({ "i", "n" }, "<c-I>", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
