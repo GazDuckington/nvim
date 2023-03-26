@@ -49,19 +49,16 @@ lazy.setup(
 
 		-- quarto
 		{
-			"quarto-dev/quarto-nvim",
+			'quarto-dev/quarto-nvim',
 			dependencies = {
-				"jmbuhr/otter.nvim",
-				"jpalardy/vim-slime",
-				"ekickx/clipboard-image.nvim",
-				"edluffy/hologram.nvim",
-				"neovim/nvim-lspconfig"
+				'jmbuhr/otter.nvim',
+				'neovim/nvim-lspconfig'
 			},
 			config = function()
-				require("quarto").setup {
+				require 'quarto'.setup {
 					lspFeatures = {
 						enabled = true,
-						languages = { "r", "python", "julia" },
+						languages = { 'r', 'python', 'julia' },
 						diagnostics = {
 							enabled = true,
 							triggers = { "BufWrite" }
@@ -71,7 +68,7 @@ lazy.setup(
 						}
 					}
 				}
-			end,
+			end
 		},
 
 		-- tabnine
@@ -116,6 +113,7 @@ lazy.setup(
 					"nvim-telescope/telescope-fzf-native.nvim",
 					build = "make"
 				},
+				"olacin/telescope-cc.nvim"
 			},
 		},
 
