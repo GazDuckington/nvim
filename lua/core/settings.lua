@@ -31,6 +31,7 @@ g.web_filetypes = {
 	"svelte",
 	"markdown",
 	"markdown.mdx",
+	"htmldjango",
 }
 -- options for whichkey
 g.ops = {
