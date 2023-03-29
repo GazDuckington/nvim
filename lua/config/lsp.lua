@@ -57,3 +57,12 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+local cmp = require("cmp")
+local cmp_config = require("lsp-zero").defaults.cmp_config({})
+
+cmp_config.sources = {
+	{ name = 'cmp_tabnine' }
+}
+
+cmp.setup(cmp_config)
