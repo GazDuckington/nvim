@@ -56,13 +56,14 @@ lsp.on_attach(function(client, bufnr)
 	map("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end)
 
+lsp.setup_nvim_cmp({
+	sources = {
+		{ name = 'path' },
+		{ name = 'nvim_lsp' },
+		{ name = 'buffer',   keyword_length = 3 },
+		{ name = 'luasnip',  keyword_length = 2 },
+		{ name = 'cpm_tabnine' }
+	}
+})
+
 lsp.setup()
-
-local cmp = require("cmp")
-local cmp_config = require("lsp-zero").defaults.cmp_config({})
-
-cmp_config.sources = {
-	{ name = 'cmp_tabnine' }
-}
-
-cmp.setup(cmp_config)

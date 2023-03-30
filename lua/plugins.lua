@@ -32,6 +32,10 @@ lazy.setup(
 				{ 'neovim/nvim-lspconfig' },         -- Required
 				{ 'williamboman/mason.nvim' },       -- Optional
 				{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+				{
+					"jose-elias-alvarez/null-ls.nvim",
+					dependencies = { "nvim-lua/plenary.nvim" }
+				},
 
 				-- Autocompletion
 				{ 'hrsh7th/nvim-cmp' },     -- Required
@@ -77,6 +81,13 @@ lazy.setup(
 			build = "./install.sh",
 			dependencies = "hrsh7th/nvim-cmp",
 			event = "InsertEnter",
+		},
+		{
+			"codota/tabnine-nvim",
+			build = "./dl_binaries.sh",
+			config = function()
+				require("tabnine").setup()
+			end
 		},
 
 		-- Treesitter
@@ -239,6 +250,9 @@ lazy.setup(
 			config = true,
 			event = "BufReadPost",
 		},
+
+		--  python
+		-- {"averms/black-nvim", build: "UpdateRemotePlugins"},
 
 		-- markdown
 		{

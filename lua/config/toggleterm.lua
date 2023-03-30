@@ -7,7 +7,7 @@ local opts = vim.g.opts
 
 require("toggleterm").setup {
 	size = 10,
-	open_mapping = [[<c-`>]],
+	open_mapping = [[<leader>`]],
 	shade_filetypes = {},
 	shade_terminals = true,
 	shading_factor = 2,
@@ -44,7 +44,7 @@ end
 -- keybindings
 for var = 1, 9 do
 	local map = vim.keymap.set
-	local key = string.format("<C-%s>", var)
+	local key = string.format("<leader>%s", var)
 	local term = string.format("<cmd>%sToggleTerm<cr>", var)
 	map("n", key, term, opts)
 end
