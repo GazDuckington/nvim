@@ -7,7 +7,7 @@ local opts = vim.g.opts
 
 require("toggleterm").setup {
 	size = 10,
-	open_mapping = [[<leader>`]],
+	open_mapping = [[<A-`>]],
 	shade_filetypes = {},
 	shade_terminals = true,
 	shading_factor = 2,
