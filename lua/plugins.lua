@@ -88,7 +88,7 @@ lazy.setup(
 			config = function()
 				require("tabnine").setup({
 					disable_auto_comment = true,
-					accept_keymap = "<C-Tab>",
+					accept_keymap = "<C-space>",
 					dismiss_keymap = "<C-]>",
 					debounce_ms = 800,
 					suggestion_color = { gui = "#808080", cterm = 244 },
@@ -179,13 +179,11 @@ lazy.setup(
 			end,
 			event = "BufEnter"
 		},
-
-		-- search chars
 		{
-			"ggandor/leap.nvim",
-			event = "BufRead",
+			"folke/todo-comments.nvim",
+			dependencies = "nvim-lua/plenary.nvim",
 			config = function()
-				require("leap").add_default_mappings()
+				require("todo-comments").setup()
 			end
 		},
 
@@ -236,7 +234,10 @@ lazy.setup(
 		-- ft
 		{
 			"nathom/filetype.nvim",
-			event = "BufReadPre"
+			event = "BufReadPre",
+			config = function()
+				require("filetype").setup()
+			end
 		},
 
 		-- resize on focus

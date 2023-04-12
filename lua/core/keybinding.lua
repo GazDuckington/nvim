@@ -15,6 +15,7 @@ local mappings = {
 	f = { name = "Find" },
 	c = { ":ColorizerToggle<cr>", "Toggle colorizer" },
 	C = { ":Telescope conventional_commits<cr>", "conventional commit" },
+	n = { ":nohl<cr>", "Reset highlight" },
 	m = {
 		name = "Menus",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },

@@ -30,16 +30,16 @@ autocmd("BufWritePre", {
 })
 
 -- filetype management
-autocmd(
-	{ "BufEnter", "BufNewFile", "BufRead" },
-	{
-		pattern = { "*" },
-		callback = function()
-			require("filetype").resolve()
-		end,
-		group = gpinit,
-	}
-)
+-- autocmd(
+-- 	{ "BufEnter", "BufNewFile", "BufRead" },
+-- 	{
+-- 		pattern = { "*" },
+-- 		callback = function()
+-- 			require("filetype").resolve()
+-- 		end,
+-- 		group = gpinit,
+-- 	}
+-- )
 
 -- Show line diagnostics automatically in hover window
 autocmd(
