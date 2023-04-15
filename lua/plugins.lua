@@ -232,13 +232,13 @@ lazy.setup(
 		},
 
 		-- ft
-		{
-			"nathom/filetype.nvim",
-			event = "BufReadPre",
-			config = function()
-				require("filetype").setup()
-			end
-		},
+		-- {
+		-- 	"nathom/filetype.nvim",
+		-- 	event = "BufReadPre",
+		-- 	config = function()
+		-- 		require("filetype").setup()
+		-- 	end
+		-- },
 
 		-- resize on focus
 		{
