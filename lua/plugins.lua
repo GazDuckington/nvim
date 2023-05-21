@@ -17,10 +17,10 @@ if not ok then return end
 
 lazy.setup(
 	{
-		-- surround word
 		{
-			"tpope/vim-surround",
-			event = "InsertEnter"
+			"kylechui/nvim-surround",
+			version = "*",
+			event = "VeryLazy",
 		},
 
 		-- LSP
@@ -51,40 +51,29 @@ lazy.setup(
 			}
 		},
 
-		-- quarto
 		{
-			'quarto-dev/quarto-nvim',
-			dependencies = {
-				'jmbuhr/otter.nvim',
-				'neovim/nvim-lspconfig'
-			},
-			config = function()
-				require 'quarto'.setup {
-					lspFeatures = {
-						enabled = true,
-						languages = { 'r', 'python', 'julia' },
-						diagnostics = {
-							enabled = true,
-							triggers = { "BufWrite" }
-						},
-						completion = {
-							enabled = true
-						}
-					}
+			"folke/trouble.nvim",
+			cmd = { "TroubleToggle", "Trouble" },
+			event = "VeryLazy",
+			opts = {
+				use_diagnostic_signs = true,
+				action_keys = {
+					close = { "q", "<esc>" },
+					cancel = "<c-e>"
 				}
-			end
+			}
 		},
 
 		-- tabnine
 		{
 			"tzachar/cmp-tabnine",
 			build = "./install.sh",
-			dependencies = "hrsh7th/nvim-cmp",
 			event = "InsertEnter",
 		},
 		{
 			"codota/tabnine-nvim",
 			build = "./dl_binaries.sh",
+			event = "VeryLazy",
 			config = function()
 				require("tabnine").setup({
 					disable_auto_comment = true,
@@ -125,6 +114,7 @@ lazy.setup(
 		-- telescope
 		{
 			"nvim-telescope/telescope.nvim",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				{
@@ -144,6 +134,7 @@ lazy.setup(
 		-- colorizer
 		{
 			"norcalli/nvim-colorizer.lua",
+			event = "VeryLazy",
 			config = function()
 				require("colorizer").setup()
 			end,
@@ -152,6 +143,7 @@ lazy.setup(
 		-- file explorer
 		{
 			"nvim-tree/nvim-tree.lua",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",
 			},
@@ -181,6 +173,7 @@ lazy.setup(
 		},
 		{
 			"folke/todo-comments.nvim",
+			event = "VeryLazy",
 			dependencies = "nvim-lua/plenary.nvim",
 			config = function()
 				require("todo-comments").setup()
@@ -194,30 +187,50 @@ lazy.setup(
 			event = "VeryLazy"
 		},
 
-		-- session manager
+		{
+			'RRethy/vim-illuminate',
+			lazy = true,
+			enabled = true,
+			dependencies = {
+				'nvim-lua/plenary.nvim',
+			},
+			event = { 'CursorMoved', 'InsertLeave' },
+			config = function()
+				require 'illuminate'.configure {
+					filetypes_denylist = {
+						'NvimTree',
+						'nvim-tree',
+						'Telescope',
+						'telescope',
+					}
+				}
+			end
+		},
 
 		-- lualine
 		{
 			"nvim-lualine/lualine.nvim",
-			dependencies = { "nvim-tree/nvim-web-devicons" },
 			event = "VeryLazy",
 		},
 
 		-- barbar buffer line
 		{
 			"romgrk/barbar.nvim",
-			requires = { "nvim-tree/nvim-web-devicons" },
-			config = function()
-				require("bufferline").setup { auto_hide = true, }
-			end,
+			init = function() vim.g.barbar_auto_setup = false end,
+			opts = {
+				auto_hide = true,
+				icons = {
+					button = '󰅙'
+				}
+			},
 			event = "VeryLazy",
 		},
 
 		-- colorscheme
 		{
 			"catppuccin/nvim",
+			event = "VeryLazy",
 			name = "catppuccin",
-			lazy = false,
 		},
 
 		-- command launcher
@@ -225,7 +238,6 @@ lazy.setup(
 			"desdic/greyjoy.nvim",
 			dependencies = {
 				"stevearc/dressing.nvim",
-				config = true,
 				event = "VeryLazy",
 			},
 			event = "VeryLazy"
@@ -255,7 +267,6 @@ lazy.setup(
 		-- show git stuff in gutter
 		{
 			"lewis6991/gitsigns.nvim",
-			config = true,
 			event = "BufReadPost",
 		},
 
@@ -265,6 +276,7 @@ lazy.setup(
 		-- markdown
 		{
 			"dkarter/bullets.vim",
+			event = "VeryLazy",
 			ft = "markdown"
 		},
 		{
@@ -272,10 +284,12 @@ lazy.setup(
 			config = function()
 				require("markdowny").setup()
 			end,
+			event = "VeryLazy",
 			ft = "markdown",
 		},
 		{
 			"kat0h/bufpreview.vim",
+			event = "VeryLazy",
 			build = "deno task prepare",
 			dependencies = { "vim-denops/denops.vim" },
 			ft = "markdown",

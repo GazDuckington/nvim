@@ -48,6 +48,12 @@ local mappings = {
 		h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		k = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next marks" },
 		j = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev marks" },
+	},
+	x = {
+		name = "Trouble",
+		X = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Worksapce Diagnostics" },
+		x = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+		q = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" }
 	}
 }
 
