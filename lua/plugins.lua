@@ -35,17 +35,13 @@ lazy.setup(
 				{ "neovim/nvim-lspconfig" },         -- Required
 				{ "williamboman/mason.nvim" },       -- Optional
 				{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-				{
-					"jose-elias-alvarez/null-ls.nvim",
-					dependencies = { "nvim-lua/plenary.nvim" }
-				},
 				-- Autocompletion
-				{ 'hrsh7th/nvim-cmp' },     -- Required
-				{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-				{ 'hrsh7th/cmp-buffer' },   -- Optional
-				{ 'hrsh7th/cmp-path' },     -- Optional
-				{ 'saadparwaiz1/cmp_luasnip' }, -- Optional
-				{ 'hrsh7th/cmp-nvim-lua' }, -- Optional
+				{ 'hrsh7th/nvim-cmp' },              -- Required
+				{ 'hrsh7th/cmp-nvim-lsp' },          -- Required
+				{ 'hrsh7th/cmp-buffer' },            -- Optional
+				{ 'hrsh7th/cmp-path' },              -- Optional
+				{ 'saadparwaiz1/cmp_luasnip' },      -- Optional
+				{ 'hrsh7th/cmp-nvim-lua' },          -- Optional
 
 				-- Snippets
 				{ 'L3MON4D3/LuaSnip' },         -- Required
@@ -153,9 +149,44 @@ lazy.setup(
 		},
 
 		-- indentation lines
+		-- {
+		-- 	"lukas-reineke/indent-blankline.nvim",
+		-- 	event = "BufReadPre"
+		-- },
 		{
-			"lukas-reineke/indent-blankline.nvim",
-			event = "BufReadPre"
+			"shellRaining/hlchunk.nvim",
+			event = { "UIEnter" },
+			config = function()
+				require("hlchunk").setup({
+					indent = {
+						chars = {
+							"│",
+						},
+						-- style = {
+						-- 	"#f38ba8",
+						-- 	"#fab387",
+						-- 	"#f9e2af",
+						-- 	"#a6e3a1",
+						-- 	"#89dceb",
+						-- 	"#89b4fa",
+						-- 	"#cba6f7",
+						-- },
+					},
+					line_num = {
+						style = "#cba6f7",
+					},
+					chunk = {
+						chars = {
+							horizontal_line = "─",
+							vertical_line = "│",
+							left_top = "┌",
+							left_bottom = "└",
+							right_arrow = "─",
+						},
+						style = "#cba6f7"
+					}
+				})
+			end
 		},
 
 		-- comment
@@ -256,7 +287,8 @@ lazy.setup(
 
 		-- resize on focus
 		{
-			"beauwilliams/focus.nvim",
+			"nvim-focus/focus.nvim",
+			version = false,
 			event = "BufReadPost"
 		},
 
@@ -264,6 +296,38 @@ lazy.setup(
 		{
 			"nat-418/boole.nvim",
 			event = "BufRead",
+			config = function()
+				require("boole").setup({
+					mappings = {
+						increment = '<A-a>',
+						decrement = '<A-x>',
+					}
+				})
+			end
+		},
+
+		-- session manager
+		{
+			"gennaro-tedesco/nvim-possession",
+			dependencies = {
+				"ibhagwan/fzf-lua",
+			},
+			config = true,
+			init = function()
+				local possession = require("nvim-possession")
+				vim.keymap.set("n", "<leader>sl", function()
+					possession.list()
+				end)
+				vim.keymap.set("n", "<leader>sn", function()
+					possession.new()
+				end)
+				vim.keymap.set("n", "<leader>su", function()
+					possession.update()
+				end)
+				vim.keymap.set("n", "<leader>sd", function()
+					possession.delete()
+				end)
+			end,
 		},
 
 		-- show git stuff in gutter
@@ -273,9 +337,33 @@ lazy.setup(
 		},
 
 		--  python
+		{
+			"linux-cultist/venv-selector.nvim",
+			dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+			config = true,
+			event = "VeryLazy",
+			keys = { {
+				"<leader>ps", "<cmd>:VenvSelect<cr>",
+				"<leader>pc", "<cmd>:VenvSelectCached<cr>"
+			} }
+		},
 		-- {"averms/black-nvim", build: "UpdateRemotePlugins"},
 
 		-- markdown
+		{
+			"iamcco/markdown-preview.nvim",
+			cmd = { "MarkdownPreviewToggle" },
+			ft = { "markdown" },
+			build = function() vim.fn["mkdp#util#install"]() end,
+		},
+		{
+			"iamcco/markdown-preview.nvim",
+			build = "cd app && npm install",
+			config = function()
+				vim.g.mkdp_filetypes = { "markdown" }
+			end,
+			ft = { "markdown" },
+		},
 		{
 			"dkarter/bullets.vim",
 			event = "VeryLazy",
@@ -288,14 +376,6 @@ lazy.setup(
 			end,
 			event = "VeryLazy",
 			ft = "markdown",
-		},
-		{
-			"kat0h/bufpreview.vim",
-			event = "VeryLazy",
-			build = "deno task prepare",
-			dependencies = { "vim-denops/denops.vim" },
-			ft = "markdown",
-			cmd = "PreviewMarkdownToggle"
 		},
 	},
 	-- opts/configurations

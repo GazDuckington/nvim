@@ -1,6 +1,8 @@
 local wk = require("which-key")
 local map = vim.keymap.set
 local opts = vim.g.opts
+-- possession
+local possession = require("nvim-possession")
 
 local mappings = {
 	["."] = { ":cd ~/.config/nvim<cr>:e init.lua<cr>", "Open Neovim Config" },
@@ -39,7 +41,7 @@ local mappings = {
 	},
 	h = {
 		name = "Helps",
-		k = { "<cmd>Telescope keymaps<cr>", "List all keymaps" },
+		k = { "<cmd>Telescope keymaps<cr>", "L:vnoremap < <gvist all keymaps" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 	},
 	g = {
@@ -54,6 +56,13 @@ local mappings = {
 		X = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Worksapce Diagnostics" },
 		x = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
 		q = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" }
+	},
+	s = {
+		name = "session manager",
+		l = { function() possession.list() end, "sessions list" },
+		n = { function() possession.new() end, "create new session" },
+		u = { function() possession.update() end, "update session" },
+		d = { function() possession.delete() end, "delete session" },
 	}
 }
 
@@ -70,6 +79,8 @@ map("n", "N", "Nzzzv", opts)
 map("n", "<C-a>", "ggVG", opts)
 map("x", "<leader>p", "\"_dP", opts)
 map("i", "<c-o>", "<C-O>o", opts)
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
 -- save & quit
 map("i", "<c-s>", "<ESC><cmd>w!<cr>", opts)
