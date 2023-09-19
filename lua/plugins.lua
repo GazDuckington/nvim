@@ -206,11 +206,8 @@ lazy.setup(
 		},
 		{
 			"folke/todo-comments.nvim",
-			event = "VeryLazy",
-			dependencies = "nvim-lua/plenary.nvim",
-			config = function()
-				require("todo-comments").setup()
-			end
+			dependencies = { "nvim-lua/plenary.nvim" },
+			opts = {}
 		},
 
 		-- harpoon
@@ -279,18 +276,21 @@ lazy.setup(
 		-- ft
 		-- {
 		-- 	"nathom/filetype.nvim",
-		-- 	event = "BufReadPre",
+		-- 	event = "BufReadPost",
+		-- 	opts = function()
+		-- 		require("filetype").resolve()
+		-- 	end,
 		-- 	config = function()
 		-- 		require("filetype").setup()
 		-- 	end
 		-- },
 
 		-- resize on focus
-		{
-			"nvim-focus/focus.nvim",
-			version = false,
-			event = "BufReadPost"
-		},
+		-- {
+		-- 	"nvim-focus/focus.nvim",
+		-- 	version = false,
+		-- 	event = "BufReadPost"
+		-- },
 
 		-- toggle boolean
 		{

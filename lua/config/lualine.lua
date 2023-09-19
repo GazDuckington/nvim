@@ -68,7 +68,7 @@ require('lualine').setup({
 	},
 	options = {
 		theme = catto,
-		globalstatus = true,
+		globalstatus = false,
 		component_separators = '',
 		-- section_separators = { left = '🭐', right = '🭅' },
 		section_separators = { left = '', right = '' },

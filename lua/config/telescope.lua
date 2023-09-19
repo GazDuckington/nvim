@@ -53,7 +53,7 @@ telescope.setup {
 		buffers = {
 			-- theme = "dropdown",
 			-- previewer = false,
-			initial_mode = "normal",
+			-- initial_mode = "normal",
 			mappings = {
 				i = {
 					["<A-d>"] = actions.delete_buffer,

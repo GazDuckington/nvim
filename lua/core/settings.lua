@@ -1,5 +1,6 @@
 local o = vim.opt
 local g = vim.g
+local wo = vim.wo
 local cmd = vim.cmd
 
 vim.opt_global.shell = "fish"
@@ -55,7 +56,7 @@ g.loaded_netrwPlugin = 1
 o.termguicolors = true
 o.cursorline = true
 -- overirden by lualine
--- o.laststatus = 3
+o.laststatus = 2
 o.number = true
 o.relativenumber = true
 
@@ -91,6 +92,11 @@ o.smartindent = true
 -- undo
 o.undofile = true
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- text wrapping
+wo.wrap = false
+wo.list = false
+wo.linebreak = true
 
 -- disable diagnostics inline texts
 vim.diagnostic.config({

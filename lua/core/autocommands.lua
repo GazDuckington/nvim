@@ -30,10 +30,18 @@ autocmd("BufWritePre", {
 })
 
 -- filetype management
+vim.filetype.add({
+	filename = {
+		[".env"] = function()
+			return "config"
+		end,
+	},
+})
+
 -- autocmd(
 -- 	{ "BufEnter", "BufNewFile", "BufRead" },
 -- 	{
--- 		pattern = { "*" },
+-- 		-- pattern = { "*" },
 -- 		callback = function()
 -- 			require("filetype").resolve()
 -- 		end,
@@ -64,6 +72,20 @@ autocmd(
 			vim.cmd.cd(data.file)
 			-- open the tree
 			require("nvim-tree.api").tree.open()
+		end
+	}
+)
+
+-- python venv
+autocmd(
+	{ "VimEnter" },
+	{
+		pattern = { "*" },
+		callback = function()
+			local venv = vim.fn.findfile("pyproject.toml", vim.fn.getcwd() .. ";")
+			if venv ~= "" then
+				require("venv-selector").retrieve_from_cache()
+			end
 		end
 	}
 )

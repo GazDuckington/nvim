@@ -34,10 +34,8 @@ local mappings = {
 	},
 	v = {
 		name = "Views",
-		l = { "<cmd>FocusSplitRight<cr>", "Focus split right" },
-		h = { "<cmd>FocusSplitLeft<cr>", "Focus split left" },
-		j = { "<cmd>FocusSplitDown<cr>", "Focus split down" },
-		k = { "<cmd>FocusSplitUp<cr>", "Focus split up" },
+		l = { "<cmd>vsplit<cr><C-w>l", "Focus split right" },
+		j = { "<cmd>split<cr><C-w>j", "Focus split down" },
 	},
 	h = {
 		name = "Helps",
@@ -133,5 +131,7 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
