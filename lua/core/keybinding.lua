@@ -55,13 +55,14 @@ local mappings = {
 		x = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
 		q = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" }
 	},
-	s = {
+	S = {
 		name = "session manager",
 		l = { function() possession.list() end, "sessions list" },
 		n = { function() possession.new() end, "create new session" },
 		u = { function() possession.update() end, "update session" },
 		d = { function() possession.delete() end, "delete session" },
-	}
+	},
+	V = { "<cmd>VenvSelect<cr>", "select python venv" },
 }
 
 wk.register(mappings, vim.g.ops)
@@ -135,3 +136,8 @@ map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
+
+-- goto
+map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)

@@ -14,7 +14,7 @@ require('nvim-tree').setup({
 		number = true,
 		relativenumber = true,
 		float = {
-			enable = true,
+			enable = false,
 			open_win_config = function()
 				local screen_w = vim.opt.columns:get()
 				local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -35,9 +35,9 @@ require('nvim-tree').setup({
 				}
 			end,
 		},
-		width = function()
-			return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
-		end,
+		-- width = function()
+		-- 	return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+		-- end,
 		mappings = {
 			list = {
 				{
