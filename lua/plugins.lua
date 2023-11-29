@@ -25,6 +25,9 @@ lazy.setup(
 				require("nvim-surround").setup()
 			end
 		},
+		{
+			"github/copilot.vim",
+		},
 
 		-- LSP
 		{
@@ -63,11 +66,11 @@ lazy.setup(
 		},
 
 		-- tabnine
-		{
-			"tzachar/cmp-tabnine",
-			build = "./install.sh",
-			event = "InsertEnter",
-		},
+		-- {
+		-- 	"tzachar/cmp-tabnine",
+		-- 	build = "./install.sh",
+		-- 	event = "InsertEnter",
+		-- },
 		{
 			"codota/tabnine-nvim",
 			build = "./dl_binaries.sh",
@@ -352,14 +355,9 @@ lazy.setup(
 		-- markdown
 		{
 			"iamcco/markdown-preview.nvim",
-			cmd = { "MarkdownPreviewToggle" },
-			ft = { "markdown" },
-			build = function() vim.fn["mkdp#util#install"]() end,
-		},
-		{
-			"iamcco/markdown-preview.nvim",
+			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 			build = "cd app && npm install",
-			config = function()
+			init = function()
 				vim.g.mkdp_filetypes = { "markdown" }
 			end,
 			ft = { "markdown" },
