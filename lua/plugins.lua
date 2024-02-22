@@ -25,9 +25,9 @@ lazy.setup(
 				require("nvim-surround").setup()
 			end
 		},
-		{
-			"github/copilot.vim",
-		},
+		-- {
+		-- 	"github/copilot.vim",
+		-- },
 
 		-- LSP
 		{
@@ -104,6 +104,14 @@ lazy.setup(
 		{
 			"windwp/nvim-autopairs",
 			event = "InsertEnter",
+		},
+
+		-- numb
+		{
+			'nacro90/numb.nvim',
+			config = function()
+				require('numb').setup()
+			end
 		},
 
 		-- terminal
