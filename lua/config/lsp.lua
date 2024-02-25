@@ -1,4 +1,15 @@
 local lsp = require("lsp-zero")
+local cmp = require('cmp')
+
+local cmp_mappings = cmp.mapping.preset.insert({
+	["<C-b>"] = cmp.mapping.scroll_docs(-4),
+	["<C-f>"] = cmp.mapping.scroll_docs(4),
+	["<C-y>"] = cmp.mapping.complete(),
+	["<C-e>"] = cmp.mapping.abort(),
+	["<CR>"] = cmp.mapping.confirm({ select = false }),
+	['<Tab>'] = vim.NIL,
+	['<S-Tab>'] = vim.NIL,
+});
 
 -- lsp-zero
 lsp.preset("recommended")
@@ -63,7 +74,8 @@ lsp.setup_nvim_cmp({
 		{ name = 'buffer',     keyword_length = 3 },
 		{ name = 'luasnip',    keyword_length = 2 },
 		{ name = 'cpm_tabnine' }
-	}
+	},
+	mapping = cmp_mappings,
 })
 
 lsp.setup()

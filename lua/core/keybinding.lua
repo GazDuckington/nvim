@@ -139,5 +139,5 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 
 -- goto
-map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+map("n", "gD", "<cmd>Telescope lsp_type_definitions<CR>", opts)
