@@ -28,6 +28,10 @@ lazy.setup(
 		-- {
 		-- 	"github/copilot.vim",
 		-- },
+		{
+			'Exafunction/codeium.vim',
+			event = 'BufEnter'
+		},
 
 		-- LSP
 		{
@@ -71,6 +75,19 @@ lazy.setup(
 		-- 	build = "./install.sh",
 		-- 	event = "InsertEnter",
 		-- },
+		{
+			"jackMort/ChatGPT.nvim",
+			event = "VeryLazy",
+			config = function()
+				require("chatgpt").setup()
+			end,
+			dependencies = {
+				"MunifTanjim/nui.nvim",
+				"nvim-lua/plenary.nvim",
+				"folke/trouble.nvim",
+				"nvim-telescope/telescope.nvim"
+			}
+		},
 		{
 			"codota/tabnine-nvim",
 			build = "./dl_binaries.sh",
