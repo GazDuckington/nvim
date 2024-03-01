@@ -68,7 +68,7 @@ local mappings = {
 wk.register(mappings, vim.g.ops)
 
 -- quality of life
-map("i", "jk", "<ESC>", opts)
+-- map("i", "jk", "<ESC>", opts)
 map("n", "P", '"0p', opts)
 map("n", "J", "mzJ`z", opts)
 map("n", "<c-d>", "<C-d>zz", opts)
