@@ -78,4 +78,16 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
 
+-- autoformat on save
+lsp.format_on_save({
+	format_opts = {
+		async = false,
+		timeout_ms = 10000,
+	},
+	servers = {
+		['tsserver'] = { 'javascript', 'typescript' },
+		['ruff'] = { 'python' },
+		['shellcheck'] = { 'bash', 'zsh', 'sh' }
+	}
+})
 lsp.setup()

@@ -141,3 +141,6 @@ map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 -- goto
 map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 map("n", "gD", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+
+-- fine cmd
+map('n', ':', '<cmd>FineCmdline<CR>', opts)

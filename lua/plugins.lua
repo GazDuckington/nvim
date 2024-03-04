@@ -68,41 +68,49 @@ lazy.setup(
 				}
 			}
 		},
-
+		{
+			'VonHeikemen/fine-cmdline.nvim',
+			dependencies = {
+				{ 'MunifTanjim/nui.nvim' }
+			}
+		},
 		-- tabnine
 		-- {
 		-- 	"tzachar/cmp-tabnine",
 		-- 	build = "./install.sh",
 		-- 	event = "InsertEnter",
 		-- },
-		{
-			"jackMort/ChatGPT.nvim",
-			event = "VeryLazy",
-			config = function()
-				require("chatgpt").setup()
-			end,
-			dependencies = {
-				"MunifTanjim/nui.nvim",
-				"nvim-lua/plenary.nvim",
-				"folke/trouble.nvim",
-				"nvim-telescope/telescope.nvim"
-			}
-		},
-		{
-			"codota/tabnine-nvim",
-			build = "./dl_binaries.sh",
-			event = "VeryLazy",
-			config = function()
-				require("tabnine").setup({
-					disable_auto_comment = true,
-					accept_keymap = "<C-space>",
-					dismiss_keymap = "<C-]>",
-					debounce_ms = 800,
-					suggestion_color = { gui = "#808080", cterm = 244 },
-					exclude_filetypes = { "TelescopePrompt" }
-				})
-			end
-		},
+		-- {
+		-- 	"jackMort/ChatGPT.nvim",
+		-- 	event = "VeryLazy",
+		-- 	config = function()
+		-- 		local home = vim.fn.expand("$HOME")
+		-- 		require("chatgpt").setup({
+		-- 			api_key_cmd = "cat " .. home .. "/secret.txt"
+		-- 		})
+		-- 	end,
+		-- 	dependencies = {
+		-- 		"MunifTanjim/nui.nvim",
+		-- 		"nvim-lua/plenary.nvim",
+		-- 		"folke/trouble.nvim",
+		-- 		"nvim-telescope/telescope.nvim"
+		-- 	}
+		-- },
+		-- {
+		-- 	"codota/tabnine-nvim",
+		-- 	build = "./dl_binaries.sh",
+		-- 	event = "VeryLazy",
+		-- 	config = function()
+		-- 		require("tabnine").setup({
+		-- 			disable_auto_comment = true,
+		-- 			accept_keymap = "<C-space>",
+		-- 			dismiss_keymap = "<C-]>",
+		-- 			debounce_ms = 800,
+		-- 			suggestion_color = { gui = "#808080", cterm = 244 },
+		-- 			exclude_filetypes = { "TelescopePrompt" }
+		-- 		})
+		-- 	end
+		-- },
 
 		-- Treesitter
 		{
