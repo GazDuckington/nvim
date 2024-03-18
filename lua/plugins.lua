@@ -18,6 +18,16 @@ if not ok then return end
 lazy.setup(
 	{
 		{
+			"miversen33/sunglasses.nvim",
+			config = function()
+				require("sunglasses").setup({
+					filter_type = "SHADE",
+					filter_percent = .65
+				})
+			end,
+			event = "UIEnter"
+		},
+		{
 			"kylechui/nvim-surround",
 			version = "*",
 			event = "VeryLazy",
