@@ -26,6 +26,7 @@ local mappings = {
 		w = { ":saveas ", "Save buffer as" },
 		i = { ":LspInfo<cr>", "LSP Info" },
 		n = { ":Navbuddy<cr>", "Navbuddy, explore breadcrumb" },
+		f = { ":FocusToggle<cr>", "FocusToggle" },
 	},
 	q = {
 		name = "Quickfix",

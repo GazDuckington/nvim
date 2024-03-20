@@ -400,11 +400,11 @@ lazy.setup(
 		-- },
 
 		-- resize on focus
-		-- {
-		-- 	"nvim-focus/focus.nvim",
-		-- 	version = false,
-		-- 	event = "BufReadPost"
-		-- },
+		{
+			"nvim-focus/focus.nvim",
+			version = false,
+			event = "BufReadPost",
+		},
 
 		-- toggle boolean
 		{
