@@ -17,15 +17,55 @@ if not ok then return end
 
 lazy.setup(
 	{
+		-- quality of life
 		{
-			"miversen33/sunglasses.nvim",
+			'mikesmithgh/kitty-scrollback.nvim',
+			enabled = true,
+			lazy = true,
+			cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+			event = { 'User KittyScrollbackLaunch' },
+			-- version = '*', -- latest stable version, may have breaking changes if major version changed
+			-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
 			config = function()
-				require("sunglasses").setup({
-					filter_type = "SHADE",
-					filter_percent = .65
-				})
+				require('kitty-scrollback').setup()
 			end,
-			event = "UIEnter"
+		},
+		{
+			"levouh/tint.nvim",
+		},
+		{
+			"chrisgrieser/nvim-spider",
+			keys = {
+				{
+					"w",
+					"<cmd>lua require('spider').motion('w')<CR>",
+					mode = { "n", "o", "x" },
+				},
+				{
+					"e",
+					"<cmd>lua require('spider').motion('e')<CR>",
+					mode = { "n", "o", "x" },
+				},
+
+				{
+					"b",
+					"<cmd>lua require('spider').motion('b')<CR>",
+					mode = { "n", "o", "x" },
+				},
+			},
+		},
+
+		{
+			"utilyre/barbecue.nvim",
+			name = "barbecue",
+			version = "*",
+			dependencies = {
+				"SmiteshP/nvim-navic",
+				"nvim-tree/nvim-web-devicons", -- optional dependency
+			},
+			opts = {
+				-- configurations go here
+			},
 		},
 		{
 			"kylechui/nvim-surround",
@@ -49,7 +89,19 @@ lazy.setup(
 			branch = 'v1.x',
 			dependencies = {
 				-- LSP Support
-				{ "neovim/nvim-lspconfig" },         -- Required
+				{
+					"neovim/nvim-lspconfig",
+					dependencies = {
+						{
+							"SmiteshP/nvim-navbuddy",
+							dependencies = {
+								"SmiteshP/nvim-navic",
+								"MunifTanjim/nui.nvim"
+							},
+							opts = { lsp = { auto_attach = true } }
+						}
+					},
+				},                                   -- Required
 				{ "williamboman/mason.nvim" },       -- Optional
 				{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 				-- Autocompletion
@@ -78,12 +130,12 @@ lazy.setup(
 				}
 			}
 		},
-		{
-			'VonHeikemen/fine-cmdline.nvim',
-			dependencies = {
-				{ 'MunifTanjim/nui.nvim' }
-			}
-		},
+		-- {
+		-- 	'VonHeikemen/fine-cmdline.nvim',
+		-- 	dependencies = {
+		-- 		{ 'MunifTanjim/nui.nvim' }
+		-- 	}
+		-- },
 		-- tabnine
 		-- {
 		-- 	"tzachar/cmp-tabnine",
@@ -176,11 +228,12 @@ lazy.setup(
 			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
+				"debugloop/telescope-undo.nvim",
 				{
 					"nvim-telescope/telescope-fzf-native.nvim",
 					build = "make"
 				},
-				"olacin/telescope-cc.nvim"
+				-- "olacin/telescope-cc.nvim"
 			},
 		},
 

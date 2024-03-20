@@ -68,5 +68,6 @@ telescope.setup {
 
 -- extensions
 telescope.load_extension("fzf")
-telescope.load_extension("conventional_commits")
+-- telescope.load_extension("conventional_commits")
 telescope.load_extension('lsp_handlers')
+telescope.load_extension('undo')

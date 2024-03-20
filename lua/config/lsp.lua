@@ -33,6 +33,7 @@ lsp.configure("emmet_ls", {
 	end
 })
 
+lsp.configure("ruff_lsp", {})
 
 lsp.configure("lua_ls", {
 	settings = {
@@ -74,9 +75,9 @@ lsp.setup_nvim_cmp({
 	sources = {
 		{ name = 'path' },
 		{ name = 'nvim_lsp' },
-		{ name = 'buffer',     keyword_length = 3 },
-		{ name = 'luasnip',    keyword_length = 2 },
-		{ name = 'cpm_tabnine' },
+		{ name = 'buffer',  keyword_length = 3 },
+		{ name = 'luasnip', keyword_length = 2 },
+		-- { name = 'cpm_tabnine' },
 		{ name = 'emmet_ls' }
 	},
 	mapping = cmp_mappings,
@@ -91,6 +92,7 @@ lsp.format_on_save({
 	servers = {
 		['tsserver'] = { 'javascript', 'typescript' },
 		['ruff'] = { 'python' },
+		['black'] = { 'python' },
 		['shellcheck'] = { 'bash', 'zsh', 'sh' },
 		['goimport'] = { 'go' },
 		['gopls'] = { 'go' },

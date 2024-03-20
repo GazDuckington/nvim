@@ -75,17 +75,3 @@ autocmd(
 		end
 	}
 )
-
--- python venv
-autocmd(
-	{ "VimEnter" },
-	{
-		pattern = { "*" },
-		callback = function()
-			local venv = vim.fn.findfile("pyproject.toml", vim.fn.getcwd() .. ";")
-			if venv ~= "" then
-				require("venv-selector").retrieve_from_cache()
-			end
-		end
-	}
-)
