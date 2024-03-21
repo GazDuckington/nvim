@@ -20,6 +20,15 @@ lazy.setup(
 		-- quality of life
 		{
 			'mikesmithgh/kitty-scrollback.nvim',
+			dependencies = {
+				"ibhagwan/fzf-lua",
+				-- optional for icon support
+				dependencies = { "nvim-tree/nvim-web-devicons" },
+				config = function()
+					-- calling `setup` is optional for customization
+					require("fzf-lua").setup({})
+				end
+			},
 			enabled = true,
 			lazy = true,
 			cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
