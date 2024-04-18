@@ -67,7 +67,8 @@ require('lualine').setup({
 		lualine_z = { line },
 	},
 	options = {
-		theme = catto,
+		-- theme = catto,
+		theme = "catppuccin",
 		globalstatus = false,
 		component_separators = '',
 		-- section_separators = { left = '🭐', right = '🭅' },
