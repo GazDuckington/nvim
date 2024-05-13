@@ -12,6 +12,7 @@ vim.opt.termguicolors = true
 -- load plugins
 require("plugins")
 -- core settings
+reload("core.vscode")
 reload("core.settings")
 reload("core.keybinding")
 reload("core.autocommands")
