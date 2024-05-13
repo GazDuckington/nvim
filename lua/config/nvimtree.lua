@@ -38,15 +38,15 @@ require('nvim-tree').setup({
 		-- width = function()
 		-- 	return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
 		-- end,
-		mappings = {
-			list = {
-				{
-					key = "t",
-					action = "open_tab_silent",
-					action_cb = open_tab_silent
-				},
-			}
-		},
+		-- mappings = {
+		-- 	list = {
+		-- 		{
+		-- 			key = "t",
+		-- 			action = "open_tab_silent",
+		-- 			action_cb = open_tab_silent
+		-- 		},
+		-- 	}
+		-- },
 	},
 	renderer = {
 		indent_markers = {

@@ -257,7 +257,7 @@ lazy.setup(
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",
 			},
-			tag = "nightly",
+			-- tag = "nightly",
 		},
 
 		-- indentation lines
