@@ -454,7 +454,8 @@ lazy.setup(
 		--  python
 		{
 			"linux-cultist/venv-selector.nvim",
-			dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+			branch = "regexp",
+			dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
 			config = true,
 			event = "VeryLazy",
 			keys = { {
