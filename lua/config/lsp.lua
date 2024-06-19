@@ -91,7 +91,7 @@ lsp.format_on_save({
 	},
 	servers = {
 		['tsserver'] = { 'javascript', 'typescript' },
-		['ruff'] = { 'python' },
+		-- ['ruff'] = { 'python' },
 		['black'] = { 'python' },
 		['shellcheck'] = { 'bash', 'zsh', 'sh' },
 		['goimport'] = { 'go' },
