@@ -22,6 +22,7 @@ g.must_lsp = {
 -- filetypes for emmet
 g.web_filetypes = {
 	"html",
+	"templ",
 	"typescriptreact",
 	"javascriptreact",
 	"css",
