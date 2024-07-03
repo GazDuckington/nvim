@@ -77,6 +77,7 @@ lsp.setup_nvim_cmp({
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer',  keyword_length = 3 },
 		{ name = 'luasnip', keyword_length = 2 },
+		{ name = 'codeium', keyword_length = 2 },
 		-- { name = 'cpm_tabnine' },
 		{ name = 'emmet_ls' }
 	},
@@ -91,8 +92,8 @@ lsp.format_on_save({
 	},
 	servers = {
 		['tsserver'] = { 'javascript', 'typescript' },
-		-- ['ruff'] = { 'python' },
-		['black'] = { 'python' },
+		['ruff'] = { 'python' },
+		-- ['black'] = { 'python' },
 		['shellcheck'] = { 'bash', 'zsh', 'sh' },
 		['goimport'] = { 'go' },
 		['gopls'] = { 'go' },
