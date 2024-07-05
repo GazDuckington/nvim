@@ -18,7 +18,7 @@ if not ok then return end
 lazy.setup(
 	{
 		-- quality of life
-		{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async', config = true },
+		{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 		{
 			'mikesmithgh/kitty-scrollback.nvim',
 			dependencies = {
