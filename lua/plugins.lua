@@ -341,16 +341,6 @@ lazy.setup(
 				'nvim-lua/plenary.nvim',
 			},
 			event = { 'CursorMoved', 'InsertLeave' },
-			config = function()
-				require 'illuminate'.configure {
-					filetypes_denylist = {
-						'NvimTree',
-						'nvim-tree',
-						'Telescope',
-						'telescope',
-					}
-				}
-			end
 		},
 
 		-- lualine
