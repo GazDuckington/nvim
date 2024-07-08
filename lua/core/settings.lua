@@ -5,6 +5,9 @@ local cmd = vim.cmd
 
 vim.opt_global.shell = "fish"
 
+if vim.g.colors_name == nil then
+	vim.g.colors_name = "cattpuccin-mocha"
+end
 -- must install lsp servers
 g.must_lsp = {
 	"lua_ls",

@@ -14,6 +14,7 @@ require("plugins")
 -- core settings
 reload("core.vscode")
 reload("core.settings")
+reload("core.commands")
 reload("core.keybinding")
 reload("core.autocommands")
 -- plugins config
