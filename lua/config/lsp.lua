@@ -13,17 +13,19 @@ local cmp_mappings = {
 	["<C-f>"] = cmp.mapping.scroll_docs(4),
 	["<C-y>"] = cmp.mapping.complete(),
 	["<C-e>"] = cmp.mapping.abort(),
-	["<CR>"] = cmp.mapping({
-		i = function(fallback)
-			if cmp.visible() and cmp.get_active_entry() then
-				cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+	["<CR>"] = cmp.mapping(function(fallback)
+		if cmp.visible() then
+			if luasnip.expandable() then
+				luasnip.expand()
 			else
-				fallback()
+				cmp.confirm({
+					select = true,
+				})
 			end
-		end,
-		s = cmp.mapping.confirm({ select = true }),
-		c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-	}),
+		else
+			fallback()
+		end
+	end),
 
 	["<Tab>"] = cmp.mapping(function(fallback)
 		if cmp.visible() then
@@ -134,6 +136,7 @@ lsp.format_on_save({
 	servers = {
 		['tsserver'] = { 'javascript', 'typescript' },
 		['ruff'] = { 'python' },
+		['lua_ls'] = { 'lua' },
 		-- ['black'] = { 'python' },
 		['shellcheck'] = { 'bash', 'zsh', 'sh' },
 		['goimport'] = { 'go' },

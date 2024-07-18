@@ -248,7 +248,22 @@ lazy.setup(
 		-- which key
 		{
 			"folke/which-key.nvim",
-			event = "VeryLazy"
+			event = "VeryLazy",
+			dependencies = {
+				"echasnovski/mini.icons",
+				"nvim-tree/nvim-web-devicons",
+			},
+			opts = {
+				keys = {
+					{
+						"<leader>?",
+						function()
+							require("which-key").show({ global = false })
+						end,
+						desc = "Buffer Local Keymaps (which-key)",
+					},
+				}
+			}
 		},
 
 		-- colorizer
@@ -429,21 +444,21 @@ lazy.setup(
 				"ibhagwan/fzf-lua",
 			},
 			config = true,
-			init = function()
-				local possession = require("nvim-possession")
-				vim.keymap.set("n", "<leader>sl", function()
-					possession.list()
-				end)
-				vim.keymap.set("n", "<leader>sn", function()
-					possession.new()
-				end)
-				vim.keymap.set("n", "<leader>su", function()
-					possession.update()
-				end)
-				vim.keymap.set("n", "<leader>sd", function()
-					possession.delete()
-				end)
-			end,
+			-- init = function()
+			-- 	local possession = require("nvim-possession")
+			-- 	vim.keymap.set("n", "<leader>sl", function()
+			-- 		possession.list()
+			-- 	end)
+			-- 	vim.keymap.set("n", "<leader>sn", function()
+			-- 		possession.new()
+			-- 	end)
+			-- 	vim.keymap.set("n", "<leader>su", function()
+			-- 		possession.update()
+			-- 	end)
+			-- 	vim.keymap.set("n", "<leader>sd", function()
+			-- 		possession.delete()
+			-- 	end)
+			-- end,
 		},
 
 		-- show git stuff in gutter
@@ -459,10 +474,6 @@ lazy.setup(
 			dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
 			config = true,
 			event = "VeryLazy",
-			keys = { {
-				"<leader>ps", "<cmd>:VenvSelect<cr>",
-				"<leader>pc", "<cmd>:VenvSelectCached<cr>"
-			} }
 		},
 		-- {"averms/black-nvim", build: "UpdateRemotePlugins"},
 
