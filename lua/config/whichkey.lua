@@ -9,7 +9,7 @@ local mappings = {
 	{ "<leader>i",  "<cmd>cd %:p:h<cr>",                                      desc = "Cd to Buffer" },
 	{ "<leader>o",  ":e ",                                                    desc = "Open/Create File" },
 	{ "<leader>c",  ":ColorizerToggle<cr>",                                   desc = "Toggle colorizer" },
-	{ "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
+	-- { "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
 
 	{ "<leader>m",  group = "Menu" },
 	{ "<leader>mg", "<cmd>LazyGit<cr>",                                       desc = "LazyGit" },
