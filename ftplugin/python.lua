@@ -8,7 +8,7 @@ local opts = vim.g.opts
 
 map("n", "mr", "<cmd>TermExec cmd='python %'<cr>", opts)
 
-wk.add({ "<leader>V", "<cmd>VenvSelect<cr>", "select python venv" })
+wk.add({ "<leader>V", "<cmd>VenvSelect<cr>", desc = "Select python venv" })
 
 -- init something
 -- require("venv-selector").retrieve_from_cache()
