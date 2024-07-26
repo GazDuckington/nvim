@@ -58,11 +58,11 @@ cmp.setup({
 -- lsp-zero
 lsp.preset("recommended")
 
-lsp.configure("sourcery", {
-	init_options = {
-		token = os.getenv('SOURCERY_TOKEN')
-	}
-})
+-- lsp.configure("sourcery", {
+-- 	init_options = {
+-- 		token = os.getenv('SOURCERY_TOKEN')
+-- 	}
+-- })
 
 lsp.configure("cssls", {
 	filetypes = {
@@ -117,11 +117,12 @@ end)
 
 lsp.setup_nvim_cmp({
 	sources = {
-		{ name = 'codeium', keyword_length = 2 },
+		{ name = 'codeium',  keyword_length = 2 },
+		{ name = 'sourcery', keyword_length = 2 },
 		{ name = 'nvim_lsp' },
 		{ name = 'path' },
-		{ name = 'buffer',  keyword_length = 3 },
-		{ name = 'luasnip', keyword_length = 2 },
+		{ name = 'buffer',   keyword_length = 3 },
+		{ name = 'luasnip',  keyword_length = 2 },
 		{ name = 'emmet_ls' }
 	},
 	mapping = cmp_mappings,

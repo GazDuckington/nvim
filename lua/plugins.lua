@@ -19,27 +19,27 @@ lazy.setup(
 	{
 		-- quality of life
 		{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
-		{
-			'mikesmithgh/kitty-scrollback.nvim',
-			dependencies = {
-				"ibhagwan/fzf-lua",
-				-- optional for icon support
-				dependencies = { "nvim-tree/nvim-web-devicons" },
-				config = function()
-					-- calling `setup` is optional for customization
-					require("fzf-lua").setup({})
-				end
-			},
-			enabled = true,
-			lazy = true,
-			cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
-			event = { 'User KittyScrollbackLaunch' },
-			-- version = '*', -- latest stable version, may have breaking changes if major version changed
-			-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
-			config = function()
-				require('kitty-scrollback').setup()
-			end,
-		},
+		-- {
+		-- 	'mikesmithgh/kitty-scrollback.nvim',
+		-- 	dependencies = {
+		-- 		"ibhagwan/fzf-lua",
+		-- 		-- optional for icon support
+		-- 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		-- 		config = function()
+		-- 			-- calling `setup` is optional for customization
+		-- 			require("fzf-lua").setup({})
+		-- 		end
+		-- 	},
+		-- 	enabled = true,
+		-- 	lazy = true,
+		-- 	cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+		-- 	event = { 'User KittyScrollbackLaunch' },
+		-- 	-- version = '*', -- latest stable version, may have breaking changes if major version changed
+		-- 	-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
+		-- 	config = function()
+		-- 		require('kitty-scrollback').setup()
+		-- 	end,
+		-- },
 		{
 			'mvllow/modes.nvim',
 			tag = 'v0.2.0',
