@@ -12,7 +12,7 @@ local color = require("catppuccin.palettes").get_palette(scheme)
 -- colorscheme
 require("catppuccin").setup({
 	flavour = scheme,
-	transparent_background = false,
+	transparent_background = true,
 	term_colors = true,
 	integrations = {
 		mason = true,
