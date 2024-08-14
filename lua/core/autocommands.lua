@@ -30,24 +30,34 @@ autocmd("BufWritePre", {
 })
 
 -- filetype management
-vim.filetype.add({
-	filename = {
-		[".env"] = function()
-			return "config"
-		end,
-	},
-})
+-- vim.filetype.add({
+-- 	filename = {
+-- 		[".env"] = "config",
+-- 		["*.rasi"] = "sass"
+-- 	},
+-- })
 
--- autocmd(
--- 	{ "BufEnter", "BufNewFile", "BufRead" },
--- 	{
--- 		-- pattern = { "*" },
--- 		callback = function()
--- 			require("filetype").resolve()
--- 		end,
--- 		group = gpinit,
--- 	}
--- )
+autocmd(
+	{ "BufEnter", "BufNewFile", "BufRead" },
+	{
+		pattern = { ".env" },
+		callback = function()
+			vim.cmd([[setfiletype config]])
+		end,
+		group = gpinit,
+	}
+)
+
+autocmd(
+	{ "BufEnter", "BufNewFile", "BufRead" },
+	{
+		pattern = { "*.rasi" },
+		callback = function()
+			vim.cmd([[setfiletype sass]])
+		end,
+		group = gpinit,
+	}
+)
 
 -- Show line diagnostics automatically in hover window
 autocmd(
