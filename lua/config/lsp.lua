@@ -56,7 +56,7 @@ cmp.setup({
 })
 
 -- lsp-zero
-lsp.preset("recommended")
+-- lsp.preset("recommended")
 
 -- lsp.configure("sourcery", {
 -- 	init_options = {
@@ -117,12 +117,12 @@ end)
 
 lsp.setup_nvim_cmp({
 	sources = {
-		{ name = 'codeium',  keyword_length = 2 },
-		{ name = 'sourcery', keyword_length = 2 },
+		{ name = 'codeium' },
+		{ name = 'sourcery' },
 		{ name = 'nvim_lsp' },
 		{ name = 'path' },
-		{ name = 'buffer',   keyword_length = 3 },
-		{ name = 'luasnip',  keyword_length = 2 },
+		{ name = 'buffer' },
+		{ name = 'luasnip' },
 		{ name = 'emmet_ls' }
 	},
 	mapping = cmp_mappings,
@@ -135,7 +135,6 @@ lsp.format_on_save({
 		timeout_ms = 10000,
 	},
 	servers = {
-		['tsserver'] = { 'javascript', 'typescript' },
 		['ruff'] = { 'python' },
 		['lua_ls'] = { 'lua' },
 		-- ['black'] = { 'python' },

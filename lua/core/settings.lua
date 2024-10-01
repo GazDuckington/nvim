@@ -15,7 +15,6 @@ g.must_lsp = {
 	"pyright",
 	"gopls",
 	"svelte",
-	"tsserver",
 	"eslint",
 	"tailwindcss",
 	"emmet_ls",

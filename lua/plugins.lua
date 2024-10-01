@@ -18,7 +18,7 @@ if not ok then return end
 lazy.setup(
 	{
 		-- quality of life
-		{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
 		-- {
 		-- 	'mikesmithgh/kitty-scrollback.nvim',
 		-- 	dependencies = {
@@ -77,54 +77,56 @@ lazy.setup(
 		-- {
 		-- 	"github/copilot.vim",
 		-- },
-		{
-			'Exafunction/codeium.nvim',
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				{
-					"hrsh7th/nvim-cmp",
-					event = { "InsertEnter", "CmdlineEnter" },
-				},
-			},
-		},
+		-- {
+		-- 	'Exafunction/codeium.nvim',
+		-- 	config = function()
+		-- 		require('codeium').setup({
+		-- 			enable_chat = true,
+		-- 		})
+		-- 	end
+		-- 	,
+		-- 	dependencies = {
+		-- 		"nvim-lua/plenary.nvim",
+		-- 		"hrsh7th/nvim-cmp",
+		-- 	},
+		-- 	event = 'BufEnter'
+		-- },
 
 		-- LSP
 		{
 			'VonHeikemen/lsp-zero.nvim',
-			branch = 'v1.x',
-			dependencies = {
-				-- LSP Support
-				{
-					"neovim/nvim-lspconfig",
-					dependencies = {
-						{
-							"SmiteshP/nvim-navbuddy",
-							dependencies = {
-								"SmiteshP/nvim-navic",
-								"MunifTanjim/nui.nvim"
-							},
-							opts = { lsp = { auto_attach = true } }
-						}
-					},
-				},                                   -- Required
-				{ "williamboman/mason.nvim" },       -- Optional
-				{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-				-- Autocompletion
-				{
-					"hrsh7th/nvim-cmp",
-					event = { "InsertEnter", "CmdlineEnter" },
-				},
-				{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-				{ 'hrsh7th/cmp-buffer' },   -- Optional
-				{ 'hrsh7th/cmp-path' },     -- Optional
-				{ 'saadparwaiz1/cmp_luasnip' }, -- Optional
-				{ 'hrsh7th/cmp-nvim-lua' }, -- Optional
-
-				-- Snippets
-				{ 'L3MON4D3/LuaSnip' },         -- Required
-				{ 'rafamadriz/friendly-snippets' }, -- Optional
-			}
+			branch = 'v4.x',
 		},
+		-- LSP Support
+		{
+			"neovim/nvim-lspconfig",
+			dependencies = {
+				{
+					"SmiteshP/nvim-navbuddy",
+					dependencies = {
+						"SmiteshP/nvim-navic",
+						"MunifTanjim/nui.nvim"
+					},
+					opts = { lsp = { auto_attach = true } }
+				}
+			},
+		},                                     -- Required
+		{ "williamboman/mason.nvim" },         -- Optional
+		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+		-- Autocompletion
+		{
+			"hrsh7th/nvim-cmp",
+			event = { "InsertEnter", "CmdlineEnter" },
+		},
+		{ 'hrsh7th/cmp-nvim-lsp' },   -- Required
+		{ 'hrsh7th/cmp-buffer' },     -- Optional
+		{ 'hrsh7th/cmp-path' },       -- Optional
+		{ 'saadparwaiz1/cmp_luasnip' }, -- Optional
+		{ 'hrsh7th/cmp-nvim-lua' },   -- Optional
+
+		-- Snippets
+		{ 'L3MON4D3/LuaSnip' },           -- Required
+		{ 'rafamadriz/friendly-snippets' }, -- Optional
 
 		{
 			"folke/trouble.nvim",
