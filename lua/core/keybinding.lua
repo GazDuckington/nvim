@@ -35,21 +35,21 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- buffer controls
-map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 map("n", "<A-w>", "<cmd>BufferClose<cr>", opts)
 map("n", "<A-h>", "<cmd>BufferPrevious<cr>", opts)
 map("n", "<A-l>", "<cmd>BufferNext<cr>", opts)
 --
-map('n', '<A-H>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A-L>', '<Cmd>BufferMoveNext<CR>', opts)
+map("n", "<A-H>", "<Cmd>BufferMovePrevious<CR>", opts)
+map("n", "<A-L>", "<Cmd>BufferMoveNext<CR>", opts)
 --
 -- magic buffer picking
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
+map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 -- sort automatically by...
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+map("n", "<Space>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
+map("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
+map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
+map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 -- telescope stuff
 -- find

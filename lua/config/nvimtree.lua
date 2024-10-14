@@ -14,7 +14,7 @@ require('nvim-tree').setup({
 		number = true,
 		relativenumber = true,
 		float = {
-			enable = false,
+			enable = true,
 			open_win_config = function()
 				local screen_w = vim.opt.columns:get()
 				local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()

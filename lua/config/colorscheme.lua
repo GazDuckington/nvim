@@ -44,6 +44,15 @@ require("catppuccin").setup({
 		IndentBlanklineSpaceChar = {
 			fg = color.surface0,
 		},
+		NormalFloat = { bg = color.crust },
+		Pmenu = { bg = color.crust },
+		PmenuSel = { fg = color.text, bg = color.crust, style = { 'bold' } },
+		CmpBorder = {
+			fg = color.blue,
+		},
+		Comment = {
+			fg = color.lavender,
+		},
 	},
 })
 

@@ -18,5 +18,10 @@ mason.setup(settings)
 
 mason_lspconfig.setup({
 	ensure_installed = servers,
+	handlers = {
+		function(server_name)
+			require('lspconfig')[server_name].setup({})
+		end,
+	},
 	automatic_installation = true,
 })
