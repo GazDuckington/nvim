@@ -27,7 +27,8 @@ require("catppuccin").setup({
 		gitsigns = true,
 		indent_blankline = {
 			enabled = true,
-			colored_indent_levels = true,
+			scope_color = "lavender",
+			colored_indent_levels = false,
 		},
 	},
 	custom_highlights = {
