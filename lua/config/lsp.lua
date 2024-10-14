@@ -1,4 +1,4 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
 local cmp = require("cmp")
 local cmp_action = require('lsp-zero').cmp_action()
 local cmp_format = require('lsp-zero').cmp_format({ details = true })
@@ -11,33 +11,39 @@ local has_words_before = function()
 end
 
 -- lsp-zero
+lsp_zero.configure("lua_ls", {
+	cmd = { 'lua-language-server' },
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+				path = vim.split(package.path, ';'),
+			},
+			diagnostics = {
+				globals = { "vim" }
+			},
+			telemetry = {
+				enable = false,
+			},
+		}
+	}
+})
 
-lsp.configure("cssls", {
+lsp_zero.configure("cssls", {
 	filetypes = {
 		"css", "scss", "less", "rasi"
 	}
 })
 
-lsp.configure("emmet_ls", {
+lsp_zero.configure("emmet_ls", {
 	filetypes = vim.g.web_filetypes,
 	root_dir = function(fname)
 		return vim.loop.cwd()
 	end
 })
 
--- lsp.configure("ruff_lsp", {})
 
-lsp.configure("lua_ls", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" }
-			}
-		}
-	}
-})
-
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
 	if client.name == "eslint" then
 		vim.cmd.LspStop("eslint")
 		return
@@ -101,7 +107,7 @@ cmp.setup({
 })
 
 -- autoformat on save
-lsp.format_on_save({
+lsp_zero.format_on_save({
 	format_opts = {
 		async = false,
 		timeout_ms = 10000,
@@ -115,4 +121,4 @@ lsp.format_on_save({
 		['gopls'] = { 'go' },
 	}
 })
-lsp.setup()
+lsp_zero.setup()

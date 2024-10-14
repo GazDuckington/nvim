@@ -107,7 +107,9 @@ lazy.setup(
 						"SmiteshP/nvim-navic",
 						"MunifTanjim/nui.nvim"
 					},
-					opts = { lsp = { auto_attach = true } }
+					opts = {
+						lsp = { auto_attach = true }
+					}
 				}
 			},
 		},                                     -- Required
@@ -307,44 +309,9 @@ lazy.setup(
 		},
 
 		-- indentation lines
-		-- {
-		-- 	"lukas-reineke/indent-blankline.nvim",
-		-- 	event = "BufReadPre"
-		-- },
 		{
-			"shellRaining/hlchunk.nvim",
-			event = { "UIEnter" },
-			config = function()
-				require("hlchunk").setup({
-					indent = {
-						chars = {
-							"│",
-						},
-						-- style = {
-						-- 	"#f38ba8",
-						-- 	"#fab387",
-						-- 	"#f9e2af",
-						-- 	"#a6e3a1",
-						-- 	"#89dceb",
-						-- 	"#89b4fa",
-						-- 	"#cba6f7",
-						-- },
-					},
-					line_num = {
-						style = "#cba6f7",
-					},
-					chunk = {
-						chars = {
-							horizontal_line = "─",
-							vertical_line = "│",
-							left_top = "┌",
-							left_bottom = "└",
-							right_arrow = "─",
-						},
-						style = "#cba6f7"
-					}
-				})
-			end
+			"lukas-reineke/indent-blankline.nvim",
+			event = "BufReadPre"
 		},
 
 		-- comment

@@ -14,6 +14,7 @@ require("catppuccin").setup({
 	flavour = scheme,
 	transparent_background = true,
 	term_colors = true,
+	default_integrations = false,
 	integrations = {
 		mason = true,
 		leap = true,
