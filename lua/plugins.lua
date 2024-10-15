@@ -309,13 +309,14 @@ lazy.setup(
 		},
 
 		-- indentation lines
-		{
-			"lukas-reineke/indent-blankline.nvim",
-			main = "ibl",
-			---@module "ibl"
-			---@type ibl.config
-			opts = {},
-		},
+		{ 'echasnovski/mini.indentscope', version = '*' },
+		-- {
+		-- 	"lukas-reineke/indent-blankline.nvim",
+		-- 	main = "ibl",
+		-- 	---@module "ibl"
+		-- 	---@type ibl.config
+		-- 	opts = {},
+		-- },
 
 		-- comment
 		{

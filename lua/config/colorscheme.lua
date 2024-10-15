@@ -25,11 +25,7 @@ require("catppuccin").setup({
 		barbar = true,
 		which_key = true,
 		gitsigns = true,
-		indent_blankline = {
-			enabled = true,
-			scope_color = "lavender",
-			colored_indent_levels = false,
-		},
+		mini = true,
 	},
 	custom_highlights = {
 		CursorLine = { bg = color.crust },
@@ -55,6 +51,9 @@ require("catppuccin").setup({
 		Comment = {
 			fg = color.lavender,
 		},
+		MiniIndentscopeSymbol = {
+			fg = color.surface2,
+		}
 	},
 })
 
