@@ -88,6 +88,9 @@ local mappings = {
 	{
 		"<leader>ti", ":<C-U>Gitsigns select_hunk<CR>", mode = { "o", "x" },
 	},
+	{ "<leader>l", group = "Telescope LSP" },
+	{ "<leader>f", group = "Telescope Fuzzy Finder" },
+	{ "<leader>b", group = "Buffer Sorting" },
 }
 
 for var = 1, 9 do
