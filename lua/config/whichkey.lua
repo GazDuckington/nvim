@@ -3,13 +3,16 @@ local possession = require("nvim-possession")
 
 local mappings = {
 	{ "<leader>.",  ":cd ~/.config/nvim<cr>:e init.lua<cr>",                  desc = "Open Neovim Config" },
-	{ "<leader>e",  "<cmd>NvimTreeFindFileToggle<cr>",                        desc = "Open tree view" },
 	{ "<leader>n",  ":nohl<cr>",                                              desc = "Reset highlight" },
 	{ "<leader>r",  "<cmd>Greyjoy<cr>",                                       desc = "Greyjoy launcher" },
 	{ "<leader>i",  "<cmd>cd %:p:h<cr>",                                      desc = "Cd to Buffer" },
 	{ "<leader>o",  ":e ",                                                    desc = "Open/Create File" },
 	{ "<leader>c",  ":ColorizerToggle<cr>",                                   desc = "Toggle colorizer" },
 	-- { "<leader>C",  ":Telescope conventional_commits<cr>",                    desc = "conventional commit" },
+
+	-- file manager
+	{ "<leader>e",  "<cmd>Yazi toggle<cr>",                                   desc = "Open yazi file manager" },
+	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
 	{ "<leader>mg", "<cmd>LazyGit<cr>",                                       desc = "LazyGit" },

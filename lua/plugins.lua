@@ -18,6 +18,7 @@ if not ok then return end
 lazy.setup(
 	{
 		-- quality of life
+		-- { 'pteroctopus/faster.nvim' },
 		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
 		-- {
 		-- 	'mikesmithgh/kitty-scrollback.nvim',
@@ -299,13 +300,25 @@ lazy.setup(
 		},
 
 		-- file explorer
+		-- {
+		-- 	"nvim-tree/nvim-tree.lua",
+		-- 	event = "VeryLazy",
+		-- 	dependencies = {
+		-- 		"nvim-tree/nvim-web-devicons",
+		-- 	},
+		-- 	-- tag = "nightly",
+		-- },
+		---@type LazySpec
 		{
-			"nvim-tree/nvim-tree.lua",
+			"mikavilpas/yazi.nvim",
 			event = "VeryLazy",
-			dependencies = {
-				"nvim-tree/nvim-web-devicons",
+			---@type YaziConfig
+			opts = {
+				open_for_directories = true,
+				keymaps = {
+					show_help = '<f1>',
+				},
 			},
-			-- tag = "nightly",
 		},
 
 		-- indentation lines

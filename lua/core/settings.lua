@@ -52,8 +52,8 @@ g.mapleader = " "
 g.maplocalleader = " "
 g.opts = { noremap = true, silent = true }
 g.breadcrumb_enabled = true
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+g.loaded_netrw = 0
+g.loaded_netrwPlugin = 0
 -- end of global settings
 
 -- appearance

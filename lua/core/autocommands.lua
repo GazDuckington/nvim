@@ -30,12 +30,13 @@ autocmd("BufWritePre", {
 })
 
 -- filetype management
--- vim.filetype.add({
--- 	filename = {
--- 		[".env"] = "config",
--- 		["*.rasi"] = "sass"
--- 	},
--- })
+vim.filetype.add({
+	pattern = {
+		[".env"] = "config",
+		["*.rasi"] = "scss",
+		['.*%.blade%.php'] = 'blade',
+	},
+})
 
 autocmd(
 	{ "BufEnter", "BufNewFile", "BufRead" },
@@ -71,17 +72,17 @@ autocmd(
 	}
 )
 
--- nvim-tree
+-- auto cd to dir
 autocmd(
 	{ "VimEnter" },
 	{
+		pattern = { "*" },
 		callback = function(data)
-			local directory = vim.fn.isdirectory(data.file) == 1
-			if not directory then return end
-			-- cd to directory
-			vim.cmd.cd(data.file)
-			-- open the tree
-			require("nvim-tree.api").tree.open()
+			-- Check if the argument is a directory
+			if vim.fn.isdirectory(data.file) == 1 then
+				-- Change to the directory
+				vim.cmd("cd " .. data.file)
+			end
 		end
 	}
 )
