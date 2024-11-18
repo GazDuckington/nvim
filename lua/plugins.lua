@@ -300,26 +300,26 @@ lazy.setup(
 		},
 
 		-- file explorer
-		-- {
-		-- 	"nvim-tree/nvim-tree.lua",
-		-- 	event = "VeryLazy",
-		-- 	dependencies = {
-		-- 		"nvim-tree/nvim-web-devicons",
-		-- 	},
-		-- 	-- tag = "nightly",
-		-- },
-		---@type LazySpec
 		{
-			"mikavilpas/yazi.nvim",
+			"nvim-tree/nvim-tree.lua",
 			event = "VeryLazy",
-			---@type YaziConfig
-			opts = {
-				open_for_directories = true,
-				keymaps = {
-					show_help = '<f1>',
-				},
+			dependencies = {
+				"nvim-tree/nvim-web-devicons",
 			},
+			-- tag = "nightly",
 		},
+		-- ---@type LazySpec
+		-- {
+		-- 	"mikavilpas/yazi.nvim",
+		-- 	event = "VeryLazy",
+		-- 	---@type YaziConfig
+		-- 	opts = {
+		-- 		open_for_directories = true,
+		-- 		keymaps = {
+		-- 			show_help = '<f1>',
+		-- 		},
+		-- 	},
+		-- },
 
 		-- indentation lines
 		{ 'echasnovski/mini.indentscope', version = '*' },
@@ -443,28 +443,28 @@ lazy.setup(
 		},
 
 		-- session manager
-		{
-			"gennaro-tedesco/nvim-possession",
-			dependencies = {
-				"ibhagwan/fzf-lua",
-			},
-			config = true,
-			-- init = function()
-			-- 	local possession = require("nvim-possession")
-			-- 	vim.keymap.set("n", "<leader>sl", function()
-			-- 		possession.list()
-			-- 	end)
-			-- 	vim.keymap.set("n", "<leader>sn", function()
-			-- 		possession.new()
-			-- 	end)
-			-- 	vim.keymap.set("n", "<leader>su", function()
-			-- 		possession.update()
-			-- 	end)
-			-- 	vim.keymap.set("n", "<leader>sd", function()
-			-- 		possession.delete()
-			-- 	end)
-			-- end,
-		},
+		-- {
+		-- 	"gennaro-tedesco/nvim-possession",
+		-- 	dependencies = {
+		-- 		"ibhagwan/fzf-lua",
+		-- 	},
+		-- 	config = true,
+		-- init = function()
+		-- 	local possession = require("nvim-possession")
+		-- 	vim.keymap.set("n", "<leader>sl", function()
+		-- 		possession.list()
+		-- 	end)
+		-- 	vim.keymap.set("n", "<leader>sn", function()
+		-- 		possession.new()
+		-- 	end)
+		-- 	vim.keymap.set("n", "<leader>su", function()
+		-- 		possession.update()
+		-- 	end)
+		-- 	vim.keymap.set("n", "<leader>sd", function()
+		-- 		possession.delete()
+		-- 	end)
+		-- end,
+		-- },
 
 		-- show git stuff in gutter
 		{

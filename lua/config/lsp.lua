@@ -115,7 +115,7 @@ lsp_zero.format_on_save({
 	servers = {
 		['ruff'] = { 'python' },
 		['lua_ls'] = { 'lua' },
-		-- ['black'] = { 'python' },
+		['eslint'] = { 'javascript', 'vue' },
 		['shellcheck'] = { 'bash', 'zsh', 'sh' },
 		['goimport'] = { 'go' },
 		['gopls'] = { 'go' },
