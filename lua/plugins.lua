@@ -18,36 +18,20 @@ if not ok then return end
 lazy.setup(
 	{
 		-- quality of life
-		-- { 'pteroctopus/faster.nvim' },
-		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
-		-- {
-		-- 	'mikesmithgh/kitty-scrollback.nvim',
-		-- 	dependencies = {
-		-- 		"ibhagwan/fzf-lua",
-		-- 		-- optional for icon support
-		-- 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		-- 		config = function()
-		-- 			-- calling `setup` is optional for customization
-		-- 			require("fzf-lua").setup({})
-		-- 		end
-		-- 	},
-		-- 	enabled = true,
-		-- 	lazy = true,
-		-- 	cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
-		-- 	event = { 'User KittyScrollbackLaunch' },
-		-- 	-- version = '*', -- latest stable version, may have breaking changes if major version changed
-		-- 	-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
-		-- 	config = function()
-		-- 		require('kitty-scrollback').setup()
-		-- 	end,
-		-- },
 		{
-			'mvllow/modes.nvim',
-			tag = 'v0.2.0',
-			config = function()
-				require('modes').setup()
-			end
+			"folke/snacks.nvim",
+			priority = 1000,
+			lazy = false,
+			opts = {
+				bigfile = { enabled = true },
+				notifier = { enabled = true },
+				quickfile = { enabled = true },
+				statuscolumn = { enabled = true },
+				words = { enabled = true },
+				dashboard = { enabled = true },
+			}
 		},
+		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
 		{
 			"levouh/tint.nvim",
 		},
@@ -75,23 +59,13 @@ lazy.setup(
 				require("nvim-surround").setup()
 			end
 		},
-		-- {
-		-- 	"github/copilot.vim",
-		-- },
-		-- {
-		-- 	'Exafunction/codeium.nvim',
-		-- 	config = function()
-		-- 		require('codeium').setup({
-		-- 			enable_chat = true,
-		-- 		})
-		-- 	end
-		-- 	,
-		-- 	dependencies = {
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"hrsh7th/nvim-cmp",
-		-- 	},
-		-- 	event = 'BufEnter'
-		-- },
+		{
+			'Exafunction/codeium.nvim',
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"hrsh7th/nvim-cmp",
+			}
+		},
 
 		-- LSP
 		{
@@ -166,49 +140,6 @@ lazy.setup(
 				)
 			end,
 		},
-		-- {
-		-- 	'VonHeikemen/fine-cmdline.nvim',
-		-- 	dependencies = {
-		-- 		{ 'MunifTanjim/nui.nvim' }
-		-- 	}
-		-- },
-		-- tabnine
-		-- {
-		-- 	"tzachar/cmp-tabnine",
-		-- 	build = "./install.sh",
-		-- 	event = "InsertEnter",
-		-- },
-		-- {
-		-- 	"jackMort/ChatGPT.nvim",
-		-- 	event = "VeryLazy",
-		-- 	config = function()
-		-- 		local home = vim.fn.expand("$HOME")
-		-- 		require("chatgpt").setup({
-		-- 			api_key_cmd = "cat " .. home .. "/secret.txt"
-		-- 		})
-		-- 	end,
-		-- 	dependencies = {
-		-- 		"MunifTanjim/nui.nvim",
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"folke/trouble.nvim",
-		-- 		"nvim-telescope/telescope.nvim"
-		-- 	}
-		-- },
-		-- {
-		-- 	"codota/tabnine-nvim",
-		-- 	build = "./dl_binaries.sh",
-		-- 	event = "VeryLazy",
-		-- 	config = function()
-		-- 		require("tabnine").setup({
-		-- 			disable_auto_comment = true,
-		-- 			accept_keymap = "<C-space>",
-		-- 			dismiss_keymap = "<C-]>",
-		-- 			debounce_ms = 800,
-		-- 			suggestion_color = { gui = "#808080", cterm = 244 },
-		-- 			exclude_filetypes = { "TelescopePrompt" }
-		-- 		})
-		-- 	end
-		-- },
 
 		-- Treesitter
 		{
@@ -243,21 +174,6 @@ lazy.setup(
 			event = "VeryLazy",
 		},
 
-		-- lazygit
-		{
-			"kdheepak/lazygit.nvim",
-			cmd = {
-				"LazyGit",
-				"LazyGitConfig",
-				"LazyGitCurrentFile",
-				"LazyGitFilter",
-				"LazyGitFilterCurrentFile",
-			},
-			-- optional for floating window border decoration
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-			},
-		},
 		-- telescope
 		{
 			"nvim-telescope/telescope.nvim",
@@ -306,30 +222,10 @@ lazy.setup(
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",
 			},
-			-- tag = "nightly",
 		},
-		-- ---@type LazySpec
-		-- {
-		-- 	"mikavilpas/yazi.nvim",
-		-- 	event = "VeryLazy",
-		-- 	---@type YaziConfig
-		-- 	opts = {
-		-- 		open_for_directories = true,
-		-- 		keymaps = {
-		-- 			show_help = '<f1>',
-		-- 		},
-		-- 	},
-		-- },
 
 		-- indentation lines
 		{ 'echasnovski/mini.indentscope', version = '*' },
-		-- {
-		-- 	"lukas-reineke/indent-blankline.nvim",
-		-- 	main = "ibl",
-		-- 	---@module "ibl"
-		-- 	---@type ibl.config
-		-- 	opts = {},
-		-- },
 
 		-- comment
 		{
@@ -389,7 +285,6 @@ lazy.setup(
 					button = '󰅙'
 				}
 			},
-			event = "VeryLazy",
 		},
 
 		-- colorscheme
@@ -409,25 +304,6 @@ lazy.setup(
 			event = "VeryLazy"
 		},
 
-		-- ft
-		-- {
-		-- 	"nathom/filetype.nvim",
-		-- 	event = "BufReadPost",
-		-- 	opts = function()
-		-- 		require("filetype").resolve()
-		-- 	end,
-		-- 	config = function()
-		-- 		require("filetype").setup()
-		-- 	end
-		-- },
-
-		-- resize on focus
-		-- {
-		-- 	"nvim-focus/focus.nvim",
-		-- 	version = false,
-		-- 	event = "BufReadPost",
-		-- },
-
 		-- toggle boolean
 		{
 			"nat-418/boole.nvim",
@@ -441,30 +317,6 @@ lazy.setup(
 				})
 			end
 		},
-
-		-- session manager
-		-- {
-		-- 	"gennaro-tedesco/nvim-possession",
-		-- 	dependencies = {
-		-- 		"ibhagwan/fzf-lua",
-		-- 	},
-		-- 	config = true,
-		-- init = function()
-		-- 	local possession = require("nvim-possession")
-		-- 	vim.keymap.set("n", "<leader>sl", function()
-		-- 		possession.list()
-		-- 	end)
-		-- 	vim.keymap.set("n", "<leader>sn", function()
-		-- 		possession.new()
-		-- 	end)
-		-- 	vim.keymap.set("n", "<leader>su", function()
-		-- 		possession.update()
-		-- 	end)
-		-- 	vim.keymap.set("n", "<leader>sd", function()
-		-- 		possession.delete()
-		-- 	end)
-		-- end,
-		-- },
 
 		-- show git stuff in gutter
 		{

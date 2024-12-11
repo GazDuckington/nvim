@@ -71,7 +71,7 @@ end)
 
 cmp.setup({
 	sources = {
-		-- { name = 'codeium' },
+		{ name = 'codeium' },
 		{ name = 'sourcery' },
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer' },

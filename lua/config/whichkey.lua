@@ -15,7 +15,7 @@ local mappings = {
 	-- { "<leader>ec", "<cmd>Yazi cwd<cr>",                                      desc = "Open yazi file manager in current directory" },
 
 	{ "<leader>m",  group = "Menu" },
-	{ "<leader>mg", "<cmd>LazyGit<cr>",                                       desc = "LazyGit" },
+	{ "<leader>mg", "<cmd>lua Snacks.lazygit()<cr>",                          desc = "LazyGit" },
 	{ "<leader>ml", "<cmd>Lazy<cr>",                                          desc = "Open Lazy.nvim menu" },
 	{ "<leader>mm", "<cmd>Mason<cr>",                                         desc = "Open Mason menu" },
 	{ "<leader>ms", ":saveas ",                                               desc = "Save buffer as" },
@@ -41,12 +41,6 @@ local mappings = {
 	{ "<leader>gh", "<cmd>lua require('harpoon.mark').add_file()<cr>",        desc = "Mark file" },
 	{ "<leader>gk", "<cmd>lua require('harpoon.ui').nav_next()<cr>",          desc = "Next marks" },
 	{ "<leader>gj", "<cmd>lua require('harpoon.ui').nav_prev()<cr>",          desc = "Prev marks" },
-
-	-- { "<leader>S",  group = "Sessions" },
-	-- { "<leader>Sl", function() possession.list() end,                         desc = "sessions list" },
-	-- { "<leader>Sn", function() possession.new() end,                          desc = "create new session" },
-	-- { "<leader>Su", function() possession.update() end,                       desc = "update session" },
-	-- { "<leader>Sd", function() possession.delete() end,                       desc = "delete session" },
 
 	{ "<leader>x",  group = "Trouble" },
 	{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>",           desc = "Worksapce Diagnostics" },
