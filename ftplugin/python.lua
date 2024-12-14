@@ -4,7 +4,7 @@ vim.opt_local.softtabstop = 4
 vim.opt_local.shiftwidth = 4
 
 local map = vim.keymap.set
-local opts = vim.g.opts
+local opts = { noremap = true, silent = true }
 
 map("n", "mr", "<cmd>TermExec cmd='python %'<cr>", opts)
 

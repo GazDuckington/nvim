@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = vim.g.opts
+local opts = { noremap = true, silent = true }
 
 -- quality of life
 -- map("i", "jk", "<ESC>", opts)
@@ -36,7 +36,8 @@ map("n", "<C-l>", "<C-w>l", opts)
 
 -- buffer controls
 map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
-map("n", "<A-w>", "<cmd>BufferClose<cr>", opts)
+-- map("n", "<A-w>", "<cmd>BufferClose<cr>", opts)
+map("n", "<A-w>", "<cmd>lua Snacks.bufdelete()<cr>", opts)
 map("n", "<A-h>", "<cmd>BufferPrevious<cr>", opts)
 map("n", "<A-l>", "<cmd>BufferNext<cr>", opts)
 --
@@ -51,21 +52,8 @@ map("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
--- telescope stuff
--- find
-map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>fr", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<leader>fu", "<cmd>Telescope undo<cr>", opts)
-map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
-
 -- goto
 map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 map("n", "gD", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-
--- fine cmd
--- map('n', ':', '<cmd>FineCmdline<CR>', opts)
+map("n", "]]", function() Snacks.words.jump(vim.v.count1) end, opts)
+map("n", "[[", function() Snacks.words.jump(-vim.v.count1) end, opts)

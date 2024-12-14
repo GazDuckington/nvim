@@ -50,7 +50,6 @@ g.ops = {
 -- keymap options
 g.mapleader = " "
 g.maplocalleader = " "
-g.opts = { noremap = true, silent = true }
 g.breadcrumb_enabled = true
 g.loaded_netrw = 0
 g.loaded_netrwPlugin = 0
@@ -74,8 +73,8 @@ o.scrolloff = 8
 o.list = true
 o.listchars = {
 	tab = '  ',
-	trail = '◦',
-	space = '•',
+	-- trail = '◦',
+	-- space = '•',
 	eol = '',
 }
 

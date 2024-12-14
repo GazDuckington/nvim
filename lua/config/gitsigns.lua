@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = vim.g.opts
+local opts = { noremap = true, silent = true }
 
 require('gitsigns').setup {
 	current_line_blame = false,

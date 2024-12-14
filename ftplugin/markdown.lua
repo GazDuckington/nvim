@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = vim.g.opts
+local opts = { noremap = true, silent = true }
 
 vim.opt_local.spell = true
 vim.opt_local.linebreak = true

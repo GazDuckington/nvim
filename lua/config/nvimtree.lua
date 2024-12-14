@@ -51,6 +51,9 @@ require('nvim-tree').setup({
 			},
 		},
 	},
+	update_focused_file = {
+		enable = true,
+	},
 })
 
 -- open file on create

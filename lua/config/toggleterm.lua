@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local opts = vim.g.opts
+local opts = { noremap = true, silent = true }
 
 require("toggleterm").setup {
 	size = 10,

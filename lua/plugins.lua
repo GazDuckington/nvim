@@ -29,12 +29,44 @@ lazy.setup(
 				statuscolumn = { enabled = true },
 				words = { enabled = true },
 				dashboard = { enabled = true },
+				dim = { enabled = true },
+				zen = { enabled = true },
+				win = { enabled = true },
+				indent = { enabled = true },
+				scroll = { enabled = true },
+				rename = { enabled = true },
+				bufdelete = { enabled = true },
+				terminal = {
+					enabled = true,
+					win = {
+						-- position = "float",
+						keys = {
+							term_normal = {
+								"<esc>",
+								function()
+									return "<C-\\><C-n>"
+								end,
+								mode = "t",
+								expr = true,
+								desc = "Double escape to normal mode",
+							},
+							q = "hide",
+							["<esc>"] = "hide",
+						},
+					},
+				},
+				toggle = {
+					map = vim.keymap.set,
+					enabled = true,
+					which_key = true,
+					notify = true,
+				}
 			}
 		},
-		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
 		{
-			"levouh/tint.nvim",
+			'levouh/tint.nvim',
 		},
+		{ 'kevinhwang91/nvim-ufo',            dependencies = 'kevinhwang91/promise-async' },
 		{
 			"chrisgrieser/nvim-spider",
 		},
@@ -168,16 +200,9 @@ lazy.setup(
 			end
 		},
 
-		-- terminal
-		{
-			"akinsho/toggleterm.nvim",
-			event = "VeryLazy",
-		},
-
 		-- telescope
 		{
 			"nvim-telescope/telescope.nvim",
-			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"debugloop/telescope-undo.nvim",
@@ -225,7 +250,7 @@ lazy.setup(
 		},
 
 		-- indentation lines
-		{ 'echasnovski/mini.indentscope', version = '*' },
+		-- { 'echasnovski/mini.indentscope', version = '*' },
 
 		-- comment
 		{
@@ -295,14 +320,14 @@ lazy.setup(
 		},
 
 		-- command launcher
-		{
-			"desdic/greyjoy.nvim",
-			dependencies = {
-				"stevearc/dressing.nvim",
-				event = "VeryLazy",
-			},
-			event = "VeryLazy"
-		},
+		-- {
+		-- 	"desdic/greyjoy.nvim",
+		-- 	dependencies = {
+		-- 		"stevearc/dressing.nvim",
+		-- 		event = "VeryLazy",
+		-- 	},
+		-- 	event = "VeryLazy"
+		-- },
 
 		-- toggle boolean
 		{
@@ -331,17 +356,6 @@ lazy.setup(
 			dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
 			config = true,
 			event = "VeryLazy",
-		},
-		-- {"averms/black-nvim", build: "UpdateRemotePlugins"},
-		-- markdown
-		{
-			"iamcco/markdown-preview.nvim",
-			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-			build = "cd app && npm install",
-			init = function()
-				vim.g.mkdp_filetypes = { "markdown" }
-			end,
-			ft = { "markdown" },
 		},
 		{
 			"dkarter/bullets.vim",
